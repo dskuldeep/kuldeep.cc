@@ -15,6 +15,7 @@ interface BlogPost {
   date: string;
   readingTime: string;
   tags: string[];
+  content: string;
 }
 
 interface CaseStudy {
@@ -23,6 +24,7 @@ interface CaseStudy {
   description: string;
   date: string;
   tags: string[];
+  content: string;
 }
 
 const contentDirectory = path.join(process.cwd(), "content");
@@ -52,6 +54,7 @@ function generateBlogPosts(): BlogPost[] {
         date: data.date,
         readingTime,
         tags: data.tags || [],
+        content,
       };
     });
 
@@ -72,7 +75,7 @@ function generateCaseStudies(): CaseStudy[] {
       const slug = fileName.replace(/\.md$/, "");
       const fullPath = path.join(caseStudiesDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, "utf8");
-      const { data } = matter(fileContents);
+      const { data, content } = matter(fileContents);
 
       return {
         slug,
@@ -80,6 +83,7 @@ function generateCaseStudies(): CaseStudy[] {
         description: data.description,
         date: data.date,
         tags: data.tags || [],
+        content,
       };
     });
 
