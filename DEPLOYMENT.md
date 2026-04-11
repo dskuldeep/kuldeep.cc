@@ -1,65 +1,16 @@
-# Deployment Guide
+# Cloudflare Pages Deployment
 
-This project automatically deploys to Cloudflare Workers on every push to the `main` branch.
+Your GitHub repo is already connected to Cloudflare Pages. Just update these settings:
 
-## Setup GitHub Secrets
+## Cloudflare Pages Settings
 
-You need to add these secrets to your GitHub repository:
+Go to your Cloudflare Pages project settings and set:
 
-### 1. Get your Cloudflare API Token
+- **Framework preset**: Next.js (SSR)
+- **Build command**: `npm run build`
+- **Build output directory**: `.next`
+- **Node version**: 20
 
-1. Go to https://dash.cloudflare.com/profile/api-tokens
-2. Click "Create Token"
-3. Use the "Edit Cloudflare Workers" template
-4. Click "Continue to summary" → "Create Token"
-5. Copy the token (you won't see it again!)
+That's it! Every push to `main` will auto-deploy.
 
-### 2. Get your Cloudflare Account ID
-
-1. Go to https://dash.cloudflare.com
-2. Select any site
-3. On the right sidebar, scroll down to find "Account ID"
-4. Copy the Account ID
-
-### 3. Add secrets to GitHub
-
-1. Go to your GitHub repository
-2. Click **Settings** → **Secrets and variables** → **Actions**
-3. Click **New repository secret**
-4. Add these two secrets:
-
-   - Name: `CLOUDFLARE_API_TOKEN`
-     Value: [your API token from step 1]
-
-   - Name: `CLOUDFLARE_ACCOUNT_ID`
-     Value: [your account ID from step 2]
-
-## How It Works
-
-1. Push code to the `main` branch
-2. GitHub Actions automatically triggers
-3. Installs dependencies
-4. Runs `npm run deploy` (which uses `vinext`)
-5. Your site is live on Cloudflare!
-
-## Manual Deployment
-
-You can also deploy manually from your local machine:
-
-```bash
-npm run deploy
-```
-
-Make sure you're logged in to Cloudflare first:
-
-```bash
-npx wrangler login
-```
-
-## Preview Deployments
-
-To deploy a preview version:
-
-```bash
-npm run deploy:preview
-```
+The project uses `vinext` which handles Next.js → Cloudflare Workers conversion automatically.
