@@ -170,8 +170,7 @@ async function generateHomeOG() {
               maxWidth: "900px",
             }}
           >
-            Building data-driven marketing systems that scale with AI. Head of
-            Marketing at Maxim AI.
+            Building data-driven marketing systems that scale with AI.
           </div>
         </div>
 
