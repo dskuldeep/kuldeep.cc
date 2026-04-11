@@ -32,6 +32,7 @@
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vinext": "^0.0.41"
+    "vinext": "^0.0.41",
+    "vite": "^8.0.8"
   }
 }
