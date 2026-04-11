@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages:build": "next build",
-    "pages:deploy": "echo 'Deploy the out directory to Cloudflare Pages'"
+    "deploy": "vinext deploy",
+    "deploy:preview": "vinext deploy --preview"
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",
@@ -31,6 +31,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vinext": "^0.0.41"
   }
 }
