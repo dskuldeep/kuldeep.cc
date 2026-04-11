@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #fff8ef;
@@ -18,15 +20,6 @@
   --electric: #1bd9ff;
   --moss: #3f6d63;
   --shadow: 0 24px 70px rgba(65, 34, 33, 0.12);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sora);
-  --font-display: var(--font-fraunces);
-  --font-hand: var(--font-caveat);
-  --font-mono: var(--font-ibm-plex-mono);
 }
 
 * {
