@@ -1,0 +1,36 @@
+{
+  "blogPosts": [
+    {
+      "slug": "crawldoctor-marketing-blog",
+      "title": "Using CrawlDoctor for Marketing: Tracking Human Users, AI Bots, and Conversion Signals",
+      "excerpt": "A thought-leadership essay on how marketing teams can use CrawlDoctor to understand AI crawler traffic, track buyer journeys, measure campaign performance, and improve conversion paths.",
+      "date": "2026-04-11",
+      "readingTime": "12 min read",
+      "tags": [
+        "Marketing",
+        "Analytics",
+        "Attribution",
+        "AI",
+        "SEO",
+        "Growth"
+      ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "crawldoctor-case-study",
+      "title": "How We Built CrawlDoctor",
+      "description": "A technical case study on building an AI crawler, journey analytics, and lead attribution platform with FastAPI, PostgreSQL, and React.",
+      "date": "2026-04-11",
+      "tags": [
+        "Analytics",
+        "AI",
+        "FastAPI",
+        "React",
+        "PostgreSQL",
+        "Case Study"
+      ]
+    }
+  ],
+  "generatedAt": "2026-04-11T19:26:59.722Z"
+}
