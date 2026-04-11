@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sora)"],
-        display: ["var(--font-fraunces)"],
-        hand: ["var(--font-caveat)"],
-        mono: ["var(--font-ibm-plex-mono)"],
+        sans: ["var(--font-sora)", "system-ui", "-apple-system", "sans-serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        hand: ["var(--font-caveat)", "cursive"],
+        mono: ["var(--font-ibm-plex-mono)", "Menlo", "Monaco", "Courier New", "monospace"],
       },
       colors: {
         background: "var(--color-background)",

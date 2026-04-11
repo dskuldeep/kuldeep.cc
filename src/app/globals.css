@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 :root {
+  /* Font families */
+  --font-sora: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-fraunces: 'Fraunces', Georgia, serif;
+  --font-caveat: 'Caveat', cursive;
+  --font-ibm-plex-mono: 'IBM Plex Mono', Menlo, Monaco, 'Courier New', monospace;
+
+  /* Colors */
   --background: #fff8ef;
   --foreground: #20181d;
   --background-strong: #fff2df;
