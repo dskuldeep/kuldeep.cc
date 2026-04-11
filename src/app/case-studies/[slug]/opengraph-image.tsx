@@ -1,11 +1,19 @@
 import { ImageResponse } from "next/og";
-import { getCaseStudy } from "@/lib/content";
+import { getCaseStudy, getCaseStudies } from "@/lib/content";
 
+export const dynamic = "force-static";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
+
+export async function generateStaticParams() {
+  const caseStudies = await getCaseStudies();
+  return caseStudies.map((study) => ({
+    slug: study.slug,
+  }));
+}
 
 export default async function Image({ params }: { params: { slug: string } }) {
   const caseStudy = await getCaseStudy(params.slug);
