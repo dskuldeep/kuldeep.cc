@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "Real-world case studies of AI-powered marketing systems, data-driven growth experiments, and scalable automation.",
 };
 
+// Force static generation at build time
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies();
 

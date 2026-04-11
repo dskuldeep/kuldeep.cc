@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     "Writing from Kuldeep Paul on AI-native marketing, product narratives, experimentation, and data science.",
 };
 
+// Force static generation at build time
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export default async function JournalPage() {
   const posts = await getBlogPosts();
 
