@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pages:build": "next build",
+    "pages:deploy": "echo 'Deploy the out directory to Cloudflare Pages'"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
