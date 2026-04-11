@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Kuldeep Paul",
       images: [
         {
-          url: `/case-studies/${slug}/opengraph-image`,
+          url: "/og-images/home.png",
           width: 1200,
           height: 630,
           alt: caseStudy.title,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: caseStudy.description,
       creator: "@don_fedora",
       site: "@don_fedora",
-      images: [`/case-studies/${slug}/opengraph-image`],
+      images: ["/og-images/home.png"],
     },
     alternates: {
       canonical: `https://kuldeep.cc/case-studies/${slug}`,
@@ -77,7 +77,7 @@ export default async function CaseStudyPage({ params }: Props) {
     "@type": "Article",
     headline: caseStudy.title,
     description: caseStudy.description,
-    image: `https://kuldeep.cc/case-studies/${slug}/opengraph-image`,
+    image: "https://kuldeep.cc/og-images/home.png",
     author: {
       "@type": "Person",
       name: "Kuldeep Paul",

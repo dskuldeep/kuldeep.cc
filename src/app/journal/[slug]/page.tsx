@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Kuldeep Paul",
       images: [
         {
-          url: `/journal/${slug}/opengraph-image`,
+          url: "/og-images/home.png",
           width: 1200,
           height: 630,
           alt: post.title,
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.excerpt,
       creator: "@don_fedora",
       site: "@don_fedora",
-      images: [`/journal/${slug}/opengraph-image`],
+      images: ["/og-images/home.png"],
     },
     alternates: {
       canonical: `https://kuldeep.cc/journal/${slug}`,
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    image: `https://kuldeep.cc/journal/${slug}/opengraph-image`,
+    image: "https://kuldeep.cc/og-images/home.png",
     author: {
       "@type": "Person",
       name: "Kuldeep Paul",

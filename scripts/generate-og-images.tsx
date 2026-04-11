@@ -686,16 +686,16 @@ async function generateCaseStudyOGs() {
 }
 
 async function main() {
-  console.log("Generating OpenGraph images...\n");
+  console.log("Generating OpenGraph image...\n");
 
   await generateHomeOG();
-  await generateJournalOG();
-  await generateCaseStudiesOG();
-  // Skip individual post OG images - using fallback to listing page OG images
+  // Only generate home OG image - used for all pages
+  // await generateJournalOG();
+  // await generateCaseStudiesOG();
   // await generateBlogPostOGs();
   // await generateCaseStudyOGs();
 
-  console.log("\n✓ All OpenGraph images generated successfully!");
+  console.log("\n✓ OpenGraph image generated successfully!");
   console.log(`  Output directory: ${OUTPUT_DIR}`);
 }
 

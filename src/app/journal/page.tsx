@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Journal",
   description:
     "Writing from Kuldeep Paul on AI-native marketing, product narratives, experimentation, and data science.",
+  openGraph: {
+    images: ["/og-images/home.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-images/home.png"],
+  },
 };
 
 // Force static generation at build time

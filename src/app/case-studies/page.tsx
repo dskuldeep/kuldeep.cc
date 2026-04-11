@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: "Case Studies",
   description:
     "Real-world case studies of AI-powered marketing systems, data-driven growth experiments, and scalable automation.",
+  openGraph: {
+    images: ["/og-images/home.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-images/home.png"],
+  },
 };
 
 // Force static generation at build time
