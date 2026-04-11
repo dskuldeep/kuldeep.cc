@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getBlogPost, getBlogPosts } from "@/lib/content";
 
-export const dynamic = "force-static";
 export const size = {
   width: 1200,
   height: 630,
