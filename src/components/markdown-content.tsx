@@ -178,7 +178,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                 {children}
               </a>
             ),
-            img: ({ src, alt }) => <ZoomableImage src={src} alt={alt} />,
+            img: ({ src, alt }) => <ZoomableImage src={typeof src === 'string' ? src : undefined} alt={typeof alt === 'string' ? alt : undefined} />,
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || "");
               const language = match ? match[1] : "";
