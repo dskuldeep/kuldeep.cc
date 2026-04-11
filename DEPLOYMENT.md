@@ -1,73 +1,41 @@
 # Cloudflare Pages Deployment Guide
 
-This project uses Next.js static export mode and is configured for Cloudflare Pages deployment.
+This project uses Next.js static export mode (`output: "export"`) for deployment to Cloudflare Pages.
 
-## Automated Configuration Files
+## Quick Setup
 
-The following files are committed to the repository for automated deployment:
+### Configuration Files in Repository
 
-- **`wrangler.toml`** - Cloudflare Pages configuration
-- **`.node-version`** - Specifies Node.js 20
-- **`cloudflare.json`** - Build configuration
+- **`.node-version`** - Ensures Node.js 20 is used
+- **`public/_headers`** - Custom headers for caching and security
 - **`next.config.ts`** - Configured with `output: "export"` for static generation
 
-## Deployment Options
+## Cloudflare Pages Dashboard Setup (One-Time)
 
-### Option 1: Using Cloudflare Pages Dashboard (Git Integration)
+When connecting your repository to Cloudflare Pages:
 
-1. Go to Cloudflare Pages dashboard
-2. Connect your GitHub repository
-3. **Important:** Override the auto-detected settings with:
-   - **Framework preset**: `None` (not Next.js!)
-   - **Build command**: `npm run build`
-   - **Build output directory**: `out`
-   - **Environment variables**: Add `NODE_VERSION=20`
+1. Go to **Cloudflare Dashboard** → **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
+2. Select your repository
+3. **Configure build settings:**
 
-The auto-detection tries to use the Next.js adapter which conflicts with static export. Setting preset to "None" treats it as a static site.
-
-### Option 2: Using Wrangler CLI (Recommended for Full Automation)
-
-This method provides complete automation without manual dashboard configuration:
-
-1. Install Wrangler:
-   ```bash
-   npm install -g wrangler
+   ```
+   Framework preset:     None (important!)
+   Build command:        npm run build
+   Build output directory: out
    ```
 
-2. Login to Cloudflare:
-   ```bash
-   wrangler login
+4. **Add environment variable:**
+   ```
+   NODE_VERSION = 20
    ```
 
-3. Build and deploy:
-   ```bash
-   npm run build
-   npx wrangler pages deploy out --project-name=kuldeep-cc
-   ```
+5. Click **Save and Deploy**
 
-4. For automated CI/CD, add this to your GitHub Actions:
-   ```yaml
-   name: Deploy to Cloudflare Pages
-   on:
-     push:
-       branches: [main]
-   jobs:
-     deploy:
-       runs-on: ubuntu-latest
-       steps:
-         - uses: actions/checkout@v4
-         - uses: actions/setup-node@v4
-           with:
-             node-version: 20
-         - run: npm ci
-         - run: npm run build
-         - uses: cloudflare/pages-action@v1
-           with:
-             apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-             accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-             projectName: kuldeep-cc
-             directory: out
-   ```
+### ⚠️ Important: Why "None" Framework Preset?
+
+Cloudflare auto-detects Next.js and tries to use the `@opennextjs/cloudflare` adapter, which expects server-side rendering. Since we use static export (`output: "export"`), this conflicts.
+
+Setting framework preset to **"None"** tells Cloudflare to treat it as a static site and simply deploy the `out` directory contents.
 
 ## Build Output
 
