@@ -7,22 +7,26 @@ import "./globals.css";
 const sora = Sora({
   variable: "--font-sora",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const caveat = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
