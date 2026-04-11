@@ -1,6 +1,6 @@
 ---
 title: "Using CrawlDoctor for Marketing: Tracking Human Users, AI Bots, and Conversion Signals"
-description: "A thought-leadership essay on how marketing teams can use CrawlDoctor to understand AI crawler traffic, track buyer journeys, measure campaign performance, and improve conversion paths."
+description: "An essay on how marketing teams can use CrawlDoctor to understand AI crawler traffic, track buyer journeys, measure campaign performance, and improve conversion paths."
 date: "2026-04-11"
 tags: ["Marketing", "Analytics", "Attribution", "AI", "SEO", "Growth"]
 ---

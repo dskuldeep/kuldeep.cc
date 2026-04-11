@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       "A bright editorial portfolio and journal about AI-native growth, product storytelling, and data-aware marketing systems.",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/og-images/home.png",
         width: 1200,
         height: 630,
         alt: "Kuldeep Paul | Marketing, AI, and Product",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
       "Building data-driven marketing systems that scale with AI. Head of Marketing at Maxim AI.",
     creator: "@don_fedora",
     site: "@don_fedora",
-    images: ["/opengraph-image"],
+    images: ["/og-images/home.png"],
   },
   robots: {
     index: true,

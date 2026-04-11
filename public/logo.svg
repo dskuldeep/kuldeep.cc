@@ -1,0 +1,39 @@
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background shadow K -->
+  <text x="0" y="50" font-family="Georgia, serif" font-size="48" font-weight="700" letter-spacing="-0.12em" fill="rgba(32,24,29,0.06)">
+    K
+  </text>
+
+  <!-- Main "Kuldeep" text -->
+  <text x="10" y="48" font-family="Georgia, serif" font-size="36" font-weight="600" letter-spacing="-0.09em" fill="#20181d">
+    Kuldeep
+  </text>
+
+  <!-- Orange gradient circle/dot -->
+  <defs>
+    <radialGradient id="orangeGradient" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.95);stop-opacity:1" />
+      <stop offset="30%" style="stop-color:rgba(255,255,255,0.65);stop-opacity:1" />
+      <stop offset="31%" style="stop-color:rgba(255,125,77,0.92);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(255,125,77,0.82);stop-opacity:1" />
+    </radialGradient>
+
+    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(255,125,77,0);stop-opacity:1" />
+      <stop offset="50%" style="stop-color:rgba(255,125,77,0.9);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgba(169,140,255,0.45);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="162" cy="43" r="10" fill="url(#orangeGradient)" stroke="rgba(32,24,29,0.08)" stroke-width="1">
+    <animate attributeName="opacity" values="1;0.95;1" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Decorative gradient line -->
+  <line x1="25" y1="62" x2="53" y2="62" stroke="url(#lineGradient)" stroke-width="1"/>
+
+  <!-- "Paul" text in handwriting style -->
+  <text x="58" y="66" font-family="'Comic Sans MS', cursive" font-size="20" font-style="italic" fill="#ff7d4d">
+    Paul
+  </text>
+</svg>

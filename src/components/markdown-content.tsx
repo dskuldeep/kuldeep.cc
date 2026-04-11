@@ -6,12 +6,16 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import mermaid from "mermaid";
 import { ZoomableImage } from "./image-lightbox";
 import { X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
-// Initialize mermaid
-if (typeof window !== "undefined") {
+// Dynamically import mermaid only on client-side
+let mermaidModule: typeof import("mermaid").default | null = null;
+
+async function initMermaid() {
+  if (typeof window === "undefined" || mermaidModule) return mermaidModule;
+
+  const mermaid = (await import("mermaid")).default;
   mermaid.initialize({
     startOnLoad: true,
     theme: "default",
@@ -32,6 +36,9 @@ if (typeof window !== "undefined") {
       useMaxWidth: true,
     },
   });
+
+  mermaidModule = mermaid;
+  return mermaid;
 }
 
 interface MarkdownContentProps {
@@ -47,47 +54,53 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
   const [mermaidZoom, setMermaidZoom] = useState(1);
 
   useEffect(() => {
-    // Render all mermaid diagrams after component mounts
-    mermaid.run({
-      querySelector: ".mermaid",
-    });
+    // Dynamically load and render mermaid diagrams
+    (async () => {
+      const mermaid = await initMermaid();
+      if (!mermaid) return;
 
-    // Add click handlers to all mermaid diagrams
-    const mermaidElements = document.querySelectorAll(".mermaid-container");
-    mermaidElements.forEach((element) => {
-      const htmlElement = element as HTMLElement;
-      htmlElement.style.cursor = "pointer";
-      htmlElement.onclick = () => {
-        const svgElement = element.querySelector("svg");
-        if (svgElement) {
-          // Clone the SVG to preserve all attributes
-          const clonedSvg = svgElement.cloneNode(true) as SVGElement;
+      // Render all mermaid diagrams after component mounts
+      await mermaid.run({
+        querySelector: ".mermaid",
+      });
 
-          // Get actual rendered dimensions and scale them up for lightbox
-          const rect = svgElement.getBoundingClientRect();
-          const scaleFactor = 1.5; // Make diagrams 1.5x larger in lightbox
-          const width = Math.round(rect.width * scaleFactor);
-          const height = Math.round(rect.height * scaleFactor);
+      // Add click handlers to all mermaid diagrams
+      const mermaidElements = document.querySelectorAll(".mermaid-container");
+      mermaidElements.forEach((element) => {
+        const htmlElement = element as HTMLElement;
+        htmlElement.style.cursor = "pointer";
+        htmlElement.onclick = () => {
+          const svgElement = element.querySelector("svg");
+          if (svgElement) {
+            // Clone the SVG to preserve all attributes
+            const clonedSvg = svgElement.cloneNode(true) as SVGElement;
 
-          // Set explicit dimensions as attributes (needed for proper rendering in lightbox)
-          clonedSvg.setAttribute('width', `${width}`);
-          clonedSvg.setAttribute('height', `${height}`);
+            // Get actual rendered dimensions and scale them up for lightbox
+            const rect = svgElement.getBoundingClientRect();
+            const scaleFactor = 1.5; // Make diagrams 1.5x larger in lightbox
+            const width = Math.round(rect.width * scaleFactor);
+            const height = Math.round(rect.height * scaleFactor);
 
-          // Set viewBox for proper scaling (use original dimensions for viewBox)
-          const viewBox = clonedSvg.getAttribute('viewBox');
-          if (!viewBox) {
-            const originalWidth = Math.round(rect.width);
-            const originalHeight = Math.round(rect.height);
-            clonedSvg.setAttribute('viewBox', `0 0 ${originalWidth} ${originalHeight}`);
+            // Set explicit dimensions as attributes (needed for proper rendering in lightbox)
+            clonedSvg.setAttribute('width', `${width}`);
+            clonedSvg.setAttribute('height', `${height}`);
+
+            // Set viewBox for proper scaling (use original dimensions for viewBox)
+            const viewBox = clonedSvg.getAttribute('viewBox');
+            if (!viewBox) {
+              const originalWidth = Math.round(rect.width);
+              const originalHeight = Math.round(rect.height);
+              clonedSvg.setAttribute('viewBox', `0 0 ${originalWidth} ${originalHeight}`);
+            }
+
+            setMermaidLightbox({
+              isOpen: true,
+              svgContent: clonedSvg.outerHTML,
+            });
           }
-
-          setMermaidLightbox({
-            isOpen: true,
-            svgContent: clonedSvg.outerHTML,
-          });
-        }
-      };
-    });
+        };
+      });
+    })();
   }, [content]);
 
   // Handle ESC key for Mermaid lightbox
