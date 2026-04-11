@@ -1,16 +1,19 @@
 # Cloudflare Pages Deployment
 
-Your GitHub repo is already connected to Cloudflare Pages.
+## Cloudflare Pages Settings
 
-## IMPORTANT: Update Cloudflare Pages Settings
+**CRITICAL: These exact settings are required:**
 
-Go to your Cloudflare Pages project → Settings → Builds & deployments and set:
+1. **Framework preset**: None
+2. **Build command**: `npm run build && npm run deploy`
+3. **Build output directory**: (leave empty - vinext handles deployment)
+4. **Root directory**: (leave empty)
 
-- **Framework preset**: **None** (NOT Next.js - this is critical!)
-- **Build command**: `npx vinext deploy`
-- **Build output directory**: Leave empty
-- **Node version**: 20
+## Environment Variables (if not set)
 
-## Why "None"?
+Add this if needed:
+- `NODE_VERSION` = `20`
 
-Cloudflare auto-detects Next.js and tries to use `opennextjs-cloudflare`, but we're using `vinext` instead. Setting framework to "None" prevents the auto-detection.
+The build will:
+1. Run `npm run build` (builds Next.js)
+2. Run `npm run deploy` (runs `vinext deploy` which deploys to Cloudflare Workers)

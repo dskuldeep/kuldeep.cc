@@ -5,8 +5,6 @@ date: "2026-04-11"
 tags: ["Analytics", "AI", "FastAPI", "React", "PostgreSQL", "Case Study"]
 ---
 
-# How We Built CrawlDoctor
-
 ## Challenge
 
 The web analytics stack most teams inherit was designed for a simpler internet. It was built for pageviews, sessions, and campaign tags, with the quiet assumption that a visitor was usually a human on a browser and that a conversion could be understood as a tidy sequence of clicks on a single domain. That assumption no longer holds.

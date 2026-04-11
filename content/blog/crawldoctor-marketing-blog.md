@@ -5,8 +5,6 @@ date: "2026-04-11"
 tags: ["Marketing", "Analytics", "Attribution", "AI", "SEO", "Growth"]
 ---
 
-# Using CrawlDoctor for Marketing: Tracking Human Users, AI Bots, and Conversion Signals
-
 ## Challenge
 
 Marketing analytics is entering an uncomfortable transition period. The metrics still look familiar, but the environment underneath them has changed. Traffic is no longer shaped only by humans arriving through search, social, and paid campaigns. It is also shaped by AI crawlers, answer engines, automated retrieval systems, and machine-mediated discovery. At the same time, the modern buyer journey has become more fragmented. A prospect may encounter a company through an educational article, return through a branded search, explore docs on another domain, click into a product page, and convert only after several non-linear visits.
