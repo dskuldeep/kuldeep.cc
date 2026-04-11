@@ -179,7 +179,8 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               </a>
             ),
             img: ({ src, alt }) => <ZoomableImage src={typeof src === 'string' ? src : undefined} alt={typeof alt === 'string' ? alt : undefined} />,
-            code({ node, inline, className, children, ...props }) {
+            code(props) {
+              const { node, inline, className, children, ...rest } = props as any;
               const match = /language-(\w+)/.exec(className || "");
               const language = match ? match[1] : "";
 
@@ -219,7 +220,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                         padding: "1.5rem",
                         fontSize: "0.875rem",
                       }}
-                      {...props}
+                      {...rest}
                     >
                       {String(children).replace(/\n$/, "")}
                     </SyntaxHighlighter>
@@ -231,7 +232,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               return (
                 <code
                   className="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm text-[var(--foreground)]"
-                  {...props}
+                  {...rest}
                 >
                   {children}
                 </code>
