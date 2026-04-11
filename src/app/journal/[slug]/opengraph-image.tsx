@@ -1,33 +1,20 @@
 import { ImageResponse } from "next/og";
 import { getBlogPost } from "@/lib/content";
 
-export const runtime = "edge";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
 
-export async function generateImageMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const post = getBlogPost(params.slug);
-  return [
-    {
-      id: params.slug,
-      alt: post?.title || "Blog Post",
-      contentType: "image/png",
-    },
-  ];
-}
-
 export default async function Image({ params }: { params: { slug: string } }) {
-  const post = getBlogPost(params.slug);
+  const post = await getBlogPost(params.slug);
 
   if (!post) {
-    return new ImageResponse(<div>Post not found</div>, { ...size });
+    return new ImageResponse(
+      <div style={{ display: "flex" }}>Post not found</div>,
+      { ...size }
+    );
   }
 
   return new ImageResponse(
@@ -125,13 +112,9 @@ export default async function Image({ params }: { params: { slug: string } }) {
                 color: "#635d65",
                 margin: 0,
                 lineHeight: 1.5,
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
               }}
             >
-              {post.excerpt}
+              {post.excerpt.slice(0, 150)}...
             </p>
           )}
         </div>

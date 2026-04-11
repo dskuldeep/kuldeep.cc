@@ -1,33 +1,20 @@
 import { ImageResponse } from "next/og";
 import { getCaseStudy } from "@/lib/content";
 
-export const runtime = "edge";
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = "image/png";
 
-export async function generateImageMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const caseStudy = getCaseStudy(params.slug);
-  return [
-    {
-      id: params.slug,
-      alt: caseStudy?.title || "Case Study",
-      contentType: "image/png",
-    },
-  ];
-}
-
 export default async function Image({ params }: { params: { slug: string } }) {
-  const caseStudy = getCaseStudy(params.slug);
+  const caseStudy = await getCaseStudy(params.slug);
 
   if (!caseStudy) {
-    return new ImageResponse(<div>Case study not found</div>, { ...size });
+    return new ImageResponse(
+      <div style={{ display: "flex" }}>Case study not found</div>,
+      { ...size }
+    );
   }
 
   return new ImageResponse(
@@ -125,18 +112,14 @@ export default async function Image({ params }: { params: { slug: string } }) {
                 color: "#635d65",
                 margin: 0,
                 lineHeight: 1.5,
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-                overflow: "hidden",
               }}
             >
-              {caseStudy.description}
+              {caseStudy.description.slice(0, 150)}...
             </p>
           )}
         </div>
 
-        {/* Footer with date and metrics */}
+        {/* Footer with date and badge */}
         <div
           style={{
             display: "flex",
@@ -158,22 +141,15 @@ export default async function Image({ params }: { params: { slug: string } }) {
           </div>
           <div
             style={{
-              display: "flex",
-              gap: "12px",
+              fontSize: "16px",
+              color: "#9b9399",
+              background: "rgba(255, 125, 77, 0.1)",
+              padding: "8px 20px",
+              borderRadius: "24px",
+              border: "1px solid rgba(255, 125, 77, 0.2)",
             }}
           >
-            <div
-              style={{
-                fontSize: "16px",
-                color: "#9b9399",
-                background: "rgba(255, 125, 77, 0.1)",
-                padding: "8px 20px",
-                borderRadius: "24px",
-                border: "1px solid rgba(255, 125, 77, 0.2)",
-              }}
-            >
-              Case Study
-            </div>
+            Case Study
           </div>
         </div>
 
