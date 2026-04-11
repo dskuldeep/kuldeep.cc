@@ -85,6 +85,69 @@ Wrap up your thoughts...
 - `- bullet point` - bullet lists
 - `1. numbered item` - numbered lists
 
+### Code Blocks with Syntax Highlighting
+
+````markdown
+```javascript
+function hello() {
+  console.log("Hello, world!");
+}
+```
+````
+
+### Mermaid Diagrams
+
+Create flowcharts, sequence diagrams, and more using Mermaid:
+
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action 1]
+    B -->|No| D[Action 2]
+    C --> E[End]
+    D --> E
+```
+````
+
+More Mermaid examples:
+
+**Flowchart:**
+````markdown
+```mermaid
+graph LR
+    A[Marketing Strategy] --> B[Content Creation]
+    B --> C[Distribution]
+    C --> D[Analytics]
+    D --> A
+```
+````
+
+**Sequence Diagram:**
+````markdown
+```mermaid
+sequenceDiagram
+    User->>API: Request Data
+    API->>Database: Query
+    Database-->>API: Return Data
+    API-->>User: Response
+```
+````
+
+**Timeline:**
+````markdown
+```mermaid
+timeline
+    title Project Timeline
+    2026-Q1 : Planning : Research
+    2026-Q2 : Development : Testing
+    2026-Q3 : Launch : Marketing
+    2026-Q4 : Scale : Optimization
+```
+````
+
+Learn more at [Mermaid Documentation](https://mermaid.js.org/)
+
 ## Deploying to Cloudflare Pages
 
 1. Push your changes to GitHub

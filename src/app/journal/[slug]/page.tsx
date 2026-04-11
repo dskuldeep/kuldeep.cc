@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { getBlogPost, getBlogPosts } from "@/lib/content";
+import { MarkdownContent } from "@/components/markdown-content";
 
 type Props = {
   params: Promise<{
@@ -135,68 +134,7 @@ export default async function BlogPostPage({ params }: Props) {
       </header>
 
       {/* Content */}
-      <div className="prose prose-lg max-w-none">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
-            h1: ({ children }) => (
-              <h1 className="mb-6 mt-12 font-display text-4xl font-semibold leading-tight tracking-tight text-[var(--foreground)] first:mt-0">
-                {children}
-              </h1>
-            ),
-            h2: ({ children }) => (
-              <h2 className="mb-4 mt-10 font-display text-3xl font-semibold leading-tight tracking-tight text-[var(--foreground)]">
-                {children}
-              </h2>
-            ),
-            h3: ({ children }) => (
-              <h3 className="mb-3 mt-8 font-display text-2xl font-semibold leading-tight tracking-tight text-[var(--foreground)]">
-                {children}
-              </h3>
-            ),
-            p: ({ children }) => (
-              <p className="mb-4 leading-relaxed text-[var(--foreground)]">
-                {children}
-              </p>
-            ),
-            ul: ({ children }) => (
-              <ul className="mb-6 list-disc space-y-2 pl-6 text-[var(--foreground)]">
-                {children}
-              </ul>
-            ),
-            ol: ({ children }) => (
-              <ol className="mb-6 list-decimal space-y-2 pl-6 text-[var(--foreground)]">
-                {children}
-              </ol>
-            ),
-            li: ({ children }) => (
-              <li className="leading-relaxed">{children}</li>
-            ),
-            a: ({ href, children }) => (
-              <a
-                href={href}
-                className="text-[var(--orange)] underline decoration-[var(--orange)]/30 underline-offset-4 transition-colors hover:decoration-[var(--orange)]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {children}
-              </a>
-            ),
-            code: ({ children }) => (
-              <code className="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm text-[var(--foreground)]">
-                {children}
-              </code>
-            ),
-            pre: ({ children }) => (
-              <pre className="mb-6 overflow-x-auto rounded-lg border border-[var(--line)] bg-gray-50 p-4">
-                {children}
-              </pre>
-            ),
-          }}
-        >
-          {post.content}
-        </ReactMarkdown>
-      </div>
+      <MarkdownContent content={post.content} />
     </article>
     </>
   );

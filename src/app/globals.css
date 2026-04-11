@@ -1170,3 +1170,71 @@ a {
     letter-spacing: 0.22em;
   }
 }
+
+/* Mermaid diagram responsive styling */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure text in diagrams is readable */
+.mermaid text {
+  font-family: var(--font-sans), system-ui, sans-serif !important;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .mermaid svg {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Lightbox z-index layers - ensure above navbar (z-50) */
+.lightbox-overlay {
+  z-index: 9999 !important;
+}
+
+.lightbox-controls {
+  z-index: 10000 !important;
+}
+
+/* Mermaid lightbox styling - make diagrams larger */
+.mermaid-lightbox-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: calc(100vw - 8rem);
+  max-height: calc(100vh - 8rem);
+  overflow: auto !important;
+  margin: 4rem;
+}
+
+.mermaid-lightbox-content svg {
+  max-width: none !important;
+  max-height: none !important;
+  background: white;
+  display: block;
+}
+
+/* Ensure text scales with the diagram */
+.mermaid-lightbox-content text {
+  font-size: 16px !important;
+}
+
+/* Mobile adjustments for lightbox */
+@media (max-width: 768px) {
+  .mermaid-lightbox-content {
+    max-width: calc(100vw - 2rem);
+    max-height: calc(100vh - 2rem);
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
