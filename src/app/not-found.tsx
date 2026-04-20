@@ -2,30 +2,56 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex min-h-[70vh] w-full max-w-4xl flex-col items-center justify-center px-5 py-20 text-center sm:px-6 lg:px-8">
-      <div className="space-y-6">
-        <div className="inline-flex items-center gap-3 rounded-full border border-[var(--line)] bg-white/50 px-4 py-2">
-          <span className="text-2xl">404</span>
-          <span className="h-4 w-px bg-[var(--line)]" />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--ink-soft)]">
-            Not Found
-          </span>
+    <div className="mx-auto flex min-h-[70vh] w-full max-w-3xl flex-col items-start justify-center px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div className="w-full space-y-8">
+        <div className="term">
+          <div className="term-bar">
+            <span className="bb" style={{ background: "#e8573d" }} />
+            <span className="bb" style={{ background: "#f0d66c" }} />
+            <span className="bb" style={{ background: "#9fc57a" }} />
+            <span className="ml-2 hidden text-white/45 sm:inline">/dev/null — bash</span>
+          </div>
+          <div className="term-body min-h-[180px] sm:min-h-[220px]">
+            <span className="term-line">
+              <span style={{ color: "#e8573d" }}>kuldeep@marketing</span>
+              <span style={{ color: "#9fc57a" }}> ~</span> $ cd {"<that page>"}
+            </span>
+            <span className="term-line r">
+              → bash: no such file or directory (404)
+            </span>
+            <span className="term-line m">&nbsp;</span>
+            <span className="term-line">
+              <span style={{ color: "#e8573d" }}>kuldeep@marketing</span>
+              <span style={{ color: "#9fc57a" }}> ~</span> $ ls recommended/
+            </span>
+            <span className="term-line y">home · case-studies · journal</span>
+            <span className="term-line m">&nbsp;</span>
+            <span className="term-line">
+              <span style={{ color: "#e8573d" }}>kuldeep@marketing</span>
+              <span style={{ color: "#9fc57a" }}> ~</span> $ <span className="term-cursor" />
+            </span>
+          </div>
         </div>
 
-        <h1 className="font-display text-5xl font-semibold leading-tight tracking-tight text-[var(--foreground)] sm:text-6xl">
-          This page doesn&apos;t exist.
-        </h1>
+        <div>
+          <p className="font-mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--ink-mute)]">
+            error 404
+          </p>
+          <h1 className="mt-3 font-display text-[2rem] font-semibold leading-[1] tracking-[-0.025em] text-[var(--ink)] sm:text-[3rem]">
+            This page doesn&apos;t exist.
+          </h1>
+          <p className="mt-5 max-w-lg text-[1.02rem] leading-[1.65] text-[var(--ink-soft)]">
+            The page you&apos;re looking for might have been moved, renamed, or
+            never shipped to production.
+          </p>
+        </div>
 
-        <p className="mx-auto max-w-lg text-lg leading-relaxed text-[var(--ink-soft)]">
-          The page you&apos;re looking for might have been moved or doesn&apos;t exist yet.
-        </p>
-
-        <div className="flex flex-col justify-center gap-3 pt-4 sm:flex-row">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <Link className="glass-button glass-button-primary" href="/">
-            Back to home
+            ← back to home
           </Link>
           <Link className="glass-button glass-button-secondary" href="/journal">
-            Browse journal
+            browse journal
           </Link>
         </div>
       </div>

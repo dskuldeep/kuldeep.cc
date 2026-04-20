@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { ComponentPropsWithoutRef, CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -11,6 +12,7 @@ import { X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
 // Dynamically import mermaid only on client-side
 let mermaidModule: typeof import("mermaid").default | null = null;
+const syntaxTheme = oneDark as unknown as Record<string, CSSProperties>;
 
 async function initMermaid() {
   if (typeof window === "undefined" || mermaidModule) return mermaidModule;
@@ -45,13 +47,23 @@ interface MarkdownContentProps {
   content: string;
 }
 
+type MarkdownCodeProps = ComponentPropsWithoutRef<"code"> & {
+  inline?: boolean;
+  node?: unknown;
+};
+
 export function MarkdownContent({ content }: MarkdownContentProps) {
   const mermaidRef = useRef<number>(0);
+  const renderedDiagramsRef = useRef<Set<string>>(new Set());
   const [mermaidLightbox, setMermaidLightbox] = useState<{
     isOpen: boolean;
     svgContent: string;
   }>({ isOpen: false, svgContent: "" });
   const [mermaidZoom, setMermaidZoom] = useState(1);
+  const closeMermaidLightbox = useCallback(() => {
+    setMermaidZoom(1);
+    setMermaidLightbox({ isOpen: false, svgContent: "" });
+  }, []);
 
   useEffect(() => {
     // Dynamically load and render mermaid diagrams
@@ -59,15 +71,35 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
       const mermaid = await initMermaid();
       if (!mermaid) return;
 
-      // Render all mermaid diagrams after component mounts
-      await mermaid.run({
-        querySelector: ".mermaid",
+      // Find all mermaid diagrams that haven't been rendered yet
+      const mermaidElements = document.querySelectorAll(".mermaid");
+      const unrenderedElements: Element[] = [];
+
+      mermaidElements.forEach((element) => {
+        const id = element.id;
+        // Only render if it hasn't been rendered before and doesn't have an SVG child
+        if (id && !renderedDiagramsRef.current.has(id) && !element.querySelector("svg")) {
+          unrenderedElements.push(element);
+          renderedDiagramsRef.current.add(id);
+        }
       });
 
-      // Add click handlers to all mermaid diagrams
-      const mermaidElements = document.querySelectorAll(".mermaid-container");
-      mermaidElements.forEach((element) => {
+      // Only run mermaid if there are unrendered diagrams
+      if (unrenderedElements.length > 0) {
+        await mermaid.run({
+          querySelector: ".mermaid",
+        });
+      }
+
+      // Add click handlers to all mermaid diagrams (including already rendered ones)
+      const mermaidContainers = document.querySelectorAll(".mermaid-container");
+      mermaidContainers.forEach((element) => {
         const htmlElement = element as HTMLElement;
+
+        // Skip if already has click handler
+        if (htmlElement.dataset.hasClickHandler === "true") return;
+        htmlElement.dataset.hasClickHandler = "true";
+
         htmlElement.style.cursor = "pointer";
         htmlElement.onclick = () => {
           const svgElement = element.querySelector("svg");
@@ -82,15 +114,16 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             const height = Math.round(rect.height * scaleFactor);
 
             // Set explicit dimensions as attributes (needed for proper rendering in lightbox)
-            clonedSvg.setAttribute('width', `${width}`);
-            clonedSvg.setAttribute('height', `${height}`);
+            clonedSvg.setAttribute("width", `${width}`);
+            clonedSvg.setAttribute("height", `${height}`);
+            clonedSvg.style.backgroundColor = "#ffffff";
 
             // Set viewBox for proper scaling (use original dimensions for viewBox)
-            const viewBox = clonedSvg.getAttribute('viewBox');
+            const viewBox = clonedSvg.getAttribute("viewBox");
             if (!viewBox) {
               const originalWidth = Math.round(rect.width);
               const originalHeight = Math.round(rect.height);
-              clonedSvg.setAttribute('viewBox', `0 0 ${originalWidth} ${originalHeight}`);
+              clonedSvg.setAttribute("viewBox", `0 0 ${originalWidth} ${originalHeight}`);
             }
 
             setMermaidLightbox({
@@ -107,23 +140,20 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape" && mermaidLightbox.isOpen) {
-        setMermaidLightbox({ isOpen: false, svgContent: "" });
+        closeMermaidLightbox();
       }
     };
 
     if (mermaidLightbox.isOpen) {
       document.addEventListener("keydown", handleEsc);
       document.body.style.overflow = "hidden";
-    } else {
-      // Reset zoom when closed
-      setMermaidZoom(1);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEsc);
       document.body.style.overflow = "unset";
     };
-  }, [mermaidLightbox.isOpen]);
+  }, [mermaidLightbox.isOpen, closeMermaidLightbox]);
 
   // Handle mouse wheel zoom for Mermaid
   useEffect(() => {
@@ -193,7 +223,8 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             ),
             img: ({ src, alt }) => <ZoomableImage src={typeof src === 'string' ? src : undefined} alt={typeof alt === 'string' ? alt : undefined} />,
             code(props) {
-              const { node, inline, className, children, ...rest } = props as any;
+              const { inline, className, children, style, ...rest } = props as MarkdownCodeProps;
+              void style;
               const match = /language-(\w+)/.exec(className || "");
               const language = match ? match[1] : "";
 
@@ -224,7 +255,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                 return (
                   <div className="my-6">
                     <SyntaxHighlighter
-                      style={oneDark}
+                      style={syntaxTheme}
                       language={language}
                       PreTag="div"
                       className="rounded-lg !bg-[#282c34]"
@@ -259,30 +290,28 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
       </div>
 
       {/* Mermaid Lightbox - using Portal to render at document root */}
-      {mermaidLightbox.isOpen && typeof document !== 'undefined' && createPortal(
+      {mermaidLightbox.isOpen && typeof document !== "undefined" && createPortal(
         <div
-          className="lightbox-overlay fixed inset-0 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-          onClick={() => setMermaidLightbox({ isOpen: false, svgContent: "" })}
+          className="lightbox-overlay fixed inset-0 flex items-center justify-center bg-black/90 p-3 backdrop-blur-sm sm:p-6"
+          onClick={closeMermaidLightbox}
         >
           {/* Close button */}
           <button
-            onClick={() =>
-              setMermaidLightbox({ isOpen: false, svgContent: "" })
-            }
-            className="lightbox-controls absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+            onClick={closeMermaidLightbox}
+            className="lightbox-controls absolute right-3 top-3 rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:right-6 sm:top-6 sm:p-2"
             aria-label="Close"
           >
             <X size={24} />
           </button>
 
           {/* Zoom controls */}
-          <div className="lightbox-controls absolute left-6 top-6 flex flex-col gap-2">
+          <div className="lightbox-controls absolute left-3 top-3 flex gap-1.5 sm:left-6 sm:top-6 sm:flex-col sm:gap-2">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 setMermaidZoom((prev) => Math.min(prev + 0.25, 3));
               }}
-              className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
               aria-label="Zoom in"
               title="Zoom in"
             >
@@ -293,7 +322,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                 e.stopPropagation();
                 setMermaidZoom((prev) => Math.max(prev - 0.25, 0.5));
               }}
-              className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
               aria-label="Zoom out"
               title="Zoom out"
             >
@@ -304,13 +333,13 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                 e.stopPropagation();
                 setMermaidZoom(1);
               }}
-              className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+              className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
               aria-label="Reset zoom"
               title="Reset zoom"
             >
               <RotateCcw size={20} />
             </button>
-            <div className="rounded-full bg-white/10 px-3 py-1 text-center text-xs text-white">
+            <div className="rounded-full bg-white/10 px-2.5 py-1 text-center text-[10px] text-white sm:px-3 sm:text-xs">
               {Math.round(mermaidZoom * 100)}%
             </div>
           </div>
@@ -321,7 +350,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             onClick={(e) => e.stopPropagation()}
             style={{
               transform: `scale(${mermaidZoom})`,
-              transformOrigin: 'center'
+              transformOrigin: "center",
             }}
           >
             <div
@@ -330,8 +359,8 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           </div>
 
           {/* Instructions */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-sm text-white/60">
-            Click anywhere to close • Ctrl+Scroll to zoom
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-center text-xs text-white/60 sm:bottom-6 sm:text-sm">
+            Tap outside to close • Pinch / Ctrl+Scroll to zoom
           </div>
         </div>,
         document.body

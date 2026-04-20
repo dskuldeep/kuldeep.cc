@@ -1,31 +1,20 @@
 import type { Metadata } from "next";
-import { Caveat, Fraunces, IBM_Plex_Mono, Sora } from "next/font/google";
+import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sora",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const caveat = Caveat({
-  variable: "--font-caveat",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -57,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "Kuldeep Paul",
     title: "Kuldeep Paul | Marketing, AI, and Product",
     description:
-      "A bright editorial portfolio and journal about AI-native growth, product storytelling, and data-aware marketing systems.",
+      "A terminal-flavored portfolio and journal about AI-native growth, product storytelling, and data-aware marketing systems.",
     images: [
       {
         url: "/og-images/home.png",
@@ -100,7 +89,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sora.variable} ${fraunces.variable} ${caveat.variable} ${ibmPlexMono.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-background text-foreground">
         <div className="page-shell">

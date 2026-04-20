@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
@@ -13,12 +13,16 @@ interface ImageLightboxProps {
 
 export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps) {
   const [zoom, setZoom] = useState(1);
+  const handleClose = useCallback(() => {
+    setZoom(1);
+    onClose();
+  }, [onClose]);
 
   // Handle ESC key to close
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
@@ -26,16 +30,13 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
       document.addEventListener("keydown", handleEsc);
       // Prevent body scroll when lightbox is open
       document.body.style.overflow = "hidden";
-    } else {
-      // Reset zoom when closed
-      setZoom(1);
     }
 
     return () => {
       document.removeEventListener("keydown", handleEsc);
       document.body.style.overflow = "unset";
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
   // Handle mouse wheel zoom
   useEffect(() => {
@@ -66,26 +67,26 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
 
   return createPortal(
     <div
-      className="lightbox-overlay fixed inset-0 flex items-center justify-center bg-black/90 backdrop-blur-sm"
-      onClick={onClose}
+      className="lightbox-overlay fixed inset-0 flex items-center justify-center bg-black/90 p-3 backdrop-blur-sm sm:p-6"
+      onClick={handleClose}
     >
       {/* Close button */}
       <button
-        onClick={onClose}
-        className="lightbox-controls absolute right-6 top-6 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+        onClick={handleClose}
+        className="lightbox-controls absolute right-3 top-3 rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:right-6 sm:top-6 sm:p-2"
         aria-label="Close"
       >
         <X size={24} />
       </button>
 
       {/* Zoom controls */}
-      <div className="lightbox-controls absolute left-6 top-6 flex flex-col gap-2">
+      <div className="lightbox-controls absolute left-3 top-3 flex gap-1.5 sm:left-6 sm:top-6 sm:flex-col sm:gap-2">
         <button
           onClick={(e) => {
             e.stopPropagation();
             handleZoomIn();
           }}
-          className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+          className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
           aria-label="Zoom in"
           title="Zoom in"
         >
@@ -96,7 +97,7 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
             e.stopPropagation();
             handleZoomOut();
           }}
-          className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+          className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
           aria-label="Zoom out"
           title="Zoom out"
         >
@@ -107,24 +108,20 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
             e.stopPropagation();
             handleResetZoom();
           }}
-          className="rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+          className="rounded-full bg-white/10 p-1.5 text-white transition-colors hover:bg-white/20 sm:p-2"
           aria-label="Reset zoom"
           title="Reset zoom"
         >
           <RotateCcw size={20} />
         </button>
-        <div className="rounded-full bg-white/10 px-3 py-1 text-center text-xs text-white">
+        <div className="rounded-full bg-white/10 px-2.5 py-1 text-center text-[10px] text-white sm:px-3 sm:text-xs">
           {Math.round(zoom * 100)}%
         </div>
       </div>
 
       {/* Image */}
       <div
-        className="relative flex items-center justify-center overflow-auto"
-        style={{
-          maxHeight: "calc(100vh - 10rem)",
-          maxWidth: "calc(100vw - 10rem)",
-        }}
+        className="relative flex max-h-[calc(100vh-6.5rem)] max-w-[calc(100vw-1.5rem)] items-center justify-center overflow-auto sm:max-h-[calc(100vh-10rem)] sm:max-w-[calc(100vw-10rem)]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
@@ -134,13 +131,13 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
             className="rounded-lg object-contain transition-transform"
             style={{
               transform: `scale(${zoom})`,
-              transformOrigin: 'center',
-              maxHeight: zoom === 1 ? "calc(100vh - 12rem)" : "none",
-              maxWidth: zoom === 1 ? "calc(100vw - 12rem)" : "none",
+              transformOrigin: "center",
+              maxHeight: zoom === 1 ? "calc(100vh - 8rem)" : "none",
+              maxWidth: zoom === 1 ? "calc(100vw - 2rem)" : "none",
             }}
           />
           {alt && (
-            <div className="mt-4 text-center text-sm text-white/80">
+            <div className="mt-3 text-center text-xs text-white/80 sm:mt-4 sm:text-sm">
               {alt}
             </div>
           )}
@@ -148,8 +145,8 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
       </div>
 
       {/* Instructions */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-sm text-white/60">
-        Click anywhere to close • Ctrl+Scroll to zoom
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-center text-xs text-white/60 sm:bottom-6 sm:text-sm">
+        Tap outside to close • Pinch / Ctrl+Scroll to zoom
       </div>
     </div>,
     document.body
