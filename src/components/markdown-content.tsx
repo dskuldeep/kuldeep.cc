@@ -54,7 +54,6 @@ type MarkdownCodeProps = ComponentPropsWithoutRef<"code"> & {
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
   const mermaidRef = useRef<number>(0);
-  const renderedDiagramsRef = useRef<Set<string>>(new Set());
   const [mermaidLightbox, setMermaidLightbox] = useState<{
     isOpen: boolean;
     svgContent: string;
@@ -68,23 +67,21 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
   useEffect(() => {
     // Dynamically load and render mermaid diagrams
     (async () => {
+      if (mermaidLightbox.isOpen) return;
       const mermaid = await initMermaid();
       if (!mermaid) return;
 
-      // Find all mermaid diagrams that haven't been rendered yet
+      // Find all Mermaid blocks currently missing an SVG render.
       const mermaidElements = document.querySelectorAll(".mermaid");
       const unrenderedElements: Element[] = [];
 
       mermaidElements.forEach((element) => {
-        const id = element.id;
-        // Only render if it hasn't been rendered before and doesn't have an SVG child
-        if (id && !renderedDiagramsRef.current.has(id) && !element.querySelector("svg")) {
+        if (!element.querySelector("svg")) {
           unrenderedElements.push(element);
-          renderedDiagramsRef.current.add(id);
         }
       });
 
-      // Only run mermaid if there are unrendered diagrams
+      // Run Mermaid when any diagram fell back to raw text.
       if (unrenderedElements.length > 0) {
         await mermaid.run({
           querySelector: ".mermaid",
@@ -134,7 +131,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
         };
       });
     })();
-  }, [content]);
+  }, [content, mermaidLightbox.isOpen]);
 
   // Handle ESC key for Mermaid lightbox
   useEffect(() => {
