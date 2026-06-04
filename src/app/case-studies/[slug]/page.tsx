@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getCaseStudy, getCaseStudies } from "@/lib/content";
+import { canonicalPath } from "@/lib/site";
 import { MarkdownContent } from "@/components/markdown-content";
 
 type Props = {
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@don_fedora",
       images: ["/og-images/home.png"],
     },
-    alternates: { canonical: `https://kuldeep.cc/case-studies/${slug}` },
+    alternates: { canonical: canonicalPath(`/case-studies/${slug}`) },
   };
 }
 

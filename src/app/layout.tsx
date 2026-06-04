@@ -76,9 +76,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://kuldeep.cc",
-  },
 };
 
 export default function RootLayout({

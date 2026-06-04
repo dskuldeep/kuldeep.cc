@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/content";
+import { canonicalPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Writing from Kuldeep Paul on AI-native marketing, product narratives, experimentation, and data science.",
   openGraph: { images: ["/og-images/home.png"] },
   twitter: { card: "summary_large_image", images: ["/og-images/home.png"] },
+  alternates: { canonical: canonicalPath("/journal") },
 };
 
 export const dynamic = "force-static";

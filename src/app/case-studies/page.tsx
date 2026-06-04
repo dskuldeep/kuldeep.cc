@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getCaseStudies } from "@/lib/content";
+import { canonicalPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Case Studies",
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
     "Real-world case studies of AI-powered marketing systems, data-driven growth experiments, and scalable automation.",
   openGraph: { images: ["/og-images/home.png"] },
   twitter: { card: "summary_large_image", images: ["/og-images/home.png"] },
+  alternates: { canonical: canonicalPath("/case-studies") },
 };
 
 export const dynamic = "force-static";

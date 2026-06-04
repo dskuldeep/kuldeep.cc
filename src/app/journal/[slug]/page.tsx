@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getBlogPost, getBlogPosts } from "@/lib/content";
+import { canonicalPath } from "@/lib/site";
 import { MarkdownContent } from "@/components/markdown-content";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       site: "@don_fedora",
       images: ["/og-images/home.png"],
     },
-    alternates: { canonical: `https://kuldeep.cc/journal/${slug}` },
+    alternates: { canonical: canonicalPath(`/journal/${slug}`) },
   };
 }
 

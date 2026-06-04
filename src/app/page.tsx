@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroArt } from "@/components/hero-art";
 import { getBlogPosts, getCaseStudies } from "@/lib/content";
+import { canonicalPath } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: canonicalPath() },
+};
 
 const tickerItems = [
   "AI-native growth",
