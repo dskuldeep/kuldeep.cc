@@ -141,7 +141,7 @@ export default async function Home() {
             <div className="mt-2 grid grid-cols-1 gap-0 border-y border-[var(--ink)] font-mono sm:grid-cols-3">
               {[
                 { k: "5+", v: "years shipping" },
-                { k: "MSc", v: "applied data sci" },
+                { k: "MSc", v: "applied data science" },
                 { k: "∞", v: "curiosity debt" },
               ].map((s, i) => (
                 <div
