@@ -1,47 +1,26 @@
 import type { MetadataRoute } from "next";
-import contentData from "@/data/generated/content-data.json";
-import { getBlogPosts, getCaseStudies } from "@/lib/content";
+import { getPublishedPosts } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getBlogPosts();
-  const caseStudies = getCaseStudies();
-  const lastContentUpdate = new Date(contentData.generatedAt);
+export const dynamic = "force-dynamic";
 
-  const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: SITE_URL,
-      lastModified: lastContentUpdate,
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${SITE_URL}/journal`,
-      lastModified: lastContentUpdate,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/case-studies`,
-      lastModified: lastContentUpdate,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts();
+
+  const staticPages: MetadataRoute.Sitemap = [
+    // Trailing slash matches the homepage's canonical URL exactly.
+    { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/writing`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/projects`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.6 },
   ];
 
-  const journalRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/journal/${post.slug}`,
-    lastModified: new Date(post.date),
+  const postPages: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/writing/${post.slug}`,
+    lastModified: post.updatedAt ? new Date(post.updatedAt) : undefined,
     changeFrequency: "yearly",
-    priority: 0.7,
+    priority: 0.8,
   }));
 
-  const caseStudyRoutes: MetadataRoute.Sitemap = caseStudies.map((study) => ({
-    url: `${SITE_URL}/case-studies/${study.slug}`,
-    lastModified: new Date(study.date),
-    changeFrequency: "yearly",
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...journalRoutes, ...caseStudyRoutes];
+  return [...staticPages, ...postPages];
 }

@@ -3,5 +3,20 @@
   "name": "kuldeep-cc",
   "main": "worker/index.ts",
   "compatibility_date": "2026-02-20",
-  "compatibility_flags": ["nodejs_compat"]
+  "compatibility_flags": ["nodejs_compat"],
+  "images": { "binding": "IMAGES" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "kuldeep-cc",
+      "database_id": "d985d27b-cd7a-4268-a3d9-2d58f0ed6f65",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "kuldeep-cc-media"
+    }
+  ]
 }

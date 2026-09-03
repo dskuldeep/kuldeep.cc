@@ -1,69 +1,52 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
+import { Inter, Inter_Tight } from "next/font/google";
+import { SITE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kuldeep.cc"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Kuldeep Paul | Marketing, AI, and Product",
-    template: "%s | Kuldeep Paul",
+    default: SITE.title,
+    template: `%s — ${SITE.name}`,
   },
-  description:
-    "Portfolio, writing, and work notes from Kuldeep Paul, Head of Marketing at Maxim AI, exploring the overlap between AI, data science, product, and modern marketing.",
-  keywords: [
-    "AI Marketing",
-    "Marketing Automation",
-    "Data Science",
-    "Growth Marketing",
-    "Product Marketing",
-    "Marketing Systems",
-    "Maxim AI",
-    "Applied Data Science",
-  ],
-  authors: [{ name: "Kuldeep Paul", url: "https://kuldeep.cc" }],
-  creator: "Kuldeep Paul",
-  publisher: "Kuldeep Paul",
+  description: SITE.description,
+  authors: [{ name: SITE.name, url: SITE_URL }],
+  creator: SITE.name,
+  publisher: SITE.name,
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kuldeep.cc",
-    siteName: "Kuldeep Paul",
-    title: "Kuldeep Paul | Marketing, AI, and Product",
-    description:
-      "A terminal-flavored portfolio and journal about AI-native growth, product storytelling, and data-aware marketing systems.",
-    images: [
-      {
-        url: "/og-images/home.png",
-        width: 1200,
-        height: 630,
-        alt: "Kuldeep Paul | Marketing, AI, and Product",
-      },
-    ],
+    url: SITE_URL,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kuldeep Paul | Marketing, AI, and Product",
-    description:
-      "Building data-driven marketing systems that scale with AI. Head of Marketing at Maxim AI.",
-    creator: "@don_fedora",
-    site: "@don_fedora",
-    images: ["/og-images/home.png"],
+    title: SITE.title,
+    description: SITE.description,
+    creator: SITE.twitterHandle,
+    site: SITE.twitterHandle,
+    images: ["/og.png"],
   },
   robots: {
     index: true,
@@ -86,15 +69,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${interTight.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full bg-background text-foreground">
-        <div className="page-shell">
-          <SiteHeader />
-          <main className="relative z-10 flex-1">{children}</main>
-          <SiteFooter />
-        </div>
-      </body>
+      <head>
+        {/* Apply the stored theme choice before first paint (no flash). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
+          }}
+        />
+      </head>
+      <body className="min-h-full">{children}</body>
     </html>
   );
 }

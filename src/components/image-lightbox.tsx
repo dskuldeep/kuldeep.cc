@@ -9,9 +9,11 @@ interface ImageLightboxProps {
   alt: string;
   isOpen: boolean;
   onClose: () => void;
+  /** Wide mode (diagrams): solid white canvas, opened at near-full viewport width. */
+  wide?: boolean;
 }
 
-export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps) {
+export function ImageLightbox({ src, alt, isOpen, onClose, wide = false }: ImageLightboxProps) {
   const [zoom, setZoom] = useState(1);
   const handleClose = useCallback(() => {
     setZoom(1);
@@ -129,12 +131,27 @@ export function ImageLightbox({ src, alt, isOpen, onClose }: ImageLightboxProps)
             src={src}
             alt={alt}
             className="rounded-lg object-contain transition-transform"
-            style={{
-              transform: `scale(${zoom})`,
-              transformOrigin: "center",
-              maxHeight: zoom === 1 ? "calc(100vh - 8rem)" : "none",
-              maxWidth: zoom === 1 ? "calc(100vw - 2rem)" : "none",
-            }}
+            style={
+              wide
+                ? {
+                    // Diagrams: solid white canvas, fill the viewport width so
+                    // the flow is actually readable. SVGs scale losslessly.
+                    // maxWidth "none" beats Tailwind preflight's img cap so
+                    // zooming can exceed the container (which then scrolls).
+                    background: "#ffffff",
+                    padding: "1.5rem",
+                    width: zoom === 1 ? "min(1600px, calc(100vw - 2rem))" : `${zoom * 100}vw`,
+                    maxWidth: zoom === 1 ? "100%" : "none",
+                    height: "auto",
+                    transformOrigin: "center",
+                  }
+                : {
+                    transform: `scale(${zoom})`,
+                    transformOrigin: "center",
+                    maxHeight: zoom === 1 ? "calc(100vh - 8rem)" : "none",
+                    maxWidth: zoom === 1 ? "calc(100vw - 2rem)" : "none",
+                  }
+            }
           />
           {alt && (
             <div className="mt-3 text-center text-xs text-white/80 sm:mt-4 sm:text-sm">
