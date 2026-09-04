@@ -4,8 +4,9 @@ import { useCallback, useEffect, useState } from "react";
 import type { Page } from "@/lib/content";
 import { savePage } from "@/app/admin/actions";
 import { CrepeEditor } from "@/components/admin/crepe-editor";
+import { externalizeImages, hasInlineImages } from "@/lib/externalize-images";
 
-type SaveState = "saved" | "dirty" | "saving" | "error";
+type SaveState = "saved" | "dirty" | "saving" | "uploading" | "error";
 
 export function PageEditor({ page, titleHint }: { page: Page; titleHint?: string }) {
   const [title, setTitle] = useState(page.title);
@@ -16,16 +17,29 @@ export function PageEditor({ page, titleHint }: { page: Page; titleHint?: string
   const [saveError, setSaveError] = useState("");
 
   const doSave = useCallback(async () => {
-    setSaveState("saving");
-    const result = await savePage(page.slug, title, contentMd);
-    if (result.ok) {
-      setSaveState("saved");
-      setSaveError("");
-    } else {
+    try {
+      let md = contentMd;
+      if (hasInlineImages(md)) {
+        setSaveState("uploading");
+        const result = await externalizeImages(md);
+        md = result.md;
+        setContentMd(md);
+        if (result.uploaded > 0 && !rawMode) setEditorEpoch((n) => n + 1);
+      }
+      setSaveState("saving");
+      const result = await savePage(page.slug, title, md);
+      if (result.ok) {
+        setSaveState("saved");
+        setSaveError("");
+      } else {
+        setSaveState("error");
+        setSaveError(result.error);
+      }
+    } catch (err) {
       setSaveState("error");
-      setSaveError(result.error);
+      setSaveError(err instanceof Error ? err.message : "Save failed — check your connection.");
     }
-  }, [page.slug, title, contentMd]);
+  }, [page.slug, title, contentMd, rawMode]);
 
   useEffect(() => {
     if (saveState !== "dirty") return;
@@ -38,9 +52,11 @@ export function PageEditor({ page, titleHint }: { page: Page; titleHint?: string
       ? "Saved"
       : saveState === "saving"
         ? "Saving…"
-        : saveState === "dirty"
-          ? "Unsaved changes"
-          : `Error: ${saveError}`;
+        : saveState === "uploading"
+          ? "Uploading pasted images…"
+          : saveState === "dirty"
+            ? "Unsaved changes"
+            : `Error: ${saveError}`;
 
   return (
     <div className="flex flex-col gap-5">

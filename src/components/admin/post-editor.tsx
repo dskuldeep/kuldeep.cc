@@ -11,8 +11,11 @@ import {
   type PostFields,
 } from "@/app/admin/actions";
 import { CrepeEditor } from "@/components/admin/crepe-editor";
+import { externalizeImages, hasInlineImages } from "@/lib/externalize-images";
 
-type SaveState = "saved" | "dirty" | "saving" | "error";
+type SaveState = "saved" | "dirty" | "saving" | "uploading" | "error";
+
+const MAX_CONTENT_BYTES = 1_500_000;
 
 export function PostEditor({ post }: { post: Post }) {
   const router = useRouter();
@@ -30,24 +33,52 @@ export function PostEditor({ post }: { post: Post }) {
   const [saveError, setSaveError] = useState("");
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  const doSave = useCallback(async () => {
-    setSaveState("saving");
-    const fields: PostFields = {
-      title,
-      slug,
-      excerpt,
-      contentMd,
-      tags: tags.split(","),
-    };
-    const result = await savePost(post.id, fields);
-    if (result.ok) {
-      setSaveState("saved");
-      setSaveError("");
-    } else {
+  const doSave = useCallback(async (): Promise<boolean> => {
+    try {
+      let md = contentMd;
+
+      // Pasted images arrive as inline base64 — upload them to R2 and swap in
+      // /media URLs before saving, or the payload blows the action body limit.
+      if (hasInlineImages(md)) {
+        setSaveState("uploading");
+        const result = await externalizeImages(md);
+        md = result.md;
+        setContentMd(md);
+        if (result.uploaded > 0 && !rawMode) {
+          // Remount the rich editor so it shows the uploaded images.
+          setEditorEpoch((n) => n + 1);
+        }
+      }
+
+      if (new Blob([md]).size > MAX_CONTENT_BYTES) {
+        setSaveState("error");
+        setSaveError("Post is too large to save (over 1.5 MB of text). Split it up.");
+        return false;
+      }
+
+      setSaveState("saving");
+      const fields: PostFields = {
+        title,
+        slug,
+        excerpt,
+        contentMd: md,
+        tags: tags.split(","),
+      };
+      const result = await savePost(post.id, fields);
+      if (result.ok) {
+        setSaveState("saved");
+        setSaveError("");
+        return true;
+      }
       setSaveState("error");
       setSaveError(result.error);
+      return false;
+    } catch (err) {
+      setSaveState("error");
+      setSaveError(err instanceof Error ? err.message : "Save failed — check your connection.");
+      return false;
     }
-  }, [post.id, title, slug, excerpt, contentMd, tags]);
+  }, [post.id, title, slug, excerpt, contentMd, tags, rawMode]);
 
   // Debounced autosave
   useEffect(() => {
@@ -66,15 +97,21 @@ export function PostEditor({ post }: { post: Post }) {
 
   const onPublishToggle = () => {
     startTransition(async () => {
-      await doSave();
-      if (status === "published") {
-        await unpublishPost(post.id);
-        setStatus("draft");
-      } else {
-        await publishPost(post.id);
-        setStatus("published");
+      try {
+        // Never publish a version that failed to save.
+        if (!(await doSave())) return;
+        if (status === "published") {
+          await unpublishPost(post.id);
+          setStatus("draft");
+        } else {
+          await publishPost(post.id);
+          setStatus("published");
+        }
+        router.refresh();
+      } catch (err) {
+        setSaveState("error");
+        setSaveError(err instanceof Error ? err.message : "Publish failed — try again.");
       }
-      router.refresh();
     });
   };
 
@@ -84,7 +121,14 @@ export function PostEditor({ post }: { post: Post }) {
       return;
     }
     startTransition(async () => {
-      await deletePost(post.id);
+      try {
+        await deletePost(post.id);
+      } catch (err) {
+        // deletePost redirects on success (throws NEXT_REDIRECT) — rethrow those.
+        if (err && typeof err === "object" && "digest" in err) throw err;
+        setSaveState("error");
+        setSaveError(err instanceof Error ? err.message : "Delete failed — try again.");
+      }
     });
   };
 
@@ -93,9 +137,11 @@ export function PostEditor({ post }: { post: Post }) {
       ? "Saved"
       : saveState === "saving"
         ? "Saving…"
-        : saveState === "dirty"
-          ? "Unsaved changes"
-          : `Error: ${saveError}`;
+        : saveState === "uploading"
+          ? "Uploading pasted images…"
+          : saveState === "dirty"
+            ? "Unsaved changes"
+            : `Error: ${saveError}`;
 
   return (
     <div className="flex flex-col gap-6">
