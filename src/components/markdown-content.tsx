@@ -1,8 +1,10 @@
 "use client";
 
+import type { Element } from "hast";
 import { isValidElement, useEffect, useId, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { Embed, resolveEmbed } from "@/components/embed";
 import { ImageLightbox, ZoomableImage } from "@/components/image-lightbox";
 
 function MermaidDiagram({ chart }: { chart: string }) {
@@ -82,17 +84,40 @@ function extractMermaidChart(children: React.ReactNode): string | null {
   return null;
 }
 
+/** A paragraph whose only content is a link to its own URL, i.e. a pasted bare URL. */
+function bareUrl(node: Element | undefined): string | null {
+  const kids = (node?.children ?? []).filter(
+    (child) => child.type !== "text" || child.value.trim() !== "",
+  );
+  if (kids.length !== 1) return null;
+  const [only] = kids;
+  if (only.type !== "element" || only.tagName !== "a") return null;
+  const href = only.properties?.href;
+  if (typeof href !== "string") return null;
+  const text = only.children
+    .map((child) => (child.type === "text" ? child.value : ""))
+    .join("")
+    .trim();
+  return text === href || text === href.replace(/\/$/, "") ? href : null;
+}
+
 export function MarkdownContent({ content }: { content: string }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        pre({ children, ...props }) {
+        p({ node, children, ...props }) {
+          const url = bareUrl(node);
+          const embed = url ? resolveEmbed(url) : null;
+          if (embed) return <Embed embed={embed} />;
+          return <p {...props}>{children}</p>;
+        },
+        pre({ node: _node, children, ...props }) {
           const chart = extractMermaidChart(children);
           if (chart) return <MermaidDiagram chart={chart.trim()} />;
           return <pre {...props}>{children}</pre>;
         },
-        a({ href, children, ...props }) {
+        a({ node: _node, href, children, ...props }) {
           const external = typeof href === "string" && /^https?:\/\//.test(href);
           return (
             <a

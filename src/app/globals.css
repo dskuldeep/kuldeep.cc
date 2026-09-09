@@ -337,6 +337,29 @@ h4 {
   vertical-align: top;
 }
 
+/* Embeds — bare URLs on their own line (YouTube, Vimeo, Loom, Spotify, Figma, CodePen, X) */
+.article .embed {
+  margin: 2rem 0;
+  width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--code-bg);
+}
+
+.article .embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.article .embed-tweet {
+  max-width: 550px;
+  margin-inline: auto;
+  background: transparent;
+}
+
 /* Mermaid diagrams — greyscale on a solid white canvas, click to zoom */
 .article .mermaid-container {
   margin: 2rem 0;
