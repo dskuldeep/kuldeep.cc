@@ -111,22 +111,31 @@ hr{margin:3rem 0;border:0;border-top:1px solid var(--rule)}
 table{width:100%;margin:1.75rem 0;border-collapse:collapse;font-size:.95rem}
 th{text-align:left;font-weight:650;border-bottom:2px solid var(--fg);padding:.5rem .75rem .5rem 0}
 td{border-bottom:1px solid var(--rule);padding:.5rem .75rem .5rem 0;vertical-align:top}
-.doc-header{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--rule)}
-.doc-header h1{margin:0}
-.doc-meta{margin-top:.5rem;color:var(--muted);font-size:.9rem}
-.doc-meta a{margin-left:1rem}
+.doc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule)}
+.doc-header h1{margin:0;flex:1;min-width:0}
+.dl-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1rem;border:1px solid var(--fg);border-radius:6px;background:var(--fg);color:var(--bg);font:inherit;font-size:.85rem;font-weight:600;line-height:1;text-decoration:none;cursor:pointer;white-space:nowrap;transition:opacity .15s}
+.dl-btn:hover{opacity:.85;text-decoration:none}
+.dl-btn::before{content:"↓";font-weight:400}
+.dl-btn.ghost{background:transparent;color:var(--fg)}
+.dl-btn.ghost:hover{background:var(--code-bg)}
 .pdf-frame{width:100%;height:calc(100vh - 8rem);min-height:36rem;border:1px solid var(--rule);border-radius:8px;background:var(--code-bg)}
+main.full{max-width:min(96rem,calc(100vw - 2rem));padding:2rem 1.25rem 3rem}
+.sheet-tabs{display:flex;gap:2px;margin-top:.5rem;overflow-x:auto;padding-bottom:.25rem}
+.sheet-tab{padding:.4rem .9rem;border:1px solid var(--rule);border-top:none;border-radius:0 0 6px 6px;background:var(--bg);color:var(--muted);font:inherit;font-size:.8rem;cursor:pointer}
+.sheet-tab:hover{color:var(--fg)}
+.sheet-tab.active{background:var(--code-bg);color:var(--fg);font-weight:600;border-color:var(--fg)}
 `.trim();
 
 interface ShellOptions {
   wide?: boolean;
+  full?: boolean;
   extraHead?: string;
   extraBodyEnd?: string;
   headerHtml?: string;
 }
 
 function wrapInShell(title: string, bodyHtml: string, options: ShellOptions = {}): string {
-  const mainClass = options.wide ? "wide" : "";
+  const mainClass = options.full ? "full" : options.wide ? "wide" : "";
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -150,7 +159,7 @@ ${options.extraBodyEnd ?? ""}
 }
 
 function docHeader(title: string, downloadHref: string, downloadLabel: string): string {
-  return `<div class="doc-header"><h1>${escapeHtml(title)}</h1><div class="doc-meta"><a href="${downloadHref}" download>Download ${escapeHtml(downloadLabel)}</a></div></div>`;
+  return `<div class="doc-header"><h1>${escapeHtml(title)}</h1><a href="${downloadHref}" download class="dl-btn">Download ${escapeHtml(downloadLabel)}</a></div>`;
 }
 
 const PRISM_VERSION = "1.29.0";
@@ -207,14 +216,133 @@ function parseCsv(input: string): string[][] {
   return rows.filter((r) => r.length > 1 || (r.length === 1 && r[0] !== ""));
 }
 
-function csvToHtml(rows: string[][]): string {
-  if (rows.length === 0) return "<p><em>Empty CSV.</em></p>";
-  const [head, ...body] = rows;
-  const headHtml = head.map((cell) => `<th>${escapeHtml(cell)}</th>`).join("");
-  const bodyHtml = body
-    .map((r) => `<tr>${r.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`)
-    .join("");
-  return `<div style="overflow-x:auto"><table><thead><tr>${headHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`;
+// ---------- Spreadsheet viewer (AG Grid) ----------
+
+const AG_GRID_VERSION = "31";
+const AG_GRID_HEAD = `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@${AG_GRID_VERSION}/styles/ag-grid.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ag-grid-community@${AG_GRID_VERSION}/styles/ag-theme-quartz.css">`;
+const AG_GRID_SCRIPT = `<script src="https://cdn.jsdelivr.net/npm/ag-grid-community@${AG_GRID_VERSION}/dist/ag-grid-community.min.js"></script>`;
+
+/**
+ * A minimal client that wires each sheet's rows into an AG Grid instance,
+ * with per-column filters, sortable/resizable columns and sheet tabs. All
+ * data is embedded inline as JSON so the viewer works without a fetch.
+ */
+const SHEET_VIEWER_JS = `(function(){
+  const data = JSON.parse(document.getElementById('sheet-data').textContent);
+  const gridEl = document.getElementById('sheet-grid');
+  const tabsEl = document.getElementById('sheet-tabs');
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  gridEl.className = dark ? 'ag-theme-quartz-dark sheet-grid-el' : 'ag-theme-quartz sheet-grid-el';
+  let active = 0;
+  let api = null;
+
+  function looksNumeric(v){
+    if (v === null || v === undefined || v === '') return null;
+    if (typeof v === 'number') return true;
+    if (typeof v !== 'string') return false;
+    const n = Number(v.replace(/,/g,''));
+    return !isNaN(n) && v.trim() !== '';
+  }
+
+  function build(sheet){
+    const rows = sheet.rows || [];
+    if (rows.length === 0) return { columnDefs: [], rowData: [] };
+    const header = rows[0] || [];
+    const body = rows.slice(1);
+    const nCols = Math.max(header.length, ...body.map(function(r){ return r.length; }));
+    const cols = [];
+    for (var c = 0; c < nCols; c++) {
+      var numericVotes = 0, total = 0;
+      for (var i = 0; i < body.length; i++) {
+        const isNum = looksNumeric(body[i][c]);
+        if (isNum === null) continue;
+        total++;
+        if (isNum) numericVotes++;
+      }
+      const isNumeric = total > 0 && numericVotes / total > 0.75;
+      const name = String(header[c] == null ? 'Col ' + (c+1) : header[c]);
+      cols.push({
+        field: 'c' + c,
+        headerName: name,
+        filter: isNumeric ? 'agNumberColumnFilter' : 'agTextColumnFilter',
+        type: isNumeric ? 'numericColumn' : undefined,
+        _numeric: isNumeric,
+      });
+    }
+    const rowData = body.map(function(row){
+      const obj = {};
+      for (var c = 0; c < nCols; c++) {
+        let v = row[c];
+        if (v === undefined) v = null;
+        if (cols[c]._numeric && typeof v === 'string' && v !== '') {
+          const n = Number(v.replace(/,/g,''));
+          if (!isNaN(n)) v = n;
+        }
+        obj['c' + c] = v;
+      }
+      return obj;
+    });
+    return { columnDefs: cols, rowData };
+  }
+
+  function escapeHtml(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function renderTabs(){
+    if (data.sheets.length <= 1) { tabsEl.style.display = 'none'; return; }
+    tabsEl.innerHTML = data.sheets.map(function(s, i){
+      return '<button data-idx="' + i + '" class="sheet-tab' + (i === active ? ' active' : '') + '">' + escapeHtml(s.name) + '</button>';
+    }).join('');
+  }
+
+  tabsEl.addEventListener('click', function(e){
+    const btn = e.target.closest('.sheet-tab');
+    if (!btn) return;
+    active = +btn.dataset.idx;
+    const built = build(data.sheets[active]);
+    api.setGridOption('columnDefs', built.columnDefs);
+    api.setGridOption('rowData', built.rowData);
+    renderTabs();
+  });
+
+  const first = build(data.sheets[0]);
+  api = agGrid.createGrid(gridEl, {
+    columnDefs: first.columnDefs,
+    rowData: first.rowData,
+    defaultColDef: {
+      sortable: true,
+      filter: true,
+      floatingFilter: true,
+      resizable: true,
+      minWidth: 110,
+    },
+    rowSelection: 'multiple',
+    animateRows: false,
+    suppressMovableColumns: false,
+  });
+  renderTabs();
+})();`;
+
+interface SheetData {
+  name: string;
+  rows: (string | number | boolean | null)[][];
+}
+
+function renderSheet(sheets: SheetData[], title: string, downloadLabel: string, downloadHref: string): string {
+  // </script> in the embedded JSON would close the containing script tag; the
+  // < escape is JSON-legal and never appears inside the parsed data.
+  const payload = JSON.stringify({ sheets }).replace(/</g, "\\u003c");
+  const body = `<div id="sheet-grid" style="width:100%;height:calc(100vh - 14rem);min-height:26rem"></div>
+<div id="sheet-tabs" class="sheet-tabs"></div>
+<script id="sheet-data" type="application/json">${payload}</script>`;
+  return wrapInShell(title, body, {
+    full: true,
+    headerHtml: docHeader(title, downloadHref, downloadLabel),
+    extraHead: AG_GRID_HEAD,
+    extraBodyEnd: `${AG_GRID_SCRIPT}\n<script>${SHEET_VIEWER_JS}</script>`,
+  });
 }
 
 async function renderDocx(bytes: Uint8Array): Promise<string> {
@@ -239,21 +367,32 @@ type MammothConvert = (input: {
   buffer?: Uint8Array;
 }) => Promise<{ value: string; messages: unknown[] }>;
 
-async function renderXlsx(bytes: Uint8Array): Promise<string> {
+async function xlsxToSheets(bytes: Uint8Array): Promise<SheetData[]> {
   const XLSX = (await import("xlsx")) as unknown as {
-    read: (data: Uint8Array, opts: { type: "array" }) => { SheetNames: string[]; Sheets: Record<string, unknown> };
-    utils: { sheet_to_html: (sheet: unknown, opts?: { header?: string }) => string };
+    read: (data: Uint8Array, opts: { type: "array"; cellDates?: boolean }) => {
+      SheetNames: string[];
+      Sheets: Record<string, unknown>;
+    };
+    utils: {
+      sheet_to_json: (
+        sheet: unknown,
+        opts: { header: 1; defval?: unknown; blankrows?: boolean },
+      ) => unknown[][];
+    };
   };
-  const wb = XLSX.read(bytes, { type: "array" });
-  const parts = wb.SheetNames.map((name) => {
-    // sheet_to_html defaults to a full HTML document; strip everything but the
-    // <table> so we can inline into the shell.
-    const full = XLSX.utils.sheet_to_html(wb.Sheets[name]);
-    const tableMatch = /<table[\s\S]*?<\/table>/i.exec(full);
-    const table = tableMatch ? tableMatch[0] : "";
-    return `<section><h2>${escapeHtml(name)}</h2>${table}</section>`;
+  const wb = XLSX.read(bytes, { type: "array", cellDates: true });
+  return wb.SheetNames.map((name) => {
+    const rows = XLSX.utils.sheet_to_json(wb.Sheets[name], {
+      header: 1,
+      defval: null,
+      blankrows: false,
+    });
+    // Dates serialize as ISO strings; everything else already JSON-safe.
+    const cleaned = rows.map((row) =>
+      row.map((cell) => (cell instanceof Date ? cell.toISOString().slice(0, 10) : cell)),
+    );
+    return { name, rows: cleaned as SheetData["rows"] };
   });
-  return parts.join("\n");
 }
 
 interface RenderInput {
@@ -317,17 +456,17 @@ export async function renderViewer(input: RenderInput): Promise<string> {
   }
 
   if (format === "csv") {
-    const table = csvToHtml(parseCsv(input.textContent ?? ""));
-    return wrapInShell(title, table, {
-      wide: true,
-      headerHtml: docHeader(title, downloadHref, ".csv"),
-    });
+    const rows = parseCsv(input.textContent ?? "");
+    return renderSheet([{ name: "Sheet1", rows }], title, ".csv", downloadHref);
   }
 
   if (format === "pdf") {
     const rawHref = `/${slug}?raw=1`;
-    const body = `<iframe class="pdf-frame" src="${rawHref}" title="${escapeHtml(title)}"></iframe><p class="doc-meta" style="text-align:center;margin-top:1rem"><a href="${downloadHref}" download>Download .pdf</a></p>`;
-    return wrapInShell(title, body, { wide: true, headerHtml: `<h1>${escapeHtml(title)}</h1>` });
+    const body = `<iframe class="pdf-frame" src="${rawHref}" title="${escapeHtml(title)}"></iframe>`;
+    return wrapInShell(title, body, {
+      wide: true,
+      headerHtml: docHeader(title, downloadHref, ".pdf"),
+    });
   }
 
   if (format === "docx") {
@@ -340,11 +479,8 @@ export async function renderViewer(input: RenderInput): Promise<string> {
   if (format === "xlsx") {
     const bytes = input.binaryContent;
     if (!bytes) throw new Error("xlsx requires binary content");
-    const body = await renderXlsx(bytes);
-    return wrapInShell(title, body, {
-      wide: true,
-      headerHtml: docHeader(title, downloadHref, ".xlsx"),
-    });
+    const sheets = await xlsxToSheets(bytes);
+    return renderSheet(sheets, title, ".xlsx", downloadHref);
   }
 
   throw new Error(`Unknown format: ${format as string}`);
