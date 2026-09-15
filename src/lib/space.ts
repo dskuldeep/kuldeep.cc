@@ -1,11 +1,25 @@
-import { marked } from "marked";
 import { appEnv } from "@/lib/env";
+import {
+  extensionForFormat,
+  mimeForFormat,
+  renderViewer,
+  type ArtifactFormat,
+} from "@/lib/space-render";
+
+export type { ArtifactFormat } from "@/lib/space-render";
+export { ALL_FORMATS, isBinaryFormat, mimeForFormat } from "@/lib/space-render";
 
 export const SPACE_URL = "https://space.kuldeep.cc";
 
 export const MAX_ARTIFACT_BYTES = 2 * 1024 * 1024;
 
-export type ArtifactFormat = "html" | "markdown";
+export type Visibility = "public" | "unlisted" | "private";
+
+export const VISIBILITIES: readonly Visibility[] = ["public", "unlisted", "private"];
+
+export function isVisibility(value: unknown): value is Visibility {
+  return typeof value === "string" && (VISIBILITIES as readonly string[]).includes(value);
+}
 
 export interface SpaceArtifact {
   slug: string;
@@ -16,6 +30,11 @@ export interface SpaceArtifact {
   size: number;
   publishedBy: string;
   createdAt: string;
+  mimeType: string | null;
+  sourceKey: string | null;
+  filename: string | null;
+  language: string | null;
+  visibility: Visibility;
 }
 
 interface ArtifactRow {
@@ -27,6 +46,11 @@ interface ArtifactRow {
   size: number;
   published_by: string;
   created_at: string;
+  mime_type: string | null;
+  source_key: string | null;
+  filename: string | null;
+  language: string | null;
+  visibility: Visibility;
 }
 
 const SLUG_PATTERN = /^[a-z0-9](?:[a-z0-9-]{0,62}[a-z0-9])?$/;
@@ -81,14 +105,34 @@ function toArtifact(row: ArtifactRow): SpaceArtifact {
     createdAt: row.created_at.includes("T")
       ? row.created_at
       : row.created_at.replace(" ", "T") + "Z",
+    mimeType: row.mime_type,
+    sourceKey: row.source_key,
+    filename: row.filename,
+    language: row.language,
+    visibility: row.visibility ?? "public",
   };
 }
 
+/** Every artifact, admin-only. Includes unlisted and private rows. */
 export async function listArtifacts(): Promise<SpaceArtifact[]> {
   const { results } = await appEnv.DB.prepare(
     "SELECT * FROM space_artifacts ORDER BY created_at DESC",
   ).all<ArtifactRow>();
   return results.map(toArtifact);
+}
+
+/** Just what the public hub page shows: visibility='public'. */
+export async function listPublicArtifacts(): Promise<SpaceArtifact[]> {
+  const { results } = await appEnv.DB.prepare(
+    "SELECT * FROM space_artifacts WHERE visibility = 'public' ORDER BY created_at DESC",
+  ).all<ArtifactRow>();
+  return results.map(toArtifact);
+}
+
+export async function setArtifactVisibility(slug: string, visibility: Visibility): Promise<void> {
+  await appEnv.DB.prepare("UPDATE space_artifacts SET visibility = ?1 WHERE slug = ?2")
+    .bind(visibility, slug)
+    .run();
 }
 
 export async function getArtifact(slug: string): Promise<SpaceArtifact | null> {
@@ -119,87 +163,19 @@ export async function suggestSlugs(base: string): Promise<string[]> {
   return candidates.filter((slug) => !taken.has(slug)).slice(0, 3);
 }
 
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-/** Standalone twin of the site's `.article` type role — no Tailwind, no build step. */
-const SHELL_CSS = `
-:root{--bg:#fff;--fg:#0a0a0a;--muted:#737373;--faint:#a3a3a3;--rule:#e5e5e5;--code-bg:#f5f5f5;color-scheme:light}
-@media (prefers-color-scheme:dark){:root{--bg:#0a0a0a;--fg:#f5f5f5;--muted:#969696;--faint:#6b6b6b;--rule:#262626;--code-bg:#171717;color-scheme:dark}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.125rem;line-height:1.7;-webkit-font-smoothing:antialiased}
-main{width:100%;max-width:44rem;margin:0 auto;padding:4rem 1.25rem 7rem}
-h1,h2,h3,h4{font-family:'Inter Tight','Inter',system-ui,sans-serif;letter-spacing:-0.02em;text-wrap:balance}
-h1{font-size:clamp(2rem,5vw,2.75rem);font-weight:700;line-height:1.1;margin:0 0 2rem}
-h2{font-size:1.6rem;font-weight:700;line-height:1.2;margin:2.75rem 0 .9rem}
-h3{font-size:1.25rem;font-weight:650;line-height:1.3;margin:2.25rem 0 .75rem}
-p{margin:1.1rem 0}
-a{color:inherit;text-decoration:underline;text-decoration-color:var(--faint);text-underline-offset:3px}
-a:hover{text-decoration-color:var(--fg)}
-strong{font-weight:650}
-ul,ol{margin:1.1rem 0;padding-left:1.4rem}
-li{margin:.45rem 0}
-li::marker{color:var(--muted)}
-blockquote{margin:1.75rem 0;padding-left:1.25rem;border-left:3px solid var(--fg);font-weight:500}
-code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:.85em;background:var(--code-bg);padding:.15em .4em;border-radius:4px}
-pre{margin:1.75rem 0;padding:1.1rem 1.25rem;background:var(--code-bg);border-radius:8px;overflow-x:auto;font-size:.85rem;line-height:1.65}
-pre code{background:none;padding:0}
-img{display:block;margin:2rem auto;max-width:100%;height:auto;border-radius:6px}
-hr{margin:3rem 0;border:0;border-top:1px solid var(--rule)}
-table{width:100%;margin:1.75rem 0;border-collapse:collapse;font-size:.95rem}
-th{text-align:left;font-weight:650;border-bottom:2px solid var(--fg);padding:.5rem .75rem .5rem 0}
-td{border-bottom:1px solid var(--rule);padding:.5rem .75rem .5rem 0;vertical-align:top}
-`.trim();
-
-function wrapInShell(title: string, bodyHtml: string): string {
-  return `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${escapeHtml(title)}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
-<style>${SHELL_CSS}</style>
-</head>
-<body>
-<main>
-${bodyHtml}
-</main>
-</body>
-</html>`;
-}
-
-/**
- * Markdown is rendered into the site's type shell. Raw HTML is served as the
- * agent wrote it — full documents pass through untouched, bare fragments get
- * the shell so they are still a valid page.
- */
-export async function renderArtifact(
-  content: string,
-  format: ArtifactFormat,
-  title: string,
-): Promise<string> {
-  if (format === "markdown") {
-    const html = await marked.parse(content, { gfm: true });
-    return wrapInShell(title, html);
-  }
-  return /<html[\s>]/i.test(content) ? content : wrapInShell(title, content);
-}
-
 export interface PublishInput {
   slug: string;
   title: string;
   summary: string;
   format: ArtifactFormat;
-  content: string;
+  /** Text content, required for text formats. */
+  textContent?: string;
+  /** Raw bytes, required for binary formats. */
+  binaryContent?: Uint8Array;
+  language?: string;
+  filename?: string;
   publishedBy: string;
+  visibility?: Visibility;
 }
 
 export type PublishResult =
@@ -207,19 +183,46 @@ export type PublishResult =
   | { ok: false; reason: "slug_taken"; suggestions: string[] };
 
 export async function publishArtifact(input: PublishInput): Promise<PublishResult> {
-  const html = await renderArtifact(input.content, input.format, input.title);
+  const language = input.language?.trim() || null;
+  const ext = extensionForFormat(input.format, language);
+  const sourceKey = `space/${input.slug}/source.${ext}`;
   const r2Key = `space/${input.slug}/index.html`;
+  const filename = input.filename?.trim() || `${input.slug}.${ext}`;
+  const sourceMime = mimeForFormat(input.format, language);
+
+  const html = await renderViewer({
+    format: input.format,
+    title: input.title,
+    slug: input.slug,
+    language,
+    textContent: input.textContent,
+    binaryContent: input.binaryContent,
+  });
   const size = new TextEncoder().encode(html).byteLength;
 
   // Claim the slug first: ON CONFLICT DO NOTHING makes this the atomic gate,
   // so a concurrent publish can never overwrite a live artifact in R2.
   const claimed = await appEnv.DB.prepare(
-    `INSERT INTO space_artifacts (slug, title, summary, format, r2_key, size, published_by)
-     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)
+    `INSERT INTO space_artifacts
+       (slug, title, summary, format, r2_key, size, published_by, mime_type, source_key, filename, language, visibility)
+     VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)
      ON CONFLICT (slug) DO NOTHING
      RETURNING slug`,
   )
-    .bind(input.slug, input.title, input.summary, input.format, r2Key, size, input.publishedBy)
+    .bind(
+      input.slug,
+      input.title,
+      input.summary,
+      input.format,
+      r2Key,
+      size,
+      input.publishedBy,
+      sourceMime,
+      sourceKey,
+      filename,
+      language,
+      input.visibility ?? "public",
+    )
     .first<{ slug: string }>();
 
   if (!claimed) {
@@ -227,12 +230,22 @@ export async function publishArtifact(input: PublishInput): Promise<PublishResul
   }
 
   try {
+    // Rendered viewer.
     await appEnv.MEDIA.put(r2Key, html, {
       httpMetadata: { contentType: "text/html; charset=utf-8" },
     });
+    // Original source, for download and (for PDFs) for the embedded viewer.
+    const sourceBody =
+      input.binaryContent ??
+      (input.textContent ? new TextEncoder().encode(input.textContent) : new Uint8Array(0));
+    await appEnv.MEDIA.put(sourceKey, sourceBody, {
+      httpMetadata: { contentType: sourceMime },
+    });
   } catch (error) {
-    // Release the claim rather than leaving a row pointing at a missing object.
+    // Release the claim rather than leaving a row pointing at missing objects.
     await appEnv.DB.prepare("DELETE FROM space_artifacts WHERE slug = ?1").bind(input.slug).run();
+    await appEnv.MEDIA.delete(r2Key).catch(() => {});
+    await appEnv.MEDIA.delete(sourceKey).catch(() => {});
     throw error;
   }
 
@@ -243,6 +256,7 @@ export async function deleteArtifact(slug: string): Promise<void> {
   const artifact = await getArtifact(slug);
   if (!artifact) return;
   await appEnv.MEDIA.delete(artifact.r2Key);
+  if (artifact.sourceKey) await appEnv.MEDIA.delete(artifact.sourceKey);
   await appEnv.DB.prepare("DELETE FROM space_artifacts WHERE slug = ?1").bind(slug).run();
 }
 

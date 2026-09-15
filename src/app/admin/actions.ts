@@ -10,7 +10,13 @@ import {
   verifyPassword,
 } from "@/lib/auth";
 import { appEnv } from "@/lib/env";
-import { createSpaceKey, deleteArtifact, revokeSpaceKey } from "@/lib/space";
+import {
+  createSpaceKey,
+  deleteArtifact,
+  isVisibility,
+  revokeSpaceKey,
+  setArtifactVisibility,
+} from "@/lib/space";
 
 // ---------- Auth ----------
 
@@ -191,6 +197,14 @@ export async function deleteSpaceArtifact(formData: FormData): Promise<void> {
   await requireAuth();
   const slug = String(formData.get("slug") ?? "");
   if (slug) await deleteArtifact(slug);
+  redirect("/admin/space");
+}
+
+export async function setSpaceArtifactVisibility(formData: FormData): Promise<void> {
+  await requireAuth();
+  const slug = String(formData.get("slug") ?? "");
+  const visibility = formData.get("visibility");
+  if (slug && isVisibility(visibility)) await setArtifactVisibility(slug, visibility);
   redirect("/admin/space");
 }
 

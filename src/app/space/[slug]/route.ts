@@ -1,4 +1,5 @@
 import { appEnv } from "@/lib/env";
+import { isAuthenticated } from "@/lib/auth";
 import { getArtifact, SPACE_URL } from "@/lib/space";
 
 export const dynamic = "force-dynamic";
@@ -24,13 +25,44 @@ div{text-align:center;padding:1.5rem}p{color:#737373;font-size:.95rem}a{color:in
 }
 
 export async function GET(
-  _request: Request,
+  request: Request,
   { params }: { params: Promise<{ slug: string }> },
 ): Promise<Response> {
   const { slug } = await params;
   const artifact = await getArtifact(slug);
   if (!artifact) return notFound(slug);
 
+  // Private artifacts are visible only to the logged-in admin. Everyone else
+  // gets the same 404 as a non-existent slug — never leak that it exists.
+  if (artifact.visibility === "private" && !(await isAuthenticated())) {
+    return notFound(slug);
+  }
+
+  const url = new URL(request.url);
+  const wantsDownload = url.searchParams.has("download");
+  const wantsRaw = url.searchParams.has("raw");
+
+  // ?download=1 or ?raw=1 → stream the original source file (attachment vs inline).
+  if ((wantsDownload || wantsRaw) && artifact.sourceKey) {
+    const object = await appEnv.MEDIA.get(artifact.sourceKey);
+    if (!object) return notFound(slug);
+
+    const filename = artifact.filename ?? `${artifact.slug}`;
+    const disposition = wantsDownload
+      ? `attachment; filename="${filename.replace(/"/g, "")}"`
+      : `inline; filename="${filename.replace(/"/g, "")}"`;
+
+    return new Response(object.body, {
+      headers: {
+        "Content-Type": artifact.mimeType ?? "application/octet-stream",
+        "Content-Disposition": disposition,
+        "Cache-Control": "public, max-age=300",
+        "X-Content-Type-Options": "nosniff",
+      },
+    });
+  }
+
+  // Default: rendered viewer HTML with the "hosted on kuldeep.cc" badge.
   const object = await appEnv.MEDIA.get(artifact.r2Key);
   if (!object) return notFound(slug);
 

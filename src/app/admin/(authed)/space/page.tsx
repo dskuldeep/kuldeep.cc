@@ -1,9 +1,14 @@
 import Link from "next/link";
-import { deleteSpaceArtifact, revokeSpaceKeyAction } from "@/app/admin/actions";
+import {
+  deleteSpaceArtifact,
+  revokeSpaceKeyAction,
+  setSpaceArtifactVisibility,
+} from "@/app/admin/actions";
 import { SpaceKeyForm } from "@/components/admin/space-key-form";
+import { VisibilitySelect } from "@/components/admin/visibility-select";
 import { requireAuth } from "@/lib/auth";
 import { formatDateShort } from "@/lib/format";
-import { listArtifacts, listSpaceKeys, SPACE_URL } from "@/lib/space";
+import { listArtifacts, listSpaceKeys, SPACE_URL, VISIBILITIES } from "@/lib/space";
 
 export const dynamic = "force-dynamic";
 
@@ -70,6 +75,29 @@ export default async function AdminSpacePage() {
               {artifact.publishedBy && <span className="meta shrink-0">{artifact.publishedBy}</span>}
               <span className="meta shrink-0">{artifact.format}</span>
               <span className="meta shrink-0">{Math.ceil(artifact.size / 1024)} KB</span>
+              {artifact.sourceKey && (
+                <a
+                  href={`${SPACE_URL}/${artifact.slug}?download=1`}
+                  className="meta link shrink-0"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Download
+                </a>
+              )}
+              <form action={setSpaceArtifactVisibility} className="shrink-0">
+                <input type="hidden" name="slug" value={artifact.slug} />
+                <VisibilitySelect
+                  name="visibility"
+                  defaultValue={artifact.visibility}
+                  options={VISIBILITIES}
+                />
+                <noscript>
+                  <button type="submit" className="btn ml-1">
+                    Save
+                  </button>
+                </noscript>
+              </form>
               <span className="meta w-20 shrink-0 text-right">
                 {formatDateShort(artifact.createdAt)}
               </span>

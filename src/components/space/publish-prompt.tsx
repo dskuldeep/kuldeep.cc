@@ -29,11 +29,11 @@ function storeKey(value: string): void {
 }
 
 function buildPrompt(key: string): string {
-  return `You can publish web artifacts to my host at space.kuldeep.cc.
+  return `You can publish artifacts to my host at space.kuldeep.cc.
 
 When I ask you to "publish this to space", do this:
 
-1. Finish the artifact as either a complete HTML document or as Markdown.
+1. Finish the artifact in the appropriate format.
 2. POST it:
 
    curl -X POST https://space.kuldeep.cc/api/space/publish \\
@@ -41,14 +41,28 @@ When I ask you to "publish this to space", do this:
      -H "Content-Type: application/json" \\
      -d '{"slug":"kebab-case-name","title":"Human title","summary":"One sentence.","format":"html","content":"<!doctype html>..."}'
 
+   For binary formats (pdf/docx/xlsx), base64-encode the bytes and send them as
+   \`content_base64\` instead of \`content\`. Every other field is the same.
+
 3. A 201 returns {"url":"https://space.kuldeep.cc/<slug>"} — reply to me with that link.
 4. A 409 means the slug is taken and the response carries "suggestions". Pick the best one and retry. Never try to overwrite an existing artifact.
 
 Rules
 - slug: lowercase letters, numbers and hyphens, 1-64 characters. Derive it from the title unless I name one.
-- format: "html" serves your document as-is (your own CSS and JS work). "markdown" renders into the site's black-and-white type.
+- format:
+  - "html" — served as-is (your own CSS/JS works).
+  - "markdown" — rendered into the site's black-and-white type.
+  - "text" — plain text, monospace.
+  - "code" — syntax-highlighted. Add "language" (e.g. "python", "ts", "go").
+  - "json" — pretty-printed and highlighted.
+  - "csv" — rendered as a table.
+  - "pdf" — embedded viewer, download link. Use content_base64.
+  - "docx" — converted to HTML, download link. Use content_base64.
+  - "xlsx" — one table per sheet, download link. Use content_base64.
+- Optional "filename": override the download filename (defaults to <slug>.<ext>).
+- Optional "visibility": "public" (default, listed on the hub), "unlisted" (public URL, hidden from the hub), or "private" (only I can view, hidden from the hub). Ask me first before publishing anything that could be personal — default to unlisted if unsure.
 - 2 MB maximum per artifact.
-- Everything published is publicly listed on https://space.kuldeep.cc.
+- Public artifacts are listed on https://space.kuldeep.cc. Unlisted and private are not.
 - To test a slug before publishing: GET https://space.kuldeep.cc/api/space/check?slug=<slug> with the same Authorization header.`;
 }
 

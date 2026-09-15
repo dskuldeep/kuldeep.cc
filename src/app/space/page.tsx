@@ -3,7 +3,7 @@ import { MarkdownContent } from "@/components/markdown-content";
 import { PublishPrompt } from "@/components/space/publish-prompt";
 import { getPage } from "@/lib/content";
 import { formatDateShort } from "@/lib/format";
-import { listArtifacts, SPACE_URL } from "@/lib/space";
+import { listPublicArtifacts, SPACE_URL } from "@/lib/space";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default async function SpacePage() {
   const [artifacts, intro, docs] = await Promise.all([
-    listArtifacts(),
+    listPublicArtifacts(),
     getPage("space"),
     getPage("space-docs"),
   ]);
