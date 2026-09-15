@@ -10,6 +10,7 @@ import {
   verifyPassword,
 } from "@/lib/auth";
 import { appEnv } from "@/lib/env";
+import { createSpaceKey, deleteArtifact, revokeSpaceKey } from "@/lib/space";
 
 // ---------- Auth ----------
 
@@ -120,7 +121,7 @@ export async function deletePost(id: number): Promise<void> {
 
 // ---------- Pages ----------
 
-const EDITABLE_PAGES = new Set(["home", "about"]);
+const EDITABLE_PAGES = new Set(["home", "about", "space", "space-docs"]);
 
 export async function savePage(
   slug: string,
@@ -182,4 +183,36 @@ export async function deleteImage(formData: FormData): Promise<void> {
   await appEnv.MEDIA.delete(key);
   await appEnv.DB.prepare("DELETE FROM images WHERE key = ?1").bind(key).run();
   redirect("/admin/images");
+}
+
+// ---------- Space ----------
+
+export async function deleteSpaceArtifact(formData: FormData): Promise<void> {
+  await requireAuth();
+  const slug = String(formData.get("slug") ?? "");
+  if (slug) await deleteArtifact(slug);
+  redirect("/admin/space");
+}
+
+/**
+ * Returns the plaintext token so the caller can show it once. Deliberately not
+ * a redirect: that would put the secret in the URL and browser history.
+ */
+export async function createSpaceKeyAction(
+  _previous: string | null,
+  formData: FormData,
+): Promise<string | null> {
+  await requireAuth();
+  const label = String(formData.get("label") ?? "")
+    .trim()
+    .slice(0, 60);
+  if (!label) return null;
+  return createSpaceKey(label);
+}
+
+export async function revokeSpaceKeyAction(formData: FormData): Promise<void> {
+  await requireAuth();
+  const id = String(formData.get("id") ?? "");
+  if (id) await revokeSpaceKey(id);
+  redirect("/admin/space");
 }

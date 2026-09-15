@@ -7,6 +7,8 @@ import { PageEditor } from "@/components/admin/page-editor";
 const EDITABLE: Record<string, { label: string; titleHint: string }> = {
   home: { label: "Home", titleHint: "Statement headline (shown huge on the homepage)" },
   about: { label: "About", titleHint: "Page title" },
+  space: { label: "Space", titleHint: "Statement headline on space.kuldeep.cc" },
+  "space-docs": { label: "Space docs", titleHint: "Heading above the explainer on space.kuldeep.cc" },
 };
 
 export default async function EditSitePage({ params }: { params: Promise<{ slug: string }> }) {
