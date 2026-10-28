@@ -1,0 +1,424 @@
+{
+ "ads": {
+  "cpcByMonth": [
+   {
+    "month": "2026-02",
+    "median": null,
+    "n": 1
+   },
+   {
+    "month": "2026-03",
+    "median": 3.62,
+    "n": 2
+   },
+   {
+    "month": "2026-04",
+    "median": 4.0,
+    "n": 5
+   },
+   {
+    "month": "2026-05",
+    "median": 4.0,
+    "n": 6
+   },
+   {
+    "month": "2026-06",
+    "median": 3.71,
+    "n": 10
+   },
+   {
+    "month": "2026-07",
+    "median": 4.2,
+    "n": 6
+   },
+   {
+    "month": "2026-08",
+    "median": 3.75,
+    "n": 14
+   },
+   {
+    "month": "2026-09",
+    "median": 4.0,
+    "n": 31
+   },
+   {
+    "month": "2026-10",
+    "median": 4.0,
+    "n": 14
+   }
+  ],
+  "cpmByMonth": [
+   {
+    "month": "2026-02",
+    "median": 60.0,
+    "n": 3
+   },
+   {
+    "month": "2026-03",
+    "median": 60.0,
+    "n": 2
+   },
+   {
+    "month": "2026-04",
+    "median": 34.59,
+    "n": 28
+   },
+   {
+    "month": "2026-05",
+    "median": 42.5,
+    "n": 7
+   },
+   {
+    "month": "2026-06",
+    "median": 77.16,
+    "n": 2
+   },
+   {
+    "month": "2026-07",
+    "median": 39.9,
+    "n": 3
+   },
+   {
+    "month": "2026-08",
+    "median": 47.25,
+    "n": 8
+   },
+   {
+    "month": "2026-09",
+    "median": 36.32,
+    "n": 6
+   },
+   {
+    "month": "2026-10",
+    "median": 13.0,
+    "n": 9
+   }
+  ],
+  "ctrDistribution": [
+   {
+    "label": "<0.5%",
+    "count": 4
+   },
+   {
+    "label": "0.5–0.75%",
+    "count": 14
+   },
+   {
+    "label": "0.75–1%",
+    "count": 17
+   },
+   {
+    "label": "1–1.5%",
+    "count": 14
+   },
+   {
+    "label": "1.5–2%",
+    "count": 8
+   },
+   {
+    "label": "2–3%",
+    "count": 5
+   },
+   {
+    "label": "3%+",
+    "count": 0
+   }
+  ],
+  "countriesByMonth": [
+   {
+    "month": "2026-02",
+    "countries": 1
+   },
+   {
+    "month": "2026-03",
+    "countries": 4
+   },
+   {
+    "month": "2026-04",
+    "countries": 4
+   },
+   {
+    "month": "2026-05",
+    "countries": 4
+   },
+   {
+    "month": "2026-06",
+    "countries": 5
+   },
+   {
+    "month": "2026-07",
+    "countries": 5
+   },
+   {
+    "month": "2026-08",
+    "countries": 40
+   },
+   {
+    "month": "2026-09",
+    "countries": 60
+   },
+   {
+    "month": "2026-10",
+    "countries": 89
+   }
+  ],
+  "advertisersFirstReported": [
+   {
+    "month": "2026-02",
+    "count": 15
+   },
+   {
+    "month": "2026-03",
+    "count": 11
+   },
+   {
+    "month": "2026-04",
+    "count": 2
+   },
+   {
+    "month": "2026-05",
+    "count": 4
+   },
+   {
+    "month": "2026-06",
+    "count": 3
+   },
+   {
+    "month": "2026-07",
+    "count": 17
+   },
+   {
+    "month": "2026-08",
+    "count": 30
+   },
+   {
+    "month": "2026-09",
+    "count": 13
+   },
+   {
+    "month": "2026-10",
+    "count": 46
+   }
+  ],
+  "minimumSpend": [
+   {
+    "date": "2026-02",
+    "label": "Pilot commitment",
+    "usd": 250000
+   },
+   {
+    "date": "2026-04",
+    "label": "Self-serve beta",
+    "usd": 50000
+   },
+   {
+    "date": "2026-05",
+    "label": "Daily budget, no minimum",
+    "usd": 25
+   }
+  ]
+ },
+ "robots": {
+  "leak": {
+   "gptBlockers": 810,
+   "openPct": {
+    "ClaudeBot": 18.8,
+    "Google-Extended": 27.3,
+    "CCBot": 12.7,
+    "Applebot-Extended": 35.1,
+    "Meta-ExternalAgent": 34.1,
+    "Bytespider": 23.3,
+    "Amazonbot": 37.0,
+    "cohere-training-data-crawler": 79.5,
+    "MistralAI-Training": 75.3
+   },
+   "anyMajorOpenPct": 50.0
+  },
+  "blocksAllMajorTraining": {
+   "n": 344,
+   "pctOfRobots": 6.0,
+   "pctOfGptBlockers": 42.5
+  },
+  "typology": {
+   "no AI rules": 3864,
+   "names AI bots, blocks none": 466,
+   "blocks every bot (*)": 232,
+   "blocks training and AI search/agents": 594,
+   "blocks training only": 534,
+   "blocks search/agents only": 11
+  },
+  "tld": [
+   {
+    "tld": ".fr",
+    "n": 74,
+    "blocksAnyPct": 45.9,
+    "gptPct": 39.2
+   },
+   {
+    "tld": ".de",
+    "n": 134,
+    "blocksAnyPct": 29.9,
+    "gptPct": 29.1
+   },
+   {
+    "tld": ".com",
+    "n": 2919,
+    "blocksAnyPct": 23.6,
+    "gptPct": 17.4
+   },
+   {
+    "tld": ".jp",
+    "n": 104,
+    "blocksAnyPct": 23.1,
+    "gptPct": 18.3
+   },
+   {
+    "tld": ".net",
+    "n": 253,
+    "blocksAnyPct": 22.1,
+    "gptPct": 24.1
+   },
+   {
+    "tld": ".org",
+    "n": 306,
+    "blocksAnyPct": 21.6,
+    "gptPct": 18.0
+   },
+   {
+    "tld": ".br",
+    "n": 65,
+    "blocksAnyPct": 16.9,
+    "gptPct": 9.2
+   },
+   {
+    "tld": ".ru",
+    "n": 156,
+    "blocksAnyPct": 9.6,
+    "gptPct": 7.1
+   },
+   {
+    "tld": ".gov",
+    "n": 78,
+    "blocksAnyPct": 7.7,
+    "gptPct": 3.8
+   },
+   {
+    "tld": ".io",
+    "n": 96,
+    "blocksAnyPct": 7.3,
+    "gptPct": 11.5
+   },
+   {
+    "tld": ".edu",
+    "n": 109,
+    "blocksAnyPct": 5.5,
+    "gptPct": 4.6
+   }
+  ],
+  "contentSignal": {
+   "sites": 336,
+   "pct": 5.9,
+   "values": {
+    "search=yes": 531,
+    "ai-train=no": 382,
+    "ai-input=yes": 254,
+    "ai-train=yes": 147,
+    "ai-input=no": 31,
+    "search=no": 5
+   }
+  },
+  "llmsContradiction": {
+   "llmsWithRobots": 960,
+   "blockGPTBot": 4.2,
+   "blockAnyTraining": 10.7,
+   "baselineBlockGPTBot": 17.9,
+   "examples": [
+    "gravatar.com",
+    "flightradar24.com",
+    "ilmeteo.it",
+    "meetup.com",
+    "oreilly.com",
+    "sendbird.com",
+    "glassdoor.com",
+    "prezi.com",
+    "newsbreak.com",
+    "loom.com"
+   ]
+  },
+  "listLength": {
+   "n": 1267,
+   "median": 13,
+   "p90": 44,
+   "max": 192,
+   "dist": {
+    "1": 194,
+    "2-5": 208,
+    "6-10": 178,
+    "11-25": 430,
+    "26-50": 171,
+    "51+": 86
+   }
+  },
+  "templateShare": 46.2,
+  "legacyInLists": 66.2,
+  "zombieStrict": {
+   "n": 51,
+   "pct": 7.8,
+   "examples": [
+    "espn.com",
+    "marca.com",
+    "ovh.com",
+    "e621.net",
+    "nikkansports.com",
+    "espn.com.ve",
+    "sciencemag.org",
+    "science.org",
+    "mos.ru",
+    "abcnews.com",
+    "ctvnews.ca",
+    "elle.com",
+    "esquire.com",
+    "goodhousekeeping.com",
+    "cosmopolitan.com"
+   ]
+  },
+  "nonAsciiTokens": {
+   "sites": 7,
+   "examples": [
+    "chatgpt.com: 'Perplexity‑User'",
+    "launchpad.net: 'Perplexity‑User'",
+    "academia.edu: 'Perplexity‑User'",
+    "f95zone.to: 'Perplexity‑User'",
+    "weatherbug.net: 'Perplexity‑User'",
+    "foreignpolicy.com: 'Perplexity‑User'",
+    "europepmc.org: 'Perplexity‑User'"
+   ]
+  },
+  "operatorSplit": {
+   "OpenAI": {
+    "trainingBlockers": 810,
+    "searchAlsoBlockedPct": 29.1
+   },
+   "Anthropic": {
+    "trainingBlockers": 745,
+    "searchAlsoBlockedPct": 28.6
+   },
+   "Mistral": {
+    "trainingBlockers": 200,
+    "searchAlsoBlockedPct": 6.0
+   }
+  },
+  "starBlock": {
+   "n": 232,
+   "pct": 4.1
+  },
+  "googleExtended": {
+   "blockers": 667,
+   "googlebotAlsoBlocked": 1
+  },
+  "topTemplate": {
+   "size": 23,
+   "sites": 152
+  }
+ }
+}

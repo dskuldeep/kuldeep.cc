@@ -6,7 +6,9 @@ import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
 import { SourceLink } from "@/components/data/source-link";
-import { engines, fmtMonth, getEngine, userNumbers } from "@/lib/data";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { ColumnChart } from "@/components/data/charts";
+import { engines, fmtMonth, getEngine, researchFor, userNumbers } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -47,6 +49,7 @@ export default function UserNumbersPage() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("ai-user-numbers"),
       name: "AI assistant user numbers",
       description: DESC,
       path: PATH,
@@ -96,6 +99,27 @@ export default function UserNumbersPage() {
         </div>
       </section>
 
+      <ColumnChart
+        title="ChatGPT weekly active users (millions)"
+        items={userNumbers.rows
+          .filter((u) => u.engine === "chatgpt" && u.metric === "Weekly active users")
+          .sort((a, b) => a.asOf.localeCompare(b.asOf))
+          .map((u) => ({ label: fmtMonth(u.asOf), value: parseFloat(u.value) * (u.value.includes("billion") ? 1000 : 1) }))}
+        format={(v) => v.toLocaleString("en-US")}
+        caption="ChatGPT tripled its weekly users in 20 months."
+        source="OpenAI"
+      />
+      <ColumnChart
+        title="Gemini app monthly active users (millions)"
+        items={userNumbers.rows
+          .filter((u) => u.engine === "gemini")
+          .sort((a, b) => a.asOf.localeCompare(b.asOf))
+          .map((u) => ({ label: fmtMonth(u.asOf), value: parseFloat(u.value) }))}
+        format={(v) => v.toLocaleString("en-US")}
+        caption="Gemini more than doubled between July 2025 and July 2026."
+        source="Alphabet earnings calls"
+      />
+
       <div className="bleed table-wrap mt-14">
         <table className="data-table">
           <caption>Weekly and monthly figures aren&apos;t comparable: a weekly count is always smaller than the monthly count for the same product.</caption>
@@ -134,7 +158,22 @@ export default function UserNumbersPage() {
         the article that quoted it.
       </p>
 
+      <AboutDataset
+        download="ai-user-numbers"
+        what={<p>Usage figures for AI assistants and AI search features, as stated by the companies that run them: weekly and monthly active users, queries, subscribers and paid seats.</p>}
+        how={<p>Figures come from earnings calls, keynotes, official blog posts and executive statements. Third-party traffic estimates are deliberately excluded. Where an official figure was only found in secondary reporting, the linked source is that report.</p>}
+        limits={<p>Companies choose which metric to disclose, so figures aren&apos;t comparable across products: weekly users are always fewer than monthly users for the same product, and some figures count reach rather than active use.</p>}
+        fields={[
+          { name: "engine", description: "Engine slug (see the engine reference)" },
+          { name: "metric", description: "What the number counts" },
+          { name: "value", description: "Figure as stated" },
+          { name: "asOf", description: "Month the figure refers to" },
+          { name: "statedBy", description: "Who stated it" },
+          { name: "sourceUrl", description: "Where it was reported" },
+        ]}
+      />
       <Faq items={FAQ} />
+      <RelatedResearch dataset="ai-user-numbers" />
       <CiteThis title="AI assistant user numbers" path={PATH} updated={userNumbers.updated} />
     </>
   );

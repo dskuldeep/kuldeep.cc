@@ -7,6 +7,7 @@ import { CopyBlock } from "@/components/data/copy-block";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
 import { SourceLink } from "@/components/data/source-link";
+import { RelatedResearch } from "@/components/data/about-dataset";
 import { botStat, crawlers, engines, fmtMonth, getCrawler, PURPOSE_LABEL, robotsStudy, type Crawler } from "@/lib/data";
 import { breadcrumbNode, faqNode, graph, PERSON_ID } from "@/lib/schema";
 import { canonicalPath, pageMeta, SITE } from "@/lib/site";
@@ -227,6 +228,7 @@ export default async function CrawlerPage({ params }: Props) {
       )}
 
       <Faq items={faq} />
+      <RelatedResearch dataset="ai-crawlers" />
       <p className="mt-10">
         <Link href="/data/ai-search/crawlers" className="link text-[0.95rem]">
           ← All AI crawlers

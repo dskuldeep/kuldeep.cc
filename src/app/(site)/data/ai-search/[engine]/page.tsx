@@ -5,8 +5,11 @@ import { Breadcrumbs } from "@/components/data/breadcrumbs";
 import { CiteThis } from "@/components/data/cite-this";
 import { JsonLd } from "@/components/json-ld";
 import { SourceLink } from "@/components/data/source-link";
+import { RelatedResearch } from "@/components/data/about-dataset";
+import { ColumnChart } from "@/components/data/charts";
+import { Faq } from "@/components/data/faq";
 import { botStat, crawlerSlug, engines, fmtMonth, getEngine, userNumbers } from "@/lib/data";
-import { breadcrumbNode, graph, PERSON_ID } from "@/lib/schema";
+import { breadcrumbNode, faqNode, graph, PERSON_ID } from "@/lib/schema";
 import { canonicalPath, pageMeta, SITE } from "@/lib/site";
 
 interface Props {
@@ -44,6 +47,26 @@ export default async function EnginePage({ params }: Props) {
   ];
   const users = userNumbers.rows.filter((u) => u.engine === e.slug).sort((a, b) => a.asOf.localeCompare(b.asOf));
   const others = engines.rows.filter((x) => x.slug !== e.slug);
+  const faq = [
+    {
+      q: `What search engine does ${e.name} use?`,
+      a: e.index,
+    },
+    {
+      q: `Which crawlers does ${e.name} use?`,
+      a: e.crawlers.length
+        ? `${e.name} relies on ${e.crawlers.join(", ")}. ${e.notes}`.trim()
+        : `${e.operator} has not documented a crawler for ${e.name}.`,
+    },
+    {
+      q: `How do I track ${e.name} traffic in analytics?`,
+      a: e.referrers.length
+        ? `Clicks from ${e.name} arrive with the referrer ${e.referrers.join(" or ")}.${e.utm ? ` ${e.utm}` : ""} Add it to an AI channel in GA4 using a source regex.`
+        : `${e.name} does not send its own referrer, so its clicks can't be separated from the host site's traffic.`,
+    },
+    { q: `Does ${e.name} show ads?`, a: e.ads },
+  ];
+  const chartable = users.filter((u) => /active users|monthly users/i.test(u.metric) && /million|billion/.test(u.value));
 
   const jsonLd = graph(
     {
@@ -63,6 +86,7 @@ export default async function EnginePage({ params }: Props) {
       },
       citation: e.index_sources,
     },
+    faqNode(faq),
     breadcrumbNode(crumbs),
   );
 
@@ -202,6 +226,22 @@ export default async function EnginePage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {chartable.length >= 2 && (
+        <ColumnChart
+          title={`${e.name} users over time (millions)`}
+          items={chartable.map((u) => ({
+            label: fmtMonth(u.asOf),
+            value: parseFloat(u.value.replace(/,/g, "")) * (u.value.includes("billion") ? 1000 : 1),
+          }))}
+          format={(v) => v.toLocaleString("en-US")}
+          caption={chartable.map((u) => u.metric).filter((m, i, a) => a.indexOf(m) === i).join(" / ")}
+          source={`${e.operator}, as stated`}
+        />
+      )}
+
+      <Faq items={faq} />
+      <RelatedResearch dataset="ai-engines" />
 
       <section className="mt-16">
         <h2 className="section-title mb-3">Other AI engines</h2>

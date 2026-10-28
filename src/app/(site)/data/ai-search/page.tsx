@@ -5,7 +5,9 @@ import { CiteThis } from "@/components/data/cite-this";
 import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
-import { crawlers, crawlerSlug, engines, robotsStudy } from "@/lib/data";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { GroupedHBarChart, HBarChart } from "@/components/data/charts";
+import { botStat, crawlers, crawlerSlug, engines, researchFor, robotsStudy } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -53,6 +55,7 @@ export default function AiSearchHub() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("ai-engines"),
       name: "AI search engine reference",
       description: DESC,
       path: PATH,
@@ -80,6 +83,20 @@ export default function AiSearchHub() {
         records={rows.length}
         recordLabel="engines"
         download="ai-engines"
+      />
+
+      <HBarChart
+        title="Reach of the largest AI answer surfaces (millions of users)"
+        items={[
+          { label: "AI Overviews · monthly", value: 2500, highlight: true },
+          { label: "ChatGPT · weekly", value: 1200 },
+          { label: "AI Mode · monthly", value: 1000, highlight: true },
+          { label: "Gemini app · monthly", value: 950, highlight: true },
+        ]}
+        format={(v) => `${v.toLocaleString("en-US")}M`}
+        labelWidth={200}
+        caption="As stated by Google and OpenAI in 2026. Weekly and monthly counts aren't directly comparable. Google surfaces in black."
+        source="AI assistant user numbers"
       />
 
       <div className="bleed table-wrap">
@@ -134,6 +151,22 @@ export default function AiSearchHub() {
         </table>
       </div>
 
+      <GroupedHBarChart
+        title="Can you opt out? Share of top sites blocking each engine's crawlers"
+        series={["Answer / search crawler", "Training crawler"]}
+        groups={[
+          { label: "ChatGPT", values: [botStat("OAI-SearchBot")?.blockedPct ?? 0, botStat("GPTBot")?.blockedPct ?? 0] },
+          { label: "Claude", values: [botStat("Claude-SearchBot")?.blockedPct ?? 0, botStat("ClaudeBot")?.blockedPct ?? 0] },
+          { label: "Perplexity", values: [botStat("PerplexityBot")?.blockedPct ?? 0, null] },
+          { label: "Gemini", values: [botStat("Google-Extended")?.blockedPct ?? 0, null] },
+          { label: "AI Overviews", values: [botStat("Googlebot")?.blockedPct ?? 0, null] },
+        ]}
+        format={(v) => `${v}%`}
+        max={20}
+        caption="AI Overviews and AI Mode can only be refused by blocking Googlebot, which also removes a site from Google Search."
+        source="robots.txt study of the top 10,000 sites"
+      />
+
       <section className="mt-20">
         <h2 className="section-title mb-3">More in this reference</h2>
         <ol className="index-list">
@@ -180,7 +213,24 @@ export default function AiSearchHub() {
         </ol>
       </section>
 
+      <AboutDataset
+        download="ai-engines"
+        what={<p>Eighteen AI answer engines, assistants, browsers and search features, with where each gets its web data, which crawlers feed it, how its traffic appears in analytics, whether it sells ads and how it shows sources.</p>}
+        how={<p>Each profile is written by hand from the operator&apos;s own documentation where it exists (crawler pages, help centres, launch posts), supplemented by technical reporting. Every claim about a search index links to its source on the engine&apos;s page.</p>}
+        limits={<p>AI companies rarely disclose their search providers. Index relationships described as &ldquo;reported&rdquo; come from third-party testing or reporting, not official confirmation, and can change without notice.</p>}
+        fields={[
+          { name: "slug / name / operator / kind", description: "Engine identity and type" },
+          { name: "launched", description: "Product launch date" },
+          { name: "searchIndex", description: "Where the engine's web answers come from" },
+          { name: "crawlers", description: "Crawler and fetcher tokens it uses" },
+          { name: "referrers", description: "Referrer hostnames its clicks carry" },
+          { name: "utm", description: "UTM parameters it appends, if any" },
+          { name: "ads", description: "Whether and how it shows ads" },
+          { name: "docs / sources", description: "Official documentation and supporting sources" },
+        ]}
+      />
       <Faq items={FAQ} />
+      <RelatedResearch dataset="ai-engines" />
       <CiteThis title="AI search engine reference" path={PATH} updated={engines.updated} />
     </>
   );

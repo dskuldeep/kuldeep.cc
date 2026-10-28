@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/data/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
-import { benchmarks, DATASETS, fmtMonth, fmtNumber, robotsStudy, type DatasetEntry } from "@/lib/data";
-import { breadcrumbNode, graph, PERSON_ID } from "@/lib/schema";
+import { Faq } from "@/components/data/faq";
+import { benchmarks, DATASETS, fmtMonth, fmtNumber, RESEARCH, robotsStudy, type DatasetEntry } from "@/lib/data";
+import { breadcrumbNode, faqNode, graph, PERSON_ID } from "@/lib/schema";
 import { canonicalPath, pageMeta, SITE } from "@/lib/site";
 
 const TITLE = "Data: ChatGPT Ads & AI Search datasets";
@@ -11,6 +12,25 @@ const DESC =
   "Free, sourced datasets on ChatGPT advertising and AI search: ad benchmarks, advertisers, AI crawlers, referrers, user numbers and an original robots.txt study of the top 10,000 sites.";
 
 export const metadata: Metadata = pageMeta({ title: TITLE, description: DESC, path: "/data" });
+
+const FAQ = [
+  {
+    q: "Is this data free to use?",
+    a: "Yes. Every dataset is published under Creative Commons Attribution 4.0, which allows any use, including commercial, as long as you credit Kuldeep Paul, kuldeep.cc and link to the dataset page.",
+  },
+  {
+    q: "Where does the data come from?",
+    a: "The robots.txt study is primary data I collected by fetching the top 10,000 websites. The other datasets aggregate public reporting, official documentation and company statements, with every figure linked to its source.",
+  },
+  {
+    q: "How often is the data updated?",
+    a: "On a rolling basis. Each dataset shows its last update date, and the CSV and JSON downloads always match what the page shows.",
+  },
+  {
+    q: "Can I download the data?",
+    a: "Yes. Every dataset page has CSV and JSON downloads, and each file includes the licence and a link back to its page.",
+  },
+];
 
 const crumbs = [
   { name: "Home", path: "/" },
@@ -39,6 +59,7 @@ export default function DataIndex() {
         url: canonicalPath(d.path),
       })),
     },
+    faqNode(FAQ),
     breadcrumbNode(crumbs),
   );
 
@@ -105,6 +126,23 @@ export default function DataIndex() {
         </section>
       ))}
 
+      <section className="mt-20">
+        <h2 className="section-title mb-3">Research</h2>
+        <ol className="index-list">
+          {RESEARCH.map((r) => (
+            <li key={r.slug}>
+              <Link href={`/writing/${r.slug}`}>
+                <span className="index-no" aria-hidden="true" />
+                <span className="flex-1">
+                  <span className="index-title block">{r.title}</span>
+                  <span className="mt-1 block text-[0.95rem] leading-snug text-[var(--muted)]">{r.summary}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <section className="mt-20 article">
         <h2>How this data is built</h2>
         <p>
@@ -116,6 +154,8 @@ export default function DataIndex() {
           <Link href="/data/methodology">methodology</Link>.
         </p>
       </section>
+
+      <Faq items={FAQ} />
     </>
   );
 }

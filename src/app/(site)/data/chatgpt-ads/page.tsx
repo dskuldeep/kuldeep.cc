@@ -6,7 +6,9 @@ import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
 import { SourceLink } from "@/components/data/source-link";
-import { advertisers, benchmarks, fmtMonth, timeline } from "@/lib/data";
+import { RelatedResearch } from "@/components/data/about-dataset";
+import { LineChart } from "@/components/data/charts";
+import { advertisers, benchmarks, fmtMonth, insights, monthLabel, researchFor, timeline } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -63,6 +65,7 @@ export default function ChatGptAdsHub() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("chatgpt-ads-benchmarks"),
       name: "ChatGPT Ads Index",
       description: DESC,
       path: PATH,
@@ -116,6 +119,15 @@ export default function ChatGptAdsHub() {
         </Link>
         .
       </p>
+
+      <LineChart
+        title="Median reported CPM by month (USD)"
+        points={insights.ads.cpmByMonth.map((m) => ({ label: monthLabel(m.month), value: m.median }))}
+        format={(v) => `$${Math.round(v)}`}
+        max={90}
+        caption="CPMs fell from the $60 launch price within two months; October reflects cheaper newer markets."
+        source="ChatGPT Ads benchmarks"
+      />
 
       <section className="mt-16">
         <h2 className="section-title mb-4">ChatGPT Ads at a glance</h2>
@@ -226,6 +238,7 @@ export default function ChatGptAdsHub() {
       </section>
 
       <Faq items={FAQ} />
+      <RelatedResearch dataset="chatgpt-ads-benchmarks" />
       <CiteThis title="ChatGPT Ads Index" path={PATH} updated={benchmarks.updated} />
     </>
   );

@@ -132,7 +132,7 @@ export default function MethodologyPage() {
           page shows the data that is in its CSV/JSON download, generated from the same file.
         </p>
 
-        <h2>Licence and citation</h2>
+        <h2 id="licence">Licence and citation</h2>
         <p>
           All datasets are published under{" "}
           <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">
@@ -140,8 +140,27 @@ export default function MethodologyPage() {
           </a>
           . You can copy, chart, republish and build on them commercially. Please credit{" "}
           <em>{SITE.name}, kuldeep.cc</em> and link to the dataset page you used. Each page has a
-          ready-made citation. The crawler registry incorporates the MIT-licensed{" "}
+          ready-made citation in APA, MLA, Chicago, BibTeX and HTML. The crawler registry
+          incorporates the MIT-licensed{" "}
           <a href="https://github.com/ai-robots-txt/ai.robots.txt">ai.robots.txt</a> project.
+        </p>
+        <h3>Citation rules</h3>
+        <ol>
+          <li>
+            Credit <strong>{SITE.name}, kuldeep.cc</strong> wherever you use a figure, chart or table.
+          </li>
+          <li>Link to the dataset page, not the CSV or JSON file, so readers can trace every number.</li>
+          <li>State the date of the data you used (&ldquo;as of October 2026&rdquo;); these figures change.</li>
+          <li>If you recalculate, filter or re-chart the data, say it is your analysis of this data.</li>
+          <li>
+            When quoting a single reported figure (one agency&apos;s CTR, one company&apos;s user count),
+            cite its original source too; every row links to it.
+          </li>
+          <li>Don&apos;t imply endorsement by me or by any company named in the data.</li>
+        </ol>
+        <p>
+          Example: <em>&ldquo;The median reported ChatGPT Ads CPC is $4.00, according to Kuldeep
+          Paul&apos;s ChatGPT Ads Index (kuldeep.cc, October 2026).&rdquo;</em>
         </p>
       </div>
 

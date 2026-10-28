@@ -6,7 +6,9 @@ import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
 import { TableFilter } from "@/components/data/table-filter";
-import { botStat, crawlers, PURPOSE_LABEL, robotsStudy } from "@/lib/data";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { HBarChart } from "@/components/data/charts";
+import { botStat, crawlers, PURPOSE_LABEL, researchFor, robotsStudy } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -50,6 +52,7 @@ export default function CrawlersPage() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("ai-crawlers"),
       name: "AI crawler directory",
       description: DESC,
       path: PATH,
@@ -78,6 +81,31 @@ export default function CrawlersPage() {
         records={total}
         recordLabel="bots and user agents"
         download="ai-crawlers"
+      />
+
+      <HBarChart
+        title="Most-blocked AI crawlers"
+        items={robotsStudy.bots
+          .filter((b) => !["Googlebot", "Webzio-Extended"].includes(b.token))
+          .slice(0, 12)
+          .map((b) => ({ label: b.token, value: b.blockedPct, highlight: crawlers.featured.some((c) => c.token === b.token && c.purpose === "training") }))}
+        format={(v) => `${v}%`}
+        labelWidth={180}
+        caption="Share of top-10k sites with a robots.txt that fully disallow each bot. Training crawlers in black."
+        source="robots.txt study"
+      />
+      <HBarChart
+        title="How AI bots are used: documented crawlers by purpose"
+        items={Object.entries(
+          crawlers.featured.reduce<Record<string, number>>((acc, c) => {
+            acc[PURPOSE_LABEL[c.purpose]] = (acc[PURPOSE_LABEL[c.purpose]] ?? 0) + 1;
+            return acc;
+          }, {}),
+        )
+          .sort((a, b) => b[1] - a[1])
+          .map(([label, value]) => ({ label, value }))}
+        labelWidth={180}
+        caption="Training crawlers collect data for models; search crawlers build the index AI answers cite; user-triggered fetchers read a page when someone asks."
       />
 
       <section aria-labelledby="documented">
@@ -169,7 +197,25 @@ export default function CrawlersPage() {
         </table>
       </div>
 
+      <AboutDataset
+        download="ai-crawlers"
+        what={<p>Every AI crawler, scraper, fetcher and agent user agent I could identify: {crawlers.featured.length} documented bots with full profiles (purpose, user-agent string, IP list, documentation) and {crawlers.registry.length} more from the community registry, each with the share of top sites that block it.</p>}
+        how={<p>Documented bots are written from each operator&apos;s own crawler documentation. The wider registry comes from the MIT-licensed ai.robots.txt project. Block rates come from my robots.txt study of the top 10,000 domains.</p>}
+        limits={<p>User-agent strings can be spoofed; verify with published IP lists or reverse DNS. Undocumented bots are described as their operators or the community describe them, and operators rename bots without notice.</p>}
+        fields={[
+          { name: "token", description: "The name used in robots.txt" },
+          { name: "operator", description: "Company or project running it" },
+          { name: "purpose", description: "training, search, user, agent, ads or mixed" },
+          { name: "product", description: "What the collected content is used for" },
+          { name: "respectsRobots", description: "Whether it obeys robots.txt (Yes, No, Partial, Unclear)" },
+          { name: "userAgent", description: "Full user-agent string, where published" },
+          { name: "ipList", description: "URL of the operator's published IP ranges" },
+          { name: "docs", description: "Official documentation" },
+          { name: "source", description: "Documentation-based profile or ai.robots.txt registry" },
+        ]}
+      />
       <Faq items={FAQ} />
+      <RelatedResearch dataset="ai-crawlers" />
       <CiteThis title="AI crawler directory" path={PATH} updated={crawlers.updated} />
     </>
   );

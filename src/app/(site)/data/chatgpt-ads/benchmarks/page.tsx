@@ -6,8 +6,11 @@ import { DatasetHeader } from "@/components/data/dataset-header";
 import { JsonLd } from "@/components/json-ld";
 import { SourceLink } from "@/components/data/source-link";
 import { TableFilter } from "@/components/data/table-filter";
-import { benchmarks, fmtMonth, type MetricSummary } from "@/lib/data";
-import { breadcrumbNode, datasetNode, graph } from "@/lib/schema";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { ColumnChart, LineChart } from "@/components/data/charts";
+import { Faq } from "@/components/data/faq";
+import { benchmarks, fmtMonth, insights, monthLabel, researchFor, type MetricSummary } from "@/lib/data";
+import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
 const PATH = "/data/chatgpt-ads/benchmarks";
@@ -22,6 +25,29 @@ const crumbs = [
   { name: "Data", path: "/data" },
   { name: "ChatGPT Ads Index", path: "/data/chatgpt-ads" },
   { name: "Benchmarks", path: PATH },
+];
+
+const FAQ = [
+  {
+    q: "What is the average CPC for ChatGPT ads?",
+    a: `The median reported CPC is $${s.cpc.median.toFixed(2)} across ${s.cpc.n} published figures. It has stayed close to $4 every month since CPC bidding launched in April 2026, in the middle of OpenAI's recommended $3–$5 starting bid.`,
+  },
+  {
+    q: "What is a good CTR for ChatGPT ads?",
+    a: `The median reported CTR is ${s.ctr.median.toFixed(2)}%, and about nine in ten reported CTRs are below 2%. Anything above 1% is better than typical; above 2% is rare in public reports.`,
+  },
+  {
+    q: "How much does it cost to advertise on ChatGPT?",
+    a: `Self-serve campaigns start from a $25 daily budget in the US. Typical reported prices are a median $${s.cpc.median.toFixed(2)} per click or $${s.cpm.median.toFixed(2)} per thousand impressions. Launch-era pilots required $200,000–$250,000 commitments, which no longer apply.`,
+  },
+  {
+    q: "Is CPM or CPC bidding cheaper on ChatGPT?",
+    a: `At the median CPM ($${s.cpm.median.toFixed(2)}) and median CTR (${s.ctr.median.toFixed(2)}%), impression buying works out to about $${(s.cpm.median / (10 * s.ctr.median)).toFixed(2)} per click, within cents of the median CPC. If your CTR is above about 1%, CPM is usually cheaper per click; below it, CPC is.`,
+  },
+  {
+    q: "Why do ChatGPT ads benchmarks disagree so much?",
+    a: "Most figures come from single-account tests with small budgets, in different countries, industries and months, during a period when pricing, minimums and bidding options changed repeatedly. OpenAI does not publish official benchmarks. Medians across many reports are more reliable than any single test.",
+  },
 ];
 
 const METRIC_NOTES: Record<string, string> = {
@@ -51,7 +77,9 @@ export default function BenchmarksPage() {
   const mostCited = [...rows].sort((a, b) => b.citedBy - a.citedBy).slice(0, 8);
 
   const jsonLd = graph(
+    faqNode(FAQ),
     datasetNode({
+      research: researchFor("chatgpt-ads-benchmarks"),
       name: "ChatGPT Ads benchmarks",
       description: DESC,
       path: PATH,
@@ -137,6 +165,21 @@ export default function BenchmarksPage() {
         </p>
       </section>
 
+      <LineChart
+        title="Median reported CPC by month (USD)"
+        points={insights.ads.cpcByMonth.map((m) => ({ label: monthLabel(m.month), value: m.median }))}
+        format={(v) => `$${v.toFixed(2)}`}
+        max={8}
+        caption="Grouped by month of publication; months with fewer than two reports are blank. CPC has stayed near $4 since bidding launched."
+        source="ChatGPT Ads benchmarks"
+      />
+      <ColumnChart
+        title="Distribution of reported CTRs"
+        items={insights.ads.ctrDistribution.map((b) => ({ label: b.label, value: b.count, highlight: ["0.5–0.75%", "0.75–1%", "1–1.5%"].includes(b.label) }))}
+        caption="Number of published CTR figures in each band. Most fall between 0.5% and 1.5%."
+        source="ChatGPT Ads benchmarks"
+      />
+
       <section className="mt-16" aria-labelledby="most-cited">
         <h2 id="most-cited" className="section-title mb-4">
           Most-repeated figures
@@ -217,6 +260,26 @@ export default function BenchmarksPage() {
         </Link>
       </p>
 
+      <AboutDataset
+        download="chatgpt-ads-benchmarks"
+        what={<p>Every numeric ChatGPT Ads price or performance figure found in public reporting from January to October 2026: CPM, CPC, CTR, conversion rate, CPA, ROAS and minimum spend. {s.mentionsReviewed} mentions across {s.sources} sources reduce to {s.dataPoints} distinct figures.</p>}
+        how={<p>Sources were found with around 30 systematic searches, figures extracted to a fixed schema, normalised to numbers and currencies, and deduplicated. Identical figures reported by several outlets become one row that keeps the most authoritative source and counts how many domains repeated it. Comparison figures for Google, Meta and other platforms were removed.</p>}
+        limits={<p>Most figures are single-account tests with small budgets. Values are as reported; context (industry, country, sample) is only as complete as the source. &ldquo;Measured by&rdquo; is who the source credits, which may be the platform rather than the party that ran the test.</p>}
+        fields={[
+          { name: "metric", description: "CPM, CPC, CTR, CVR, CPA, ROAS or Min. spend" },
+          { name: "value", description: "The figure exactly as reported, with units" },
+          { name: "low / high", description: "Parsed numeric value; equal unless the source gave a range" },
+          { name: "currency", description: "USD, EUR or GBP for cost metrics; empty for rates" },
+          { name: "measuredBy", description: "Who the source credits with the figure" },
+          { name: "context", description: "Industry, region and sample size where stated" },
+          { name: "sourceType", description: "official, trade press, or agency / vendor" },
+          { name: "sourceUrl / sourceDomain / sourceTitle", description: "Where the figure was reported" },
+          { name: "published", description: "Publication date of the source" },
+          { name: "citedBy", description: "Number of distinct domains reporting the same figure" },
+        ]}
+      />
+      <Faq items={FAQ} />
+      <RelatedResearch dataset="chatgpt-ads-benchmarks" />
       <CiteThis title="ChatGPT Ads benchmarks" path={PATH} updated={benchmarks.updated} />
     </>
   );

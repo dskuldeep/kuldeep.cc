@@ -6,6 +6,7 @@ import enginesJson from "@/data/ai-engines.json";
 import referrersJson from "@/data/ai-referrers.json";
 import robotsJson from "@/data/robots-study.json";
 import usersJson from "@/data/ai-user-numbers.json";
+import insightsJson from "@/data/insights.json";
 
 /**
  * Datasets behind /data. Sources are versioned JSON in src/data, regenerated
@@ -197,6 +198,65 @@ export const crawlers = crawlersJson as {
   registrySource: string;
 };
 export const robotsStudy = robotsJson as RobotsStudy;
+
+export interface Insights {
+  ads: {
+    cpcByMonth: { month: string; median: number | null; n: number }[];
+    cpmByMonth: { month: string; median: number | null; n: number }[];
+    ctrDistribution: { label: string; count: number }[];
+    countriesByMonth: { month: string; countries: number }[];
+    advertisersFirstReported: { month: string; count: number }[];
+    minimumSpend: { date: string; label: string; usd: number }[];
+  };
+  robots: {
+    leak: { gptBlockers: number; openPct: Record<string, number>; anyMajorOpenPct: number };
+    blocksAllMajorTraining: { n: number; pctOfRobots: number; pctOfGptBlockers: number };
+    typology: Record<string, number>;
+    tld: { tld: string; n: number; blocksAnyPct: number; gptPct: number }[];
+    contentSignal: { sites: number; pct: number; values: Record<string, number> };
+    llmsContradiction: { llmsWithRobots: number; blockGPTBot: number; blockAnyTraining: number; baselineBlockGPTBot: number; examples: string[] };
+    listLength: { n: number; median: number; p90: number; max: number; dist: Record<string, number> };
+    templateShare: number;
+    legacyInLists: number;
+    zombieStrict: { n: number; pct: number; examples: string[] };
+    nonAsciiTokens: { sites: number; examples: string[] };
+    starBlock: { n: number; pct: number };
+    googleExtended: { blockers: number; googlebotAlsoBlocked: number };
+    topTemplate: { size: number; sites: number };
+  };
+}
+export const insights = insightsJson as Insights;
+
+/** Short month label ("Apr") for a YYYY-MM key. */
+export function monthLabel(ym: string): string {
+  return new Date(`${ym}-01T00:00:00Z`).toLocaleDateString("en-US", { month: "short", timeZone: "UTC" });
+}
+
+export function researchFor(dataset: string): string[] {
+  return RESEARCH.filter((r) => r.datasets.includes(dataset)).map((r) => r.slug);
+}
+
+/** Research posts (stored in D1, listed here) that analyse the datasets. */
+export const RESEARCH: { slug: string; title: string; summary: string; datasets: string[] }[] = [
+  {
+    slug: "who-blocks-ai-crawlers-robots-txt-study",
+    title: "Who blocks AI crawlers? What 10,000 robots.txt files reveal",
+    summary: "Publishers block training, not answers; half of all blocklists leak; Cloudflare writes the most common AI policy.",
+    datasets: ["robots-txt-study", "ai-crawlers"],
+  },
+  {
+    slug: "chatgpt-ads-the-4-dollar-click",
+    title: "The $4 click: what 184 data points reveal about ChatGPT Ads",
+    summary: "CPC anchored to OpenAI's recommended bid, CPM and CPC converging, and a $250K club turned $25-a-day long tail.",
+    datasets: ["chatgpt-ads-benchmarks", "chatgpt-ads-advertisers", "chatgpt-ads-timeline"],
+  },
+  {
+    slug: "ai-search-opt-out-asymmetry",
+    title: "The opt-out asymmetry: you can block the small AI engines, not the big one",
+    summary: "The AI surfaces with the most users are the ones publishers can't refuse and can't measure.",
+    datasets: ["ai-engines", "ai-user-numbers", "robots-txt-study", "ai-referrers", "ai-crawlers"],
+  },
+];
 
 export function getEngine(slug: string): Engine | undefined {
   return engines.rows.find((e) => e.slug === slug);

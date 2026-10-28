@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownContent } from "@/components/markdown-content";
+import { DATASETS, RESEARCH } from "@/lib/data";
 import { getPublishedPostBySlug } from "@/lib/content";
 import { formatDateLong } from "@/lib/format";
 import { breadcrumbNode, graph, PERSON_ID, WEBSITE_ID } from "@/lib/schema";
@@ -35,6 +36,8 @@ export default async function PostPage({ params }: Props) {
   if (!post) notFound();
 
   const url = canonicalPath(`/writing/${post.slug}`);
+  const research = RESEARCH.find((r) => r.slug === post.slug);
+  const datasets = research ? DATASETS.filter((d) => research.datasets.includes(d.slug)) : [];
   const jsonLd = graph(
     {
       "@type": "BlogPosting",
@@ -52,6 +55,9 @@ export default async function PostPage({ params }: Props) {
       author: { "@id": PERSON_ID },
       publisher: { "@id": PERSON_ID },
       isPartOf: { "@id": WEBSITE_ID },
+      ...(datasets.length
+        ? { isBasedOn: datasets.map((d) => ({ "@type": "Dataset", "@id": `${canonicalPath(d.path)}#dataset`, url: canonicalPath(d.path), name: d.title })) }
+        : {}),
     },
     breadcrumbNode([
       { name: "Home", path: "/" },
@@ -74,6 +80,25 @@ export default async function PostPage({ params }: Props) {
       <div className="article">
         <MarkdownContent content={post.contentMd} />
       </div>
+
+      {datasets.length > 0 && (
+        <section className="mt-16">
+          <h2 className="section-title mb-3">Data behind this post</h2>
+          <ol className="index-list">
+            {datasets.map((d) => (
+              <li key={d.slug}>
+                <Link href={d.path}>
+                  <span className="index-no" aria-hidden="true" />
+                  <span className="flex-1">
+                    <span className="index-title block">{d.title}</span>
+                    <span className="mt-1 block text-[0.95rem] leading-snug text-[var(--muted)]">{d.description}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
 
       <p className="mt-16">
         <Link href="/writing" className="link text-[0.95rem]">

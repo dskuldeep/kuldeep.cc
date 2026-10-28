@@ -79,6 +79,8 @@ export interface DatasetSchemaInput {
   spatialCoverage?: string;
   downloads?: { format: "CSV" | "JSON"; path: string }[];
   isBasedOn?: string[];
+  /** /writing slugs of research posts built on this dataset. */
+  research?: string[];
 }
 
 export function datasetNode(d: DatasetSchemaInput) {
@@ -94,6 +96,10 @@ export function datasetNode(d: DatasetSchemaInput) {
     inLanguage: "en-US",
     isAccessibleForFree: true,
     license: "https://creativecommons.org/licenses/by/4.0/",
+    creditText: `${SITE.name}, kuldeep.cc — ${d.name}`,
+    copyrightHolder: { "@id": PERSON_ID },
+    copyrightNotice: `© ${d.dateModified.slice(0, 4)} ${SITE.name}. Licensed under CC BY 4.0.`,
+    usageInfo: canonicalPath("/data/methodology#licence"),
     creator: { "@id": PERSON_ID },
     author: { "@id": PERSON_ID },
     maintainer: { "@id": PERSON_ID },
@@ -107,6 +113,9 @@ export function datasetNode(d: DatasetSchemaInput) {
     ...(d.temporalCoverage ? { temporalCoverage: d.temporalCoverage } : {}),
     ...(d.spatialCoverage ? { spatialCoverage: d.spatialCoverage } : {}),
     ...(d.isBasedOn ? { isBasedOn: d.isBasedOn } : {}),
+    ...(d.research?.length
+      ? { subjectOf: d.research.map((slug) => ({ "@type": "BlogPosting", "@id": `${canonicalPath(`/writing/${slug}`)}#article`, url: canonicalPath(`/writing/${slug}`) })) }
+      : {}),
     ...(d.downloads
       ? {
           distribution: d.downloads.map((x) => ({

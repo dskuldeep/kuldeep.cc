@@ -6,7 +6,9 @@ import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
 import { TableFilter } from "@/components/data/table-filter";
-import { crawlerSlug, fmtMonth, fmtNumber, robotsStudy as R } from "@/lib/data";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { GroupedHBarChart, HBarChart } from "@/components/data/charts";
+import { botStat, crawlerSlug, fmtMonth, fmtNumber, insights, researchFor, robotsStudy as R } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph, PERSON_ID } from "@/lib/schema";
 import { canonicalPath, pageMeta } from "@/lib/site";
 
@@ -25,7 +27,18 @@ const crumbs = [
   { name: "robots.txt study", path: PATH },
 ];
 
+const I = insights.robots;
+const pct = (t: string) => botStat(t)?.blockedPct ?? 0;
+
 const FAQ = [
+  {
+    q: "Does blocking GPTBot keep my content out of AI training?",
+    a: `Not on its own. Half (${I.leak.anyMajorOpenPct}%) of the sites that block GPTBot leave at least one other major training crawler, such as ClaudeBot, Google-Extended, CCBot, Meta-ExternalAgent or Applebot-Extended, unblocked. Only ${fmtNumber(I.blocksAllMajorTraining.n)} sites (${I.blocksAllMajorTraining.pctOfRobots}%) block all eight major training crawlers.`,
+  },
+  {
+    q: "Which websites block AI crawlers the most?",
+    a: `By country domain, French (.fr, ${I.tld.find((t) => t.tld === ".fr")?.blocksAnyPct}%) and German (.de, ${I.tld.find((t) => t.tld === ".de")?.blocksAnyPct}%) sites block AI most, against ${I.tld.find((t) => t.tld === ".com")?.blocksAnyPct}% of .com sites. Universities (.edu) and governments (.gov) block least. The largest sites block more: ${R.tiers[0].blocksAnyAiPct}% of the top 1,000.`,
+  },
   {
     q: "What percentage of websites block AI crawlers?",
     a: `Among the top ${N} websites (Tranco list, ${fmtMonth(R.fetchedAt)}), ${H.blocksAnyAiPct}% of sites with a robots.txt file explicitly block at least one AI crawler, and ${H.mentionsAnyAiPct}% name at least one AI bot. Among the top 1,000 the rate rises to ${R.tiers[0].blocksAnyAiPct}%.`,
@@ -51,6 +64,7 @@ export default function RobotsStudyPage() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("robots-txt-study"),
       name: `AI crawler blocking in robots.txt: top ${N} websites`,
       description: DESC,
       path: PATH,
@@ -226,6 +240,83 @@ export default function RobotsStudyPage() {
         </div>
       </section>
 
+      <section className="mt-16" aria-labelledby="deeper">
+        <h2 id="deeper" className="section-title mb-4">
+          Deeper findings
+        </h2>
+      </section>
+      <GroupedHBarChart
+        title="Training crawlers are blocked about twice as often as answer crawlers"
+        series={["Training", "Search / index", "User-triggered"]}
+        groups={[
+          { label: "OpenAI", values: [pct("GPTBot"), pct("OAI-SearchBot"), pct("ChatGPT-User")] },
+          { label: "Anthropic", values: [pct("ClaudeBot"), pct("Claude-SearchBot"), pct("Claude-User")] },
+          { label: "Perplexity", values: [null, pct("PerplexityBot"), pct("Perplexity-User")] },
+          { label: "Meta", values: [pct("Meta-ExternalAgent"), pct("meta-webindexer"), pct("Meta-ExternalFetcher")] },
+          { label: "Mistral", values: [pct("MistralAI-Training"), pct("MistralAI-Index"), pct("MistralAI-User")] },
+        ]}
+        format={(v) => `${v}%`}
+        caption="Share of sites blocking each operator's bots. Publishers refuse to be training data far more often than they refuse to be cited."
+      />
+      <HBarChart
+        title={`Of ${fmtNumber(I.leak.gptBlockers)} sites blocking GPTBot, share leaving each other training crawler open`}
+        items={Object.entries(I.leak.openPct)
+          .sort((a, b) => b[1] - a[1])
+          .map(([label, value]) => ({ label, value }))}
+        format={(v) => `${v}%`}
+        max={100}
+        labelWidth={230}
+        caption="Excludes sites that block every bot with a wildcard rule."
+      />
+      <HBarChart
+        title="Share of sites blocking at least one AI crawler, by top-level domain"
+        items={I.tld.map((t) => ({ label: `${t.tld} (n=${t.n})`, value: t.blocksAnyPct, highlight: [".fr", ".de"].includes(t.tld) }))}
+        format={(v) => `${v}%`}
+        labelWidth={150}
+        caption="Top-level domains with at least 60 sites in the sample."
+      />
+      <HBarChart
+        title={`How ${fmtNumber(R.sample.withRobots)} robots.txt files treat AI`}
+        items={Object.entries(I.typology)
+          .sort((a, b) => b[1] - a[1])
+          .map(([label, value]) => ({ label, value }))}
+        format={(v) => `${fmtNumber(v)} · ${((100 * v) / R.sample.withRobots).toFixed(1)}%`}
+        labelWidth={280}
+      />
+      <div className="article">
+        <h3>Most AI blocklists are copied</h3>
+        <p>
+          {I.templateShare}% of AI blocklists with five or more entries are shared, character for
+          character, by at least three sites. The most common one, a {I.topTemplate.size}-bot
+          list on {fmtNumber(I.topTemplate.sites)} sites, is Cloudflare&apos;s managed robots.txt: the
+          web&apos;s most widely deployed AI policy is a CDN default. {fmtNumber(I.contentSignal.sites)}{" "}
+          sites ({I.contentSignal.pct}%) publish Cloudflare-style <code>Content-Signal</code> lines,
+          most often <code>search=yes</code> and <code>ai-train=no</code>.
+        </p>
+        <h3>Many rules target bots that no longer exist</h3>
+        <p>
+          {I.legacyInLists}% of AI blocklists with three or more entries include a legacy Anthropic
+          token (<code>anthropic-ai</code> or <code>Claude-Web</code>). {I.zombieStrict.n} sites
+          block a legacy token but leave ClaudeBot, Anthropic&apos;s current crawler, open, including{" "}
+          {I.zombieStrict.examples.slice(0, 5).join(", ")}. {I.nonAsciiTokens.sites} sites, including
+          chatgpt.com and academia.edu, write <code>Perplexity‑User</code> with a non-breaking hyphen
+          (U+2011), so the rule never matches.
+        </p>
+        <h3>llms.txt sites rarely block AI</h3>
+        <p>
+          Only {I.llmsContradiction.blockGPTBot}% of sites that publish an llms.txt block GPTBot,
+          against {I.llmsContradiction.baselineBlockGPTBot}% of all sites. The web is splitting into
+          publishers who build walls and product companies who lay out welcome mats.
+        </p>
+        <h3>Google-Extended doesn&apos;t do what most sites think</h3>
+        <p>
+          {fmtNumber(I.googleExtended.blockers)} sites block Google-Extended;{" "}
+          {I.googleExtended.googlebotAlsoBlocked} of them also blocks Googlebot. Google-Extended
+          controls Gemini training and grounding, not AI Overviews or AI Mode, so almost all of
+          those sites still appear in Google&apos;s AI answers.
+        </p>
+      </div>
+
       <section className="mt-16" aria-labelledby="sites">
         <h2 id="sites" className="section-title mb-4">
           AI policies of the top 1,000 sites
@@ -280,7 +371,21 @@ export default function RobotsStudyPage() {
         </p>
       </section>
 
+      <AboutDataset
+        download="robots-txt-study"
+        what={<p>The robots.txt and llms.txt files of the {N} most popular domains in the Tranco research ranking, fetched on {fmtMonth(R.fetchedAt)}, and how each file treats {fmtNumber(R.bots.length)} AI crawlers and user agents. The download lists the AI policy of every top-1,000 site that blocks an AI bot or publishes an llms.txt; the per-bot and per-tier aggregates are on this page.</p>}
+        how={<p>Each domain was requested over HTTPS (with a <code>www.</code> fallback) using an identified research user agent. Files were parsed per RFC 9309: a bot follows the group naming it (version suffixes ignored), otherwise the <code>*</code> group, and is blocked when that group disallows <code>/</code> without a root-level Allow.</p>}
+        limits={<p>robots.txt states intent; it doesn&apos;t enforce anything, and many sites also block bots at the firewall. {fmtNumber(R.sample.domains - R.sample.withRobots)} domains returned no valid robots.txt, mostly API, CDN and tracking hostnames. Partial blocks (specific paths only) are not counted as blocks.</p>}
+        fields={[
+          { name: "rank", description: "Position in the Tranco list" },
+          { name: "domain", description: "Registered domain" },
+          { name: "blocks", description: "AI crawler tokens the site explicitly and fully disallows" },
+          { name: "allows", description: "Documented AI crawlers the site names without blocking" },
+          { name: "llmsTxt", description: "Whether the site serves a valid llms.txt" },
+        ]}
+      />
       <Faq items={FAQ} />
+      <RelatedResearch dataset="robots-txt-study" />
       <CiteThis title={`Who blocks AI crawlers? robots.txt study of the top ${N} sites`} path={PATH} updated={R.updated} />
     </>
   );

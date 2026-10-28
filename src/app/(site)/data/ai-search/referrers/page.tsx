@@ -6,7 +6,8 @@ import { CopyBlock } from "@/components/data/copy-block";
 import { DatasetHeader } from "@/components/data/dataset-header";
 import { Faq } from "@/components/data/faq";
 import { JsonLd } from "@/components/json-ld";
-import { referrerRegex, referrers } from "@/lib/data";
+import { AboutDataset, RelatedResearch } from "@/components/data/about-dataset";
+import { referrerRegex, referrers, researchFor } from "@/lib/data";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -43,6 +44,7 @@ export default function ReferrersPage() {
 
   const jsonLd = graph(
     datasetNode({
+      research: researchFor("ai-referrers"),
       name: "AI referrer domains",
       description: DESC,
       path: PATH,
@@ -119,7 +121,33 @@ export default function ReferrersPage() {
         sit behind each engine.
       </p>
 
+      <section className="article mt-16">
+        <h2>Setting up an AI channel in GA4</h2>
+        <ol>
+          <li>Go to <strong>Admin → Data display → Channel groups</strong> and copy the default channel group.</li>
+          <li>Add a new channel named <em>AI assistants</em> with the condition <strong>Source</strong> matches regex, and paste the pattern above.</li>
+          <li>Drag the new channel <strong>above Referral</strong>; GA4 assigns sessions to the first matching channel.</li>
+          <li>Use the new group in Traffic acquisition reports and explorations. It applies retroactively to existing data.</li>
+        </ol>
+        <p>
+          Google AI Overviews and AI Mode can&apos;t be separated this way: their clicks arrive as{" "}
+          <code>google.com</code> and are counted as organic search.
+        </p>
+      </section>
+      <AboutDataset
+        download="ai-referrers"
+        what={<p>Hostnames that AI assistants and answer engines send as the referrer when someone clicks a link in an answer, with the product and operator behind each.</p>}
+        how={<p>Compiled from the operators&apos; documentation, analytics vendors&apos; AI-source lists and observed referrers, and cross-checked against the engine reference.</p>}
+        limits={<p>Apps and in-app browsers often send no referrer, so some AI traffic always lands in Direct. Referrer policies change; re-check if a source suddenly drops to zero.</p>}
+        fields={[
+          { name: "host", description: "Referrer hostname (or host plus path) to match" },
+          { name: "product", description: "AI product sending the traffic" },
+          { name: "operator", description: "Company behind it" },
+          { name: "note", description: "Caveats for analytics" },
+        ]}
+      />
       <Faq items={FAQ} />
+      <RelatedResearch dataset="ai-referrers" />
       <CiteThis title="AI referrer domains" path={PATH} updated={referrers.updated} />
     </>
   );
