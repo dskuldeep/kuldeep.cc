@@ -263,7 +263,7 @@ export default function BenchmarksPage() {
       <AboutDataset
         download="chatgpt-ads-benchmarks"
         what={<p>Every numeric ChatGPT Ads price or performance figure found in public reporting from January to October 2026: CPM, CPC, CTR, conversion rate, CPA, ROAS and minimum spend. {s.mentionsReviewed} mentions across {s.sources} sources reduce to {s.dataPoints} distinct figures.</p>}
-        how={<p>Sources were found with around 30 systematic searches, figures extracted to a fixed schema, normalised to numbers and currencies, and deduplicated. Identical figures reported by several outlets become one row that keeps the most authoritative source and counts how many domains repeated it. Comparison figures for Google, Meta and other platforms were removed.</p>}
+        how={<p>Sources were found through systematic searches of public reporting, figures extracted to a fixed schema, normalised to numbers and currencies, and deduplicated. Identical figures reported by several outlets become one row that keeps the most authoritative source and counts how many domains repeated it. Comparison figures for Google, Meta and other platforms were removed.</p>}
         limits={<p>Most figures are single-account tests with small budgets. Values are as reported; context (industry, country, sample) is only as complete as the source. &ldquo;Measured by&rdquo; is who the source credits, which may be the platform rather than the party that ran the test.</p>}
         fields={[
           { name: "metric", description: "CPM, CPC, CTR, CVR, CPA, ROAS or Min. spend" },

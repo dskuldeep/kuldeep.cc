@@ -72,10 +72,9 @@ export default function MethodologyPage() {
         <h2>Collection</h2>
         <ol>
           <li>
-            <strong>Systematic search.</strong> For each dataset I run a fixed set of
-            queries (around 30 per topic, covering metrics, industries, regions and phrasing
-            variants) through a neural web search API, restricted to recent publication dates and
-            excluding social platforms.
+            <strong>Systematic search.</strong> For each dataset I search public reporting,
+            official documentation and practitioner write-ups across metrics, industries and
+            regions, focusing on recent publications.
           </li>
           <li>
             <strong>Structured extraction.</strong> Each result page is read against a fixed

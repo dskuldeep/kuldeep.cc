@@ -176,7 +176,7 @@ export default function AdvertisersPage() {
       <AboutDataset
         download="chatgpt-ads-advertisers"
         what={<p>Brands publicly reported as running ads in ChatGPT: launch partners, case studies, and advertisers observed by ad-tracking panels and journalists, with a category, market and the source that reported each one.</p>}
-        how={<p>Brand names were extracted from around 20 targeted searches, then reviewed by hand. Agencies, ad-tech vendors and media outlets were removed, as were brands that were only recommended in ChatGPT answers rather than advertising. Name variants were merged.</p>}
+        how={<p>Brand names were extracted from public reporting, then reviewed by hand. Agencies, ad-tech vendors and media outlets were removed, as were brands that were only recommended in ChatGPT answers rather than advertising. Name variants were merged.</p>}
         limits={<p>This is a list of advertisers named in public, not a census: it over-represents large, US and early advertisers. Market is filled in only where the source says where the ads ran.</p>}
         fields={[
           { name: "brand", description: "Advertiser name" },
