@@ -8,6 +8,8 @@ import { pageMeta } from "@/lib/site";
 
 export const metadata: Metadata = pageMeta({
   title: "About",
+  description:
+    "About Kuldeep Paul: Head of Marketing at Maxim AI, working on AI search, generative engine optimization and data-driven growth, and the data aggregator behind the kuldeep.cc datasets.",
   path: "/about",
 });
 
