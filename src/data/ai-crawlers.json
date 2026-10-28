@@ -1,0 +1,1657 @@
+{
+ "updated": "2026-10-29",
+ "featured": [
+  {
+   "token": "GPTBot",
+   "slug": "gptbot",
+   "operator": "OpenAI",
+   "purpose": "training",
+   "product": "OpenAI foundation models",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; GPTBot/1.4; +https://openai.com/gptbot",
+   "ipList": "https://openai.com/gptbot.json",
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "summary": "OpenAI's training crawler. Disallowing GPTBot signals that your content should not be used to train OpenAI's generative models. It has no effect on whether you appear in ChatGPT search.",
+   "featured": true
+  },
+  {
+   "token": "OAI-SearchBot",
+   "slug": "oai-searchbot",
+   "operator": "OpenAI",
+   "purpose": "search",
+   "product": "ChatGPT search",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36; compatible; OAI-SearchBot/1.4; +https://openai.com/searchbot",
+   "ipList": "https://openai.com/searchbot.json",
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "summary": "Builds the index behind ChatGPT search. OpenAI says sites that block it will not be shown in ChatGPT search answers, though they can still appear as navigational links. Robots.txt changes take about 24 hours to apply.",
+   "featured": true
+  },
+  {
+   "token": "ChatGPT-User",
+   "slug": "chatgpt-user",
+   "operator": "OpenAI",
+   "purpose": "user",
+   "product": "ChatGPT, Custom GPTs, GPT Actions",
+   "respectsRobots": "Partial",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; ChatGPT-User/1.0; +https://openai.com/bot",
+   "ipList": "https://openai.com/chatgpt-user.json",
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "summary": "Fetches a page when a ChatGPT user or Custom GPT asks for it. It does not crawl automatically. Because a person initiates each request, OpenAI notes that robots.txt rules may not apply.",
+   "featured": true
+  },
+  {
+   "token": "OAI-AdsBot",
+   "slug": "oai-adsbot",
+   "operator": "OpenAI",
+   "purpose": "ads",
+   "product": "ChatGPT Ads",
+   "respectsRobots": "Not applicable",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-AdsBot/1.0; +https://openai.com/adsbot",
+   "ipList": "https://openai.com/adsbot.json",
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "summary": "Visits landing pages submitted as ChatGPT ads to check policy compliance and relevance. It only visits submitted ad URLs, and OpenAI says the data is not used for model training. Pages that block it or require login can fail ad review.",
+   "featured": true
+  },
+  {
+   "token": "ChatGPT Agent",
+   "slug": "chatgpt-agent",
+   "operator": "OpenAI",
+   "purpose": "agent",
+   "product": "ChatGPT agent mode",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "summary": "Identifies ChatGPT's agent when it browses and acts on websites for a user. Requests are signed with HTTP Message Signatures so they can be verified.",
+   "featured": true
+  },
+  {
+   "token": "ClaudeBot",
+   "slug": "claudebot",
+   "operator": "Anthropic",
+   "purpose": "training",
+   "product": "Anthropic model development",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+   "summary": "Anthropic's training crawler. Restricting it tells Anthropic to exclude the site's future content from training datasets. It honours Crawl-delay and does not bypass CAPTCHAs.",
+   "featured": true
+  },
+  {
+   "token": "Claude-SearchBot",
+   "slug": "claude-searchbot",
+   "operator": "Anthropic",
+   "purpose": "search",
+   "product": "Claude web search",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+   "summary": "Indexes content to improve the relevance of Claude's search results. Anthropic warns that blocking it may reduce your visibility in Claude's answers.",
+   "featured": true
+  },
+  {
+   "token": "Claude-User",
+   "slug": "claude-user",
+   "operator": "Anthropic",
+   "purpose": "user",
+   "product": "Claude",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+   "summary": "Fetches pages when a Claude user asks a question that needs live web content. Disabling it stops Claude retrieving your pages for user queries.",
+   "featured": true
+  },
+  {
+   "token": "anthropic-ai",
+   "slug": "anthropic-ai",
+   "operator": "Anthropic",
+   "purpose": "training",
+   "product": "Legacy token",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "An older Anthropic token that still appears in many robots.txt files. Anthropic's current documentation lists only ClaudeBot, Claude-SearchBot and Claude-User.",
+   "featured": true
+  },
+  {
+   "token": "Claude-Web",
+   "slug": "claude-web",
+   "operator": "Anthropic",
+   "purpose": "user",
+   "product": "Legacy token",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "An older Anthropic token that sites still block. It is not part of Anthropic's current documented set.",
+   "featured": true
+  },
+  {
+   "token": "PerplexityBot",
+   "slug": "perplexitybot",
+   "operator": "Perplexity AI",
+   "purpose": "search",
+   "product": "Perplexity search index",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; PerplexityBot/1.0; +https://perplexity.ai/perplexitybot)",
+   "ipList": "https://www.perplexity.com/perplexitybot.json",
+   "docs": "https://docs.perplexity.ai/guides/bots",
+   "summary": "Crawls to surface and link websites in Perplexity results. Perplexity says it is not used to crawl content for foundation-model training.",
+   "featured": true
+  },
+  {
+   "token": "Perplexity-User",
+   "slug": "perplexity-user",
+   "operator": "Perplexity AI",
+   "purpose": "user",
+   "product": "Perplexity, Comet",
+   "respectsRobots": "No",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Perplexity-User/1.0; +https://perplexity.ai/perplexity-user)",
+   "ipList": "https://www.perplexity.com/perplexity-user.json",
+   "docs": "https://docs.perplexity.ai/guides/bots",
+   "summary": "Fetches pages on behalf of users. Perplexity documents that because a user initiated the fetch, it generally ignores robots.txt rules.",
+   "featured": true
+  },
+  {
+   "token": "Google-Extended",
+   "slug": "google-extended",
+   "operator": "Google",
+   "purpose": "training",
+   "product": "Gemini training and grounding",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+   "summary": "A robots.txt control token, not a separate crawler: Googlebot does the fetching. Disallowing Google-Extended stops your content being used to train Gemini models and to ground Gemini answers. It does not affect Google Search, AI Overviews or AI Mode.",
+   "featured": true
+  },
+  {
+   "token": "GoogleOther",
+   "slug": "googleother",
+   "operator": "Google",
+   "purpose": "mixed",
+   "product": "Google internal research and development",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+   "summary": "Google's generic crawler for internal teams' one-off and research crawls, separate from Search indexing.",
+   "featured": true
+  },
+  {
+   "token": "Google-CloudVertexBot",
+   "slug": "google-cloudvertexbot",
+   "operator": "Google",
+   "purpose": "agent",
+   "product": "Vertex AI Agents",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+   "summary": "Crawls sites at the request of site owners who are building Vertex AI agents on Google Cloud.",
+   "featured": true
+  },
+  {
+   "token": "Google-Agent",
+   "slug": "google-agent",
+   "operator": "Google",
+   "purpose": "agent",
+   "product": "Google AI agents (e.g. Project Mariner)",
+   "respectsRobots": "Partial",
+   "userAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/W.X.Y.Z Mobile Safari/537.36 (compatible; Google-Agent; +https://developers.google.com/crawling/docs/crawlers-fetchers/google-agent)",
+   "ipList": null,
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers",
+   "summary": "A user-triggered fetcher used when Google's AI agents browse and act on a user's behalf. Google classifies user-triggered fetchers as generally ignoring robots.txt.",
+   "featured": true
+  },
+  {
+   "token": "Googlebot",
+   "slug": "googlebot",
+   "operator": "Google",
+   "purpose": "search",
+   "product": "Google Search, AI Overviews, AI Mode",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+   "ipList": "https://developers.google.com/static/search/apis/ipranges/googlebot.json",
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+   "summary": "Google's search crawler. It is listed here because AI Overviews and AI Mode are built from the Search index: blocking Googlebot is the only crawler-level way to leave them, and it also removes you from Google Search.",
+   "featured": true
+  },
+  {
+   "token": "Applebot",
+   "slug": "applebot",
+   "operator": "Apple",
+   "purpose": "search",
+   "product": "Siri, Spotlight, Safari suggestions",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4 Safari/605.1.15 (Applebot/0.1; +http://www.apple.com/go/applebot)",
+   "ipList": "https://search.developer.apple.com/applebot.json",
+   "docs": "https://support.apple.com/en-us/119829",
+   "summary": "Apple's crawler for Siri, Spotlight and Safari search features.",
+   "featured": true
+  },
+  {
+   "token": "Applebot-Extended",
+   "slug": "applebot-extended",
+   "operator": "Apple",
+   "purpose": "training",
+   "product": "Apple Intelligence and foundation models",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://support.apple.com/en-us/119829",
+   "summary": "A robots.txt token, not a crawler. Disallowing it tells Apple not to use content Applebot has crawled to train its foundation models, while still allowing Applebot for search features.",
+   "featured": true
+  },
+  {
+   "token": "Meta-ExternalAgent",
+   "slug": "meta-externalagent",
+   "operator": "Meta",
+   "purpose": "training",
+   "product": "Meta AI models and products",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+   "summary": "Meta's crawler for training AI models and improving products by indexing content directly.",
+   "featured": true
+  },
+  {
+   "token": "Meta-ExternalFetcher",
+   "slug": "meta-externalfetcher",
+   "operator": "Meta",
+   "purpose": "user",
+   "product": "Meta AI",
+   "respectsRobots": "No",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+   "summary": "Fetches individual links on behalf of users of Meta AI and other products. Meta notes it may bypass robots.txt because a user initiated the fetch.",
+   "featured": true
+  },
+  {
+   "token": "meta-webindexer",
+   "slug": "meta-webindexer",
+   "operator": "Meta",
+   "purpose": "search",
+   "product": "Meta AI search",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+   "summary": "Builds Meta's own web index, which supplies cited answers in Meta AI across WhatsApp, Instagram, Messenger and meta.ai.",
+   "featured": true
+  },
+  {
+   "token": "FacebookBot",
+   "slug": "facebookbot",
+   "operator": "Meta",
+   "purpose": "training",
+   "product": "Meta speech and language models",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+   "summary": "An older Meta crawler documented for training speech-recognition and language models.",
+   "featured": true
+  },
+  {
+   "token": "Amazonbot",
+   "slug": "amazonbot",
+   "operator": "Amazon",
+   "purpose": "mixed",
+   "product": "Alexa answers and Amazon AI services",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amazonbot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+   "ipList": "https://developer.amazon.com/amazonbot/ip-addresses/",
+   "docs": "https://developer.amazon.com/amazonbot",
+   "summary": "Amazon's main crawler for improving services and enabling Alexa answers. Amazon says content Amazonbot collects may be used to train AI models.",
+   "featured": true
+  },
+  {
+   "token": "Amzn-SearchBot",
+   "slug": "amzn-searchbot",
+   "operator": "Amazon",
+   "purpose": "search",
+   "product": "Alexa and Amazon search experiences",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-SearchBot/0.1) Chrome/W.X.Y.Z Safari/537.36",
+   "ipList": "https://developer.amazon.com/amazonbot/searchbot-ip-addresses/",
+   "docs": "https://developer.amazon.com/amazonbot",
+   "summary": "Crawls to improve search results in Amazon experiences such as Alexa. Amazon says it is not used for model training.",
+   "featured": true
+  },
+  {
+   "token": "Amzn-User",
+   "slug": "amzn-user",
+   "operator": "Amazon",
+   "purpose": "user",
+   "product": "Alexa and Amazon AI assistants",
+   "respectsRobots": "Partial",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; Amzn-User/0.1) Chrome/W.X.Y.Z Safari/537.36",
+   "ipList": "https://developer.amazon.com/amazonbot/live-ip-addresses/",
+   "docs": "https://developer.amazon.com/amazonbot",
+   "summary": "Fetches live content when an Alexa or Amazon AI user asks for it.",
+   "featured": true
+  },
+  {
+   "token": "CCBot",
+   "slug": "ccbot",
+   "operator": "Common Crawl",
+   "purpose": "training",
+   "product": "Common Crawl open dataset",
+   "respectsRobots": "Yes",
+   "userAgent": "CCBot/2.0 (https://commoncrawl.org/faq/)",
+   "ipList": "https://index.commoncrawl.org/ccbot.json",
+   "docs": "https://commoncrawl.org/ccbot",
+   "summary": "Builds Common Crawl's open web archive, one of the most widely used sources of LLM training data. Blocking CCBot keeps future crawls of your site out of the dataset.",
+   "featured": true
+  },
+  {
+   "token": "Bytespider",
+   "slug": "bytespider",
+   "operator": "ByteDance",
+   "purpose": "training",
+   "product": "ByteDance LLMs (Doubao)",
+   "respectsRobots": "No",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "ByteDance's crawler, widely reported as aggressive and as not respecting robots.txt. Many sites block it at the network level instead.",
+   "featured": true
+  },
+  {
+   "token": "Bingbot",
+   "slug": "bingbot",
+   "operator": "Microsoft",
+   "purpose": "search",
+   "product": "Bing, Microsoft Copilot",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36",
+   "ipList": "https://www.bing.com/toolbox/bingbot.json",
+   "docs": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+   "summary": "Bing's crawler. Copilot answers draw on the Bing index and Microsoft has no separate AI token, so Bingbot access decides Copilot visibility.",
+   "featured": true
+  },
+  {
+   "token": "MistralAI-User",
+   "slug": "mistralai-user",
+   "operator": "Mistral AI",
+   "purpose": "user",
+   "product": "Le Chat",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-User/1.0; +https://docs.mistral.ai/robots)",
+   "ipList": null,
+   "docs": "https://docs.mistral.ai/robots",
+   "summary": "Fetches pages when Le Chat users request live web content.",
+   "featured": true
+  },
+  {
+   "token": "MistralAI-Index",
+   "slug": "mistralai-index",
+   "operator": "Mistral AI",
+   "purpose": "search",
+   "product": "Le Chat search",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)",
+   "ipList": null,
+   "docs": "https://docs.mistral.ai/robots",
+   "summary": "Indexes web content for Mistral's search. Mistral says this content is not used for model training.",
+   "featured": true
+  },
+  {
+   "token": "MistralAI-Training",
+   "slug": "mistralai-training",
+   "operator": "Mistral AI",
+   "purpose": "training",
+   "product": "Mistral models",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Training/1.0; +https://docs.mistral.ai/robots)",
+   "ipList": null,
+   "docs": "https://docs.mistral.ai/robots",
+   "summary": "Mistral's crawler for collecting model training data.",
+   "featured": true
+  },
+  {
+   "token": "DuckAssistBot",
+   "slug": "duckassistbot",
+   "operator": "DuckDuckGo",
+   "purpose": "search",
+   "product": "DuckDuckGo AI-assisted answers",
+   "respectsRobots": "Yes",
+   "userAgent": "DuckAssistBot/1.2; (+http://duckduckgo.com/duckassistbot.html)",
+   "ipList": "https://duckduckgo.com/duckassistbot.json",
+   "docs": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+   "summary": "Crawls pages in real time for DuckDuckGo's cited AI answers. DuckDuckGo says the data is not used to train AI models. Opt-outs take effect after 72 hours and do not affect organic rankings.",
+   "featured": true
+  },
+  {
+   "token": "YouBot",
+   "slug": "youbot",
+   "operator": "You.com",
+   "purpose": "search",
+   "product": "You.com search and APIs",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://about.you.com/youbot/",
+   "summary": "Builds You.com's own search index, which powers its answer engine and web search APIs.",
+   "featured": true
+  },
+  {
+   "token": "cohere-ai",
+   "slug": "cohere-ai",
+   "operator": "Cohere",
+   "purpose": "user",
+   "product": "Cohere products",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "Retrieves content to answer user prompts in Cohere products.",
+   "featured": true
+  },
+  {
+   "token": "cohere-training-data-crawler",
+   "slug": "cohere-training-data-crawler",
+   "operator": "Cohere",
+   "purpose": "training",
+   "product": "Cohere LLMs",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "Downloads training data for Cohere's enterprise language models.",
+   "featured": true
+  },
+  {
+   "token": "DeepSeekBot",
+   "slug": "deepseekbot",
+   "operator": "DeepSeek",
+   "purpose": "mixed",
+   "product": "DeepSeek models and search",
+   "respectsRobots": "No",
+   "userAgent": "Mozilla/5.0 (compatible; DeepSeekBot/1.0; +https://www.deepseek.com/)",
+   "ipList": null,
+   "docs": null,
+   "summary": "DeepSeek's crawler for training and its in-house search engine. The ai.robots.txt project lists it as not respecting robots.txt.",
+   "featured": true
+  },
+  {
+   "token": "GrokBot",
+   "slug": "grokbot",
+   "operator": "xAI",
+   "purpose": "search",
+   "product": "Grok",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "A token seen in logs and robots.txt files for xAI's Grok. xAI has not published crawler documentation.",
+   "featured": true
+  },
+  {
+   "token": "KimiBot",
+   "slug": "kimibot",
+   "operator": "Moonshot AI",
+   "purpose": "training",
+   "product": "Kimi models",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; KimiBot/1.0; +https://www.kimi.com/policies/kimi-crawlers",
+   "ipList": null,
+   "docs": "https://www.kimi.ai/policies/kimi-crawlers",
+   "summary": "Moonshot AI's training crawler.",
+   "featured": true
+  },
+  {
+   "token": "Kimi-SearchBot",
+   "slug": "kimi-searchbot",
+   "operator": "Moonshot AI",
+   "purpose": "search",
+   "product": "Kimi search",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; Kimi-SearchBot/1.0; +https://www.kimi.com/policies/kimi-crawlers",
+   "ipList": null,
+   "docs": "https://www.kimi.ai/policies/kimi-crawlers",
+   "summary": "Indexes pages for Kimi's search answers.",
+   "featured": true
+  },
+  {
+   "token": "AI2Bot",
+   "slug": "ai2bot",
+   "operator": "Ai2",
+   "purpose": "training",
+   "product": "Open language models (OLMo)",
+   "respectsRobots": "Yes",
+   "userAgent": "Mozilla/5.0 (compatible) AI2Bot (+https://www.allenai.org/crawler)",
+   "ipList": null,
+   "docs": "https://allenai.org/crawler",
+   "summary": "The Allen Institute for AI's crawler for open language-model research.",
+   "featured": true
+  },
+  {
+   "token": "Bravebot",
+   "slug": "bravebot",
+   "operator": "Brave",
+   "purpose": "search",
+   "product": "Brave Search index",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://search.brave.com/help/brave-search-crawler",
+   "summary": "Brave Search's crawler. Brave's index also powers third-party AI products through the Brave Search API.",
+   "featured": true
+  },
+  {
+   "token": "PetalBot",
+   "slug": "petalbot",
+   "operator": "Huawei",
+   "purpose": "search",
+   "product": "Petal Search and Huawei assistant",
+   "respectsRobots": "Yes",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "Huawei's crawler for Petal Search and AI search features.",
+   "featured": true
+  },
+  {
+   "token": "Diffbot",
+   "slug": "diffbot",
+   "operator": "Diffbot",
+   "purpose": "mixed",
+   "product": "Knowledge graph and AI data",
+   "respectsRobots": "Partial",
+   "userAgent": null,
+   "ipList": null,
+   "docs": "https://www.diffbot.com/",
+   "summary": "Builds Diffbot's web knowledge graph and serves extraction for AI applications. Diffbot leaves robots.txt compliance to its users' discretion.",
+   "featured": true
+  },
+  {
+   "token": "Timpibot",
+   "slug": "timpibot",
+   "operator": "Timpi",
+   "purpose": "training",
+   "product": "Timpi search and LLM data",
+   "respectsRobots": "Unclear",
+   "userAgent": null,
+   "ipList": null,
+   "docs": null,
+   "summary": "Scrapes data for Timpi's decentralised index, which is also used for LLM training.",
+   "featured": true
+  }
+ ],
+ "registry": [
+  {
+   "token": "AddSearchBot",
+   "operator": null,
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AgentDataBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AgentTimes",
+   "operator": "The Agent Times",
+   "function": "Data Scraper from RSS Feeds.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AGI Agent",
+   "operator": "AGI, Inc",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AI2Bot-DeepResearchEval",
+   "operator": "Ai2, a non-profit AI research institute",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Ai2Bot-Dolma",
+   "operator": "Ai2",
+   "function": "Content is used to train open language models.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "aiHitBot",
+   "operator": "aiHit",
+   "function": "A massive, artificial intelligence/machine learning, automated system.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "AIWebIndex",
+   "operator": "Lyrenth",
+   "function": "AI Search Crawlers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "amazon-kendra",
+   "operator": "Amazon",
+   "function": "Collects data for AI natural language search",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "amazon-QBusiness",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AmazonBuyForMe",
+   "operator": "Amazon",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Andibot",
+   "operator": "Andi",
+   "function": "Search engine using generative AI, AI Search Assistant",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Anomura",
+   "operator": "Direqt",
+   "function": "Collects data for AI search",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "ApifyBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ApifyWebsiteContentCrawler",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Aranet-SearchBot",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "atlassian-bot",
+   "operator": "Atlassian",
+   "function": "AI search, assistants and agents",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Awario",
+   "operator": "Awario",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "AzureAI-SearchBot",
+   "operator": null,
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "bedrockbot",
+   "operator": "Amazon",
+   "function": "Data scraping for custom AI applications.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "bigsur.ai",
+   "operator": "Big Sur AI that fetches website content to enable AI-powered web agents, sales assistants, and content marketing solutions for busi…",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "BixelBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Brightbot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Brightbot 1.0",
+   "operator": "https://brightdata.com/brightbot",
+   "function": "LLM/AI training.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "BuddyBot",
+   "operator": "BuddyBotLearning",
+   "function": "AI Learning Companion",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "CartAI Agentic Commerce",
+   "operator": "CartAI that accesses online stores to support user-directed shopping and checkout workflows",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Channel3Bot",
+   "operator": null,
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ChatGLM-Spider",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Claude-Code",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "CledaraBot",
+   "operator": "Cledara that visits SaaS providers to complete customer-approved administrative tasks, including invoice collection and user managem…",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Cloudflare-AutoRAG",
+   "operator": "Cloudflare",
+   "function": "Collects data for AI search",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "CloudflareBrowserRenderingCrawler",
+   "operator": "Cloudflare that returns rendered website content for research, monitoring, and AI data workflows",
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "CloudVertexBot",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Code",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Codex",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Cotoyogi",
+   "operator": "ROIS",
+   "function": "AI LLM Scraper.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "CragCrawler",
+   "operator": "CragSoftware, a Brazil-based software company specializing in data engineering and AI web scraping services",
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Crawl4AI",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Crawlspace",
+   "operator": "Crawlspace",
+   "function": "AI Data Providers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Cursor",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Datenbank Crawler",
+   "operator": "Datenbank",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Devin",
+   "operator": "Devin AI",
+   "function": "AI Coding Agents",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Diffbot-User",
+   "operator": "Diffbot",
+   "function": "AI Assistants",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Dot",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "DoubaoBot",
+   "operator": "ByteDance",
+   "function": "AI crawler for ByteDance's Doubao AI assistant.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Echobot Bot",
+   "operator": "Echobox",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "EchoboxBot",
+   "operator": "Echobox",
+   "function": "Data collection to support AI-powered products.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ElevenlabsBot",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ERNIEBot",
+   "operator": "Baidu",
+   "function": "Collects public web content for Baidu's ERNIE large language models.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ExaBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ExaSearchBot",
+   "operator": "Exa",
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ExaUser",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "facebookexternalhit",
+   "operator": "Meta/Facebook",
+   "function": "Ostensibly only for sharing, but likely used as an AI crawler as well",
+   "respectsRobots": "No",
+   "featured": false
+  },
+  {
+   "token": "Factset_spyderbot",
+   "operator": "Factset",
+   "function": "AI model training.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "FirecrawlAgent",
+   "operator": "Firecrawl that extracts web content and converts it into structured data for use in LLM and AI applications",
+   "function": "AI Data Providers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "FriendlyCrawler",
+   "operator": "Unknown",
+   "function": "We are using the data from the crawler to build datasets for machine learning experiments.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "GeistHaus-PageFetcher",
+   "operator": "GeistHaus, a company developing AI systems for therapy and psychological assessment",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Gemini-Deep-Research",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Google-Firebase",
+   "operator": "Google",
+   "function": "Used as part of AI apps developed by users of Google's Firebase AI products.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Google-Gemini-CLI",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Google-NotebookLM",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "GoogleAgent-Mariner",
+   "operator": "Google",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "GoogleAgent-URLContext",
+   "operator": "Google that retrieves web content on behalf of Gemini API users",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "GoogleOther-Image",
+   "operator": "Google",
+   "function": "Scrapes data.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "GoogleOther-Video",
+   "operator": "Google",
+   "function": "Scrapes data.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Grok Bot",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "GrokAppAndroid",
+   "operator": "xAI",
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "HarkBot",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "HenkBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Hunyuan",
+   "operator": "Tencent",
+   "function": "Hunyuan is a training crawler operated by Tencent.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "iAskBot",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "iaskspider",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ICC-Crawler",
+   "operator": "NICT",
+   "function": "Scrapes data to train and support AI technologies.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "ImagesiftBot",
+   "operator": "ImageSift",
+   "function": "ImageSiftBot is a web crawler that scrapes the internet for publicly available images to support their suite of web intelligence products",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "imageSpider",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "img2dataset",
+   "operator": "img2dataset",
+   "function": "Scrapes images for use in LLMs.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Instinct",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ISSCyberRiskCrawler",
+   "operator": "ISS-Corporate",
+   "function": "Scrapes data to train machine learning models.",
+   "respectsRobots": "No",
+   "featured": false
+  },
+  {
+   "token": "kagi-fetcher",
+   "operator": "Kagi that fetches web content to answer user queries through Kagi AI, their suite of AI-powered tools including Assistant, Res…",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Kangaroo Bot",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "KeenableBot",
+   "operator": "Keenable",
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Kimi-Agent",
+   "operator": "Moonshot AI that browses websites while carrying out user-directed research and other tasks",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Kimi-User",
+   "operator": "Moonshot AI that fetches web content on behalf of users interacting with Kimi",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "KlaviyoAIBot",
+   "operator": "Klaviyo",
+   "function": "AI Assistants",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "KunatoCrawler",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "laion-huggingface-processor",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "LAIONDownloader",
+   "operator": "Large-scale Artificial Intelligence Open Network",
+   "function": "AI tools and models for machine learning research.",
+   "respectsRobots": "No",
+   "featured": false
+  },
+  {
+   "token": "LCC",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Lightpanda",
+   "operator": "Anyone who downloads the Lightpanda client. Possibly being used by a Grok-adjacent organization's botnet.",
+   "function": "AI Data Scrapers",
+   "respectsRobots": "At the discretion of Lightpanda users.",
+   "featured": false
+  },
+  {
+   "token": "LinerBot",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Linguee Bot",
+   "operator": "Linguee",
+   "function": "AI powered translation service",
+   "respectsRobots": "No",
+   "featured": false
+  },
+  {
+   "token": "LinkupBot",
+   "operator": null,
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Manus-User",
+   "operator": "Butterfly Effect, a company based in China",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "MoonshotBot",
+   "operator": "Kimi",
+   "function": "MoonshotBot is a training crawler.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Mozilla-Tabstack",
+   "operator": "Mozilla that performs programmatic, AI-driven interactions with web content through Tabstack",
+   "function": "AI Data Providers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Muse",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "MyCentralAIScraperBot",
+   "operator": null,
+   "function": "AI data scraper",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "NagetBot",
+   "operator": "Naget Inc (founded by Chris Samarinas, headquarter in Amherst, Massachusetts)",
+   "function": "AI data scraper",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "nbot",
+   "operator": "NBot",
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "netEstate Imprint Crawler",
+   "operator": "netEstate",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "newsai",
+   "operator": null,
+   "function": "AI data scraper",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "NotebookLM",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "NovaAct",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "omgili",
+   "operator": "Webz.io",
+   "function": "Data is sold.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "omgilibot",
+   "operator": "Webz.io",
+   "function": "Data is sold.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "OpenAI",
+   "operator": "OpenAI",
+   "function": null,
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "opencode",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Operator",
+   "operator": null,
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "PanguBot",
+   "operator": "the Chinese company Huawei",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Panscient",
+   "operator": "Panscient",
+   "function": "Data collection and analysis using machine learning and AI.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "panscient.com",
+   "operator": "Panscient",
+   "function": "Data collection and analysis using machine learning and AI.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Payhawk Invoice Fetching Agent",
+   "operator": "Payhawk that retrieves invoices from supplier websites for users and attaches them to expense records",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "PhindBot",
+   "operator": "phind",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Poggio-Citations",
+   "operator": "Poggio, a company that provides AI sales enablement tools for creating tailored narratives, business cases, and account plan…",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Poseidon Research Crawler",
+   "operator": "Poseidon Research",
+   "function": "AI research crawler",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "qodercli",
+   "operator": "Qoder that helps developers build, debug, and modify software from the terminal",
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "QualifiedBot",
+   "operator": "Qualified",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Querit-SearchBot",
+   "operator": "Querit that indexes web content for their search API service, which is designed to provide real-time search results for larg…",
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "QueritBot",
+   "operator": "Querit, a company providing a search API for large language model integration",
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "QuillBot",
+   "operator": "Quillbot",
+   "function": "Company offers AI detection, writing tools and other services.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "quillbot.com",
+   "operator": "Quillbot",
+   "function": "Company offers AI detection, writing tools and other services.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "QwenBot",
+   "operator": "Alibaba",
+   "function": "Collects public web content for Alibaba's Qwen (Tongyi Qianwen) large language models.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Reflectionbot",
+   "operator": "Reflection",
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "SBIntuitionsBot",
+   "operator": "SB Intuitions",
+   "function": "Uses data gathered in AI development and information analysis.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Scrapy",
+   "operator": "Zyte",
+   "function": "Scrapes data for a variety of uses including training AI.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "SemrushBot-OCOB",
+   "operator": "Semrush",
+   "function": "Crawls your site for ContentShake AI tool.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "SemrushBot-SWA",
+   "operator": "Semrush",
+   "function": "Checks URLs on your site for SEO Writing Assistant.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Shap-User",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ShapBot",
+   "operator": "Parallel",
+   "function": "AI Data Providers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Sidetrade indexer bot",
+   "operator": "Sidetrade",
+   "function": "Extracts data for a variety of uses including training AI.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Spider",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "TavilyBot",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Terra Cotta",
+   "operator": null,
+   "function": "AI Data Providers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "TerraCotta",
+   "operator": "Ceramic AI",
+   "function": "AI Data Providers",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "Thinkbot",
+   "operator": "Thinkbot",
+   "function": "Insights on AI integration and automation.",
+   "respectsRobots": "No",
+   "featured": false
+  },
+  {
+   "token": "TikTokSpider",
+   "operator": "ByteDance",
+   "function": "LLM training.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "TongyiBot",
+   "operator": "Alibaba that fetches web content for the Tongyi Qianwen assistant and related Qwen-generated answers",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Trae",
+   "operator": null,
+   "function": "AI Coding Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "TwinAgent",
+   "operator": "Twin, a platform that creates automated workers to perform tasks by integrating with APIs and controlling web applications through browser automa…",
+   "function": "AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "UseAI",
+   "operator": null,
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "VelenPublicWebCrawler",
+   "operator": "Velen Crawler",
+   "function": "Scrapes data for business data sets and machine learning models.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "WARDBot",
+   "operator": "WEBSPARK",
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "Webzio-Extended",
+   "operator": null,
+   "function": "AI Data Scrapers",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "wpbot",
+   "operator": "QuantumCloud",
+   "function": "Live chat support and lead generation.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "WRTNBot",
+   "operator": null,
+   "function": "Undocumented AI Agents",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "xAI-Grok",
+   "operator": "xAI",
+   "function": "xAI-Grok is an xAI crawler token associated with Grok content collection.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "YaK",
+   "operator": "Meltwater",
+   "function": "According to the Meltwater Consumer Intelligence page 'By applying AI, data science, and market research expertise to a live feed of global data sources, we transform unstructured data into actionable insights allowing better decision-making'.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "YandexAdditional",
+   "operator": "Yandex",
+   "function": "Scrapes/analyzes data for the YandexGPT LLM.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "YandexAdditionalBot",
+   "operator": "Yandex",
+   "function": "Scrapes/analyzes data for the YandexGPT LLM.",
+   "respectsRobots": "Yes",
+   "featured": false
+  },
+  {
+   "token": "YiBot",
+   "operator": "01.ai, an AI company founded by Kai-Fu Lee.",
+   "function": "This bot crawls the web to gather data and content for indexation and AI model training.",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "YiyanBot",
+   "operator": "Baidu that fetches web content for the yiyan",
+   "function": "AI Assistants",
+   "respectsRobots": null,
+   "featured": false
+  },
+  {
+   "token": "ZanistaBot",
+   "operator": null,
+   "function": "AI Search Crawlers",
+   "respectsRobots": null,
+   "featured": false
+  }
+ ],
+ "registrySource": "https://github.com/ai-robots-txt/ai.robots.txt"
+}

@@ -1,0 +1,173 @@
+{
+ "updated": "2026-10-29",
+ "rows": [
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "400 million",
+   "asOf": "2025-02",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://technologychecker.io/blog/chatgpt-statistics"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "700 million",
+   "asOf": "2025-07",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://openai.com/index/how-people-are-using-chatgpt/"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "800 million",
+   "asOf": "2025-10",
+   "statedBy": "Sam Altman, DevDay 2025",
+   "sourceUrl": "https://technologychecker.io/blog/chatgpt-statistics"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "900 million",
+   "asOf": "2026-02",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://www.miraa.io/blog/ai-assistant-usage-statistics"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Paying consumer subscribers",
+   "value": "50 million",
+   "asOf": "2026-02",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://www.miraa.io/blog/ai-assistant-usage-statistics"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "1 billion+",
+   "asOf": "2026-08",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://www.miraa.io/blog/ai-assistant-usage-statistics"
+  },
+  {
+   "engine": "chatgpt",
+   "metric": "Weekly active users",
+   "value": "1.2 billion",
+   "asOf": "2026-10",
+   "statedBy": "OpenAI",
+   "sourceUrl": "https://openai.com/index/chatgpt-ads-expands-26-new-countries/"
+  },
+  {
+   "engine": "google-ai-overviews",
+   "metric": "Monthly users",
+   "value": "1.5 billion",
+   "asOf": "2025-04",
+   "statedBy": "Google, Q1 2025 earnings",
+   "sourceUrl": "https://www.rank.ai/statistics/ai-overviews-statistics"
+  },
+  {
+   "engine": "google-ai-overviews",
+   "metric": "Monthly users",
+   "value": "2 billion",
+   "asOf": "2025-07",
+   "statedBy": "Sundar Pichai, Q2 2025 earnings",
+   "sourceUrl": "https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/"
+  },
+  {
+   "engine": "google-ai-overviews",
+   "metric": "Monthly users",
+   "value": "2.5 billion+",
+   "asOf": "2026-05",
+   "statedBy": "Google, I/O 2026",
+   "sourceUrl": "https://www.digitalinformationworld.com/2026/06/google-says-ai-overviews-has-over-25.html"
+  },
+  {
+   "engine": "google-ai-mode",
+   "metric": "Monthly active users (US and India)",
+   "value": "100 million",
+   "asOf": "2025-07",
+   "statedBy": "Sundar Pichai, Q2 2025 earnings",
+   "sourceUrl": "https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/"
+  },
+  {
+   "engine": "google-ai-mode",
+   "metric": "Monthly users",
+   "value": "1 billion+",
+   "asOf": "2026-05",
+   "statedBy": "Elizabeth Reid, Google I/O 2026",
+   "sourceUrl": "https://blog.google/products-and-platforms/products/search/search-io-2026/"
+  },
+  {
+   "engine": "gemini",
+   "metric": "Monthly active users",
+   "value": "450 million",
+   "asOf": "2025-07",
+   "statedBy": "Sundar Pichai, Q2 2025 earnings",
+   "sourceUrl": "https://techcrunch.com/2025/07/23/googles-ai-overviews-have-2b-monthly-users-ai-mode-100m-in-the-us-and-india/"
+  },
+  {
+   "engine": "gemini",
+   "metric": "Monthly active users",
+   "value": "750 million+",
+   "asOf": "2026-02",
+   "statedBy": "Google, Q4 2025 earnings",
+   "sourceUrl": "https://www.businessinsider.com/google-q2-2026-earnings-gemini-closing-in-chatgpt"
+  },
+  {
+   "engine": "gemini",
+   "metric": "Monthly active users",
+   "value": "950 million",
+   "asOf": "2026-07",
+   "statedBy": "Google, Q2 2026 earnings",
+   "sourceUrl": "https://www.businessinsider.com/google-q2-2026-earnings-gemini-closing-in-chatgpt"
+  },
+  {
+   "engine": "perplexity",
+   "metric": "Queries per month",
+   "value": "780 million",
+   "asOf": "2025-05",
+   "statedBy": "Aravind Srinivas",
+   "sourceUrl": "https://www.demandsage.com/perplexity-ai-statistics/"
+  },
+  {
+   "engine": "copilot",
+   "metric": "Paid Microsoft 365 Copilot seats",
+   "value": "15 million",
+   "asOf": "2026-01",
+   "statedBy": "Microsoft earnings call",
+   "sourceUrl": "https://www.computerworld.com/article/4124591/microsoft-touts-m365-copilot-momentum.html"
+  },
+  {
+   "engine": "meta-ai",
+   "metric": "Monthly users across Meta apps",
+   "value": "1 billion",
+   "asOf": "2025-05",
+   "statedBy": "Mark Zuckerberg",
+   "sourceUrl": "https://organikpi.com/blog/geo-ai-search/meta-ai-search-visibility-tracking"
+  },
+  {
+   "engine": "brave",
+   "metric": "Daily AI Answers users",
+   "value": "15 million+",
+   "asOf": "2025-09",
+   "statedBy": "Brave",
+   "sourceUrl": "https://brave.com/blog/ask-brave/"
+  },
+  {
+   "engine": "kagi",
+   "metric": "Paying members",
+   "value": "75,353",
+   "asOf": "2026-09",
+   "statedBy": "Kagi live stats",
+   "sourceUrl": "https://stack.liuhuo.org/en/discover/kagi"
+  },
+  {
+   "engine": "amazon-rufus",
+   "metric": "Customers who used Rufus",
+   "value": "300 million+",
+   "asOf": "2025-12",
+   "statedBy": "Amazon",
+   "sourceUrl": "https://www.stackline.com/news/rufus-is-gone-what-it-means-and-what-it-doesnt"
+  }
+ ]
+}

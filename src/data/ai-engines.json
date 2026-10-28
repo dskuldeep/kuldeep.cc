@@ -1,0 +1,479 @@
+{
+ "updated": "2026-10-29",
+ "rows": [
+  {
+   "slug": "chatgpt",
+   "name": "ChatGPT",
+   "operator": "OpenAI",
+   "kind": "AI assistant",
+   "launched": "2022-11-30",
+   "search_launched": "2024-10-31",
+   "index": "OpenAI's own search index, built by OAI-SearchBot, combined with third-party search providers. Bing supplied results historically; in August 2025 reporting showed ChatGPT also drawing on Google results via SerpApi.",
+   "index_sources": [
+    "https://scrunch.com/blog/2025-03-significant-updates-to-chatgpt-search",
+    "https://searchengineland.com/openai-chatgpt-serpapi-google-search-results-461226",
+    "https://searchengineland.com/chatgpt-retrieval-stack-index-cache-pages"
+   ],
+   "crawlers": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "GPTBot",
+    "OAI-AdsBot",
+    "ChatGPT Agent"
+   ],
+   "referrers": [
+    "chatgpt.com",
+    "chat.openai.com"
+   ],
+   "utm": "utm_source=chatgpt.com is appended to links in citations, so sessions can appear under that source even when the referrer is stripped.",
+   "utm_source": "https://www.searchpilot.com/resources/blog/how-does-ai-traffic-show-up-in-analytics",
+   "ads": "Yes. Ads below answers for logged-in adult Free and Go users since 9 Feb 2026; 89 countries as of 21 Oct 2026. Plus, Pro, Business and Enterprise are ad-free.",
+   "ads_source": "https://openai.com/index/chatgpt-ads-expands-26-new-countries/",
+   "docs": "https://developers.openai.com/api/docs/bots",
+   "citations": "Inline citations and a Sources panel; links carry utm_source=chatgpt.com.",
+   "notes": "Blocking GPTBot opts out of training only. To appear in ChatGPT search answers, OAI-SearchBot must be allowed."
+  },
+  {
+   "slug": "chatgpt-atlas",
+   "name": "ChatGPT Atlas",
+   "operator": "OpenAI",
+   "kind": "AI browser",
+   "launched": "2025-10-21",
+   "index": "Uses ChatGPT's search stack (OAI-SearchBot index plus partners); Atlas has no separate index.",
+   "index_sources": [
+    "https://openai.com/index/introducing-chatgpt-atlas/",
+    "https://geodocs.dev/technical/chatgpt-atlas-browser-discoverability-spec"
+   ],
+   "crawlers": [
+    "OAI-SearchBot",
+    "ChatGPT-User"
+   ],
+   "referrers": [
+    "chatgpt.com"
+   ],
+   "utm": "Citation links from the Atlas sidebar carry utm_source=chatgpt.com.",
+   "utm_source": "https://salt.agency/blog/technical-seo-chatgpt-atlas/",
+   "ads": "Inherits ChatGPT plan rules.",
+   "ads_source": null,
+   "docs": "https://openai.com/index/introducing-chatgpt-atlas/",
+   "citations": "ChatGPT sidebar answers with source links.",
+   "notes": "Agent-mode visits look like ordinary browser traffic, so they are hard to separate from human sessions in analytics."
+  },
+  {
+   "slug": "google-ai-overviews",
+   "name": "Google AI Overviews",
+   "operator": "Google",
+   "kind": "Search feature",
+   "launched": "2024-05-14",
+   "index": "Google Search's own index, crawled by Googlebot. AI Overviews are grounded in the same index and ranking systems as classic results.",
+   "index_sources": [
+    "https://developers.google.com/search/docs/appearance/ai-features"
+   ],
+   "crawlers": [
+    "Googlebot"
+   ],
+   "referrers": [
+    "google.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Yes. Search and Shopping ads can appear in and around AI Overviews; Google expanded AIO ads to 11 more countries in December 2025.",
+   "ads_source": "https://ppc.land/chatgpt-ad-cpms-drop-to-25-as-openai-races-toward-global-auction/",
+   "docs": "https://developers.google.com/search/docs/appearance/ai-features",
+   "citations": "Link cards beside and inside the overview.",
+   "notes": "Google-Extended does not control inclusion in AI Overviews. The only lever is Googlebot itself, or nosnippet/max-snippet controls."
+  },
+  {
+   "slug": "google-ai-mode",
+   "name": "Google AI Mode",
+   "operator": "Google",
+   "kind": "Search feature",
+   "launched": "2025-03-05",
+   "index": "Google Search's index, queried with query fan-out (many sub-searches per prompt).",
+   "index_sources": [
+    "https://developers.google.com/search/docs/appearance/ai-features",
+    "https://corecited.com/guides/google-ai-mode"
+   ],
+   "crawlers": [
+    "Googlebot"
+   ],
+   "referrers": [
+    "google.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Yes. Google has extended Search ads into AI Mode.",
+   "ads_source": null,
+   "docs": "https://developers.google.com/search/docs/appearance/ai-features",
+   "citations": "Inline link chips and a sources rail.",
+   "notes": "Search Console folds AI Mode clicks into Web performance; there is no separate filter."
+  },
+  {
+   "slug": "gemini",
+   "name": "Gemini",
+   "operator": "Google",
+   "kind": "AI assistant",
+   "launched": "2024-02-08",
+   "index": "Grounding with Google Search.",
+   "index_sources": [
+    "https://ai.google.dev/gemini-api/docs/google-search",
+    "https://answerline.dev/blog/ai-grounding-by-engine/"
+   ],
+   "crawlers": [
+    "Googlebot",
+    "Google-Extended",
+    "Google-Agent"
+   ],
+   "referrers": [
+    "gemini.google.com",
+    "bard.google.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No ads in the Gemini app as of October 2026.",
+   "ads_source": null,
+   "docs": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers",
+   "citations": "Source chips under the answer; a double-check button re-verifies with Search.",
+   "notes": "Google-Extended is a robots.txt token, not a crawler. Disallowing it stops use of content for Gemini training and grounding but does not affect Google Search."
+  },
+  {
+   "slug": "perplexity",
+   "name": "Perplexity",
+   "operator": "Perplexity AI",
+   "kind": "Answer engine",
+   "launched": "2022-12-07",
+   "index": "Its own index, served on Vespa, covering hundreds of billions of pages. The same index has been sold as the Perplexity Search API since September 2025.",
+   "index_sources": [
+    "https://theaiengineer.substack.com/p/how-perplexity-built-their-search",
+    "https://www.perplexity.ai/hub/blog/introducing-the-perplexity-search-api"
+   ],
+   "crawlers": [
+    "PerplexityBot",
+    "Perplexity-User"
+   ],
+   "referrers": [
+    "perplexity.ai",
+    "www.perplexity.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Sponsored follow-up questions were tested from late 2024. Perplexity confirmed in February 2026 that it is winding ads down.",
+   "ads_source": "https://www.sprites.ai/chatgpt-ads",
+   "docs": "https://docs.perplexity.ai/guides/bots",
+   "citations": "Numbered inline citations with a source list at the top.",
+   "notes": "Perplexity documents that Perplexity-User generally ignores robots.txt because a user requested the fetch. Cloudflare accused Perplexity of undeclared crawling in August 2025."
+  },
+  {
+   "slug": "comet",
+   "name": "Comet",
+   "operator": "Perplexity AI",
+   "kind": "AI browser",
+   "launched": "2025-07-09",
+   "index": "Perplexity's search index; Comet adds an in-browser assistant.",
+   "index_sources": [
+    "https://www.theverge.com/news/703037/perplexity-ai-web-browser-comet-launch"
+   ],
+   "crawlers": [
+    "Perplexity-User"
+   ],
+   "referrers": [
+    "perplexity.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No.",
+   "ads_source": null,
+   "docs": "https://docs.perplexity.ai/guides/bots",
+   "citations": "Perplexity answers in a sidebar.",
+   "notes": "Assistant-driven browsing looks like ordinary Chromium traffic in analytics."
+  },
+  {
+   "slug": "claude",
+   "name": "Claude",
+   "operator": "Anthropic",
+   "kind": "AI assistant",
+   "launched": "2023-03-14",
+   "search_launched": "2025-03-20",
+   "index": "Web search launched in March 2025 and was found to use Brave Search results. Anthropic also runs Claude-SearchBot to build its own search quality signals.",
+   "index_sources": [
+    "https://techcrunch.com/2025/03/21/anthropic-appears-to-be-using-brave-to-power-web-search-for-its-claude-chatbot/",
+    "https://simonwillison.net/2025/Mar/20/claude-can-now-search-the-web/"
+   ],
+   "crawlers": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User"
+   ],
+   "referrers": [
+    "claude.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No. Anthropic has positioned Claude as ad-free.",
+   "ads_source": null,
+   "docs": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+   "citations": "Inline citations linking to fetched pages.",
+   "notes": "Anthropic's three bots are independent. Blocking ClaudeBot opts out of training; blocking Claude-SearchBot or Claude-User reduces visibility in Claude answers."
+  },
+  {
+   "slug": "copilot",
+   "name": "Microsoft Copilot",
+   "operator": "Microsoft",
+   "kind": "AI assistant",
+   "launched": "2023-02-07",
+   "index": "Bing's index, built by Bingbot.",
+   "index_sources": [
+    "https://www.searchengines.net/microsoft-copilot/",
+    "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-answers-public-websites"
+   ],
+   "crawlers": [
+    "Bingbot"
+   ],
+   "referrers": [
+    "copilot.microsoft.com",
+    "bing.com",
+    "copilot.cloud.microsoft"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Yes. Microsoft Advertising serves ads in Copilot.",
+   "ads_source": null,
+   "docs": "https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0",
+   "citations": "Numbered citations with link cards.",
+   "notes": "There is no AI-only Microsoft token. Copilot visibility follows Bingbot access, and Bing honours nocache/noarchive meta for AI use."
+  },
+  {
+   "slug": "meta-ai",
+   "name": "Meta AI",
+   "operator": "Meta",
+   "kind": "AI assistant",
+   "launched": "2023-09-27",
+   "index": "Meta's own web index built by meta-webindexer, plus partner search results.",
+   "index_sources": [
+    "https://ppc.land/meta-webindexer/",
+    "https://www.searchenginejournal.com/metas-new-terms-expand-crawling-rights/"
+   ],
+   "crawlers": [
+    "meta-webindexer",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher"
+   ],
+   "referrers": [
+    "meta.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Meta has said it plans to monetise Meta AI; no ads in answers as of October 2026.",
+   "ads_source": null,
+   "docs": "https://developers.facebook.com/docs/sharing/webmasters/web-crawlers",
+   "citations": "Source links under answers inside WhatsApp, Instagram, Messenger and meta.ai.",
+   "notes": "Meta-ExternalAgent collects training data. Meta-ExternalFetcher fetches on a user's behalf and may bypass robots.txt."
+  },
+  {
+   "slug": "grok",
+   "name": "Grok",
+   "operator": "xAI",
+   "kind": "AI assistant",
+   "launched": "2023-11-04",
+   "index": "Two tools: live web search and X (Twitter) search. xAI has not published which web index backs web search.",
+   "index_sources": [
+    "https://corecited.com/blog/grok-search",
+    "https://lantad.co/blog/grok-seo-xai-documents-no-crawler"
+   ],
+   "crawlers": [
+    "GrokBot",
+    "xAI-Grok"
+   ],
+   "referrers": [
+    "grok.com",
+    "x.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Ads have been discussed for Grok answers on X; none confirmed in Grok responses as of October 2026.",
+   "ads_source": null,
+   "docs": null,
+   "citations": "Web and X post citations.",
+   "notes": "xAI documents no official crawler; tokens seen in logs are unverified."
+  },
+  {
+   "slug": "deepseek",
+   "name": "DeepSeek",
+   "operator": "DeepSeek",
+   "kind": "AI assistant",
+   "launched": "2025-01-10",
+   "index": "DeepSeek opened its in-house search engine in October 2026 and offers web search through its API.",
+   "index_sources": [
+    "https://www.searchenginejournal.com/deepseek-opens-its-in-house-search/",
+    "https://dejan.ai/blog/deepseek-search-engine/"
+   ],
+   "crawlers": [
+    "DeepSeekBot"
+   ],
+   "referrers": [
+    "chat.deepseek.com",
+    "deepseek.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No.",
+   "ads_source": null,
+   "docs": null,
+   "citations": "Search mode shows numbered sources.",
+   "notes": "ai.robots.txt lists DeepSeekBot as not respecting robots.txt."
+  },
+  {
+   "slug": "le-chat",
+   "name": "Le Chat",
+   "operator": "Mistral AI",
+   "kind": "AI assistant",
+   "launched": "2024-02-26",
+   "index": "Partner search (reported as Brave Search) plus Mistral's own MistralAI-Index crawler.",
+   "index_sources": [
+    "https://botmonster.com/ai/ai-web-search-backends-who-owns-who-rents/",
+    "https://docs.mistral.ai/robots"
+   ],
+   "crawlers": [
+    "MistralAI-Index",
+    "MistralAI-User",
+    "MistralAI-Training"
+   ],
+   "referrers": [
+    "chat.mistral.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No.",
+   "ads_source": null,
+   "docs": "https://docs.mistral.ai/robots",
+   "citations": "Inline source links.",
+   "notes": "Mistral says MistralAI-Index content is not used for training."
+  },
+  {
+   "slug": "you-com",
+   "name": "You.com",
+   "operator": "You.com",
+   "kind": "Answer engine",
+   "launched": "2021-11-09",
+   "index": "You.com's own web and news indexes, built by YouBot; also sold through its search APIs.",
+   "index_sources": [
+    "https://you.com/product/web-search-api"
+   ],
+   "crawlers": [
+    "YouBot"
+   ],
+   "referrers": [
+    "you.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No.",
+   "ads_source": null,
+   "docs": "https://about.you.com/youbot/",
+   "citations": "Numbered citations.",
+   "notes": ""
+  },
+  {
+   "slug": "brave",
+   "name": "Brave Search (Ask Brave)",
+   "operator": "Brave",
+   "kind": "Search engine + AI answers",
+   "launched": "2021-06-22",
+   "search_launched": "2025-09-29",
+   "index": "Brave's independent index (35+ billion pages). The same index is licensed to other AI products through the Brave Search API.",
+   "index_sources": [
+    "https://ppc.land/brave-launches-ask-brave-combining-search-and-ai-chat/",
+    "https://brave.com/blog/most-powerful-search-api-for-ai/"
+   ],
+   "crawlers": [
+    "Bravebot"
+   ],
+   "referrers": [
+    "search.brave.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Brave Search shows private search ads; AI answers are unsponsored.",
+   "ads_source": null,
+   "docs": "https://search.brave.com/help/brave-search-crawler",
+   "citations": "Inline citations.",
+   "notes": "Because Claude and others have used the Brave Search API, Brave rankings can carry into third-party AI answers."
+  },
+  {
+   "slug": "kagi",
+   "name": "Kagi Assistant",
+   "operator": "Kagi",
+   "kind": "Paid search + AI assistant",
+   "launched": "2022-06-01",
+   "index": "Kagi Search: its own Teclis and TinyGem indexes plus licensed results from other engines.",
+   "index_sources": [
+    "https://en.wikipedia.org/wiki/Kagi",
+    "https://blog.kagi.com/assistant-for-all"
+   ],
+   "crawlers": [
+    "Kagibot",
+    "kagi-fetcher"
+   ],
+   "referrers": [
+    "kagi.com"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "No. Kagi is subscription-funded.",
+   "ads_source": "https://en.wikipedia.org/wiki/Kagi",
+   "docs": "https://kagi.com/bot",
+   "citations": "Inline citations.",
+   "notes": ""
+  },
+  {
+   "slug": "duckduckgo",
+   "name": "DuckDuckGo (Duck.ai & Search Assist)",
+   "operator": "DuckDuckGo",
+   "kind": "Search engine + AI answers",
+   "launched": "2008-09-25",
+   "index": "DuckAssistBot crawls pages in real time for Search Assist answers. Duck.ai is an anonymised proxy to third-party models.",
+   "index_sources": [
+    "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot"
+   ],
+   "crawlers": [
+    "DuckAssistBot"
+   ],
+   "referrers": [
+    "duckduckgo.com",
+    "duck.ai"
+   ],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Private search ads on result pages; none inside AI answers.",
+   "ads_source": null,
+   "docs": "https://duckduckgo.com/duckduckgo-help-pages/results/duckassistbot",
+   "citations": "Search Assist cites its sources prominently.",
+   "notes": "DuckDuckGo says DuckAssistBot data is not used to train AI models; opt-outs take effect within 72 hours."
+  },
+  {
+   "slug": "amazon-rufus",
+   "name": "Amazon Rufus (retired)",
+   "operator": "Amazon",
+   "kind": "Shopping assistant",
+   "launched": "2024-02-01",
+   "index": "Amazon catalogue, reviews and Q&A, plus web content fetched by Amazonbot and Amzn-SearchBot. Retired in May 2026 in favour of an Alexa shopping agent.",
+   "index_sources": [
+    "https://www.modernretail.co/technology/marketplace-briefing-why-amazon-discontinued-its-ai-powered-rufus-chatbot-for-alexa-shopping-agent/",
+    "https://developer.amazon.com/amazonbot"
+   ],
+   "crawlers": [
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User"
+   ],
+   "referrers": [],
+   "utm": null,
+   "utm_source": null,
+   "ads": "Sponsored product suggestions appeared inside Rufus answers.",
+   "ads_source": null,
+   "docs": "https://developer.amazon.com/amazonbot",
+   "citations": "Product cards inside Amazon.",
+   "notes": "Amazon reported 300M+ customers used Rufus in 2025 before retiring it."
+  }
+ ]
+}

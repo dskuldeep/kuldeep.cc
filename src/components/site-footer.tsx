@@ -6,8 +6,17 @@ export function SiteFooter() {
       <hr className="rule mb-6" />
       <div className="meta flex flex-wrap items-baseline gap-x-5 gap-y-2">
         <span>© {new Date().getFullYear()} {SITE.name}</span>
+        <a className="link" href="/data">
+          Data
+        </a>
+        <a className="link" href="/data/methodology">
+          Methodology
+        </a>
         <a className="link" href="/feed.xml">
           RSS
+        </a>
+        <a className="link" href="/llms.txt">
+          llms.txt
         </a>
         <a className="link" href={SITE.social.x} target="_blank" rel="noreferrer">
           X

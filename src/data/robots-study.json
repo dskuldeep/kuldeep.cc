@@ -1,0 +1,11146 @@
+{
+ "updated": "2026-10-29",
+ "fetchedAt": "2026-10-29",
+ "sample": {
+  "list": "Tranco top 1M",
+  "listDate": "2026-10-29",
+  "domains": 10000,
+  "withRobots": 5701,
+  "withLlmsTxt": 983
+ },
+ "headline": {
+  "blocksAnyAiPct": 22.2,
+  "blocksAnyAi": 1267,
+  "blocksGptbotPct": 17.9,
+  "splitSearchTrainingPct": 57.6,
+  "splitSearchTraining": 587,
+  "llmsTxtPct": 9.8,
+  "mentionsAnyAiPct": 29.6
+ },
+ "bots": [
+  {
+   "token": "CCBot",
+   "slug": "ccbot",
+   "explicit": 1057,
+   "blocked": 1085,
+   "allowed": 177,
+   "blockedPct": 19.0,
+   "blockedTop1k": 121
+  },
+  {
+   "token": "Bytespider",
+   "slug": "bytespider",
+   "explicit": 954,
+   "blocked": 1067,
+   "allowed": 98,
+   "blockedPct": 18.7,
+   "blockedTop1k": 125
+  },
+  {
+   "token": "GPTBot",
+   "slug": "gptbot",
+   "explicit": 1210,
+   "blocked": 1019,
+   "allowed": 371,
+   "blockedPct": 17.9,
+   "blockedTop1k": 109
+  },
+  {
+   "token": "ClaudeBot",
+   "slug": "claudebot",
+   "explicit": 1065,
+   "blocked": 966,
+   "allowed": 294,
+   "blockedPct": 16.9,
+   "blockedTop1k": 111
+  },
+  {
+   "token": "Google-Extended",
+   "slug": "google-extended",
+   "explicit": 1007,
+   "blocked": 882,
+   "allowed": 315,
+   "blockedPct": 15.5,
+   "blockedTop1k": 93
+  },
+  {
+   "token": "Meta-ExternalAgent",
+   "slug": "meta-externalagent",
+   "explicit": 799,
+   "blocked": 871,
+   "allowed": 131,
+   "blockedPct": 15.3,
+   "blockedTop1k": 98
+  },
+  {
+   "token": "Diffbot",
+   "slug": "diffbot",
+   "explicit": 682,
+   "blocked": 862,
+   "allowed": 36,
+   "blockedPct": 15.1,
+   "blockedTop1k": 102
+  },
+  {
+   "token": "Amazonbot",
+   "slug": "amazonbot",
+   "explicit": 792,
+   "blocked": 850,
+   "allowed": 143,
+   "blockedPct": 14.9,
+   "blockedTop1k": 85
+  },
+  {
+   "token": "anthropic-ai",
+   "slug": "anthropic-ai",
+   "explicit": 756,
+   "blocked": 841,
+   "allowed": 129,
+   "blockedPct": 14.8,
+   "blockedTop1k": 82
+  },
+  {
+   "token": "cohere-ai",
+   "slug": "cohere-ai",
+   "explicit": 710,
+   "blocked": 839,
+   "allowed": 86,
+   "blockedPct": 14.7,
+   "blockedTop1k": 94
+  },
+  {
+   "token": "Applebot-Extended",
+   "slug": "applebot-extended",
+   "explicit": 775,
+   "blocked": 837,
+   "allowed": 140,
+   "blockedPct": 14.7,
+   "blockedTop1k": 90
+  },
+  {
+   "token": "omgili",
+   "slug": null,
+   "explicit": 633,
+   "blocked": 829,
+   "allowed": 23,
+   "blockedPct": 14.5,
+   "blockedTop1k": 103
+  },
+  {
+   "token": "PetalBot",
+   "slug": "petalbot",
+   "explicit": 608,
+   "blocked": 776,
+   "allowed": 43,
+   "blockedPct": 13.6,
+   "blockedTop1k": 91
+  },
+  {
+   "token": "Claude-Web",
+   "slug": "claude-web",
+   "explicit": 623,
+   "blocked": 743,
+   "allowed": 95,
+   "blockedPct": 13.0,
+   "blockedTop1k": 88
+  },
+  {
+   "token": "PerplexityBot",
+   "slug": "perplexitybot",
+   "explicit": 790,
+   "blocked": 633,
+   "allowed": 343,
+   "blockedPct": 11.1,
+   "blockedTop1k": 88
+  },
+  {
+   "token": "Google-CloudVertexBot",
+   "slug": "google-cloudvertexbot",
+   "explicit": 400,
+   "blocked": 586,
+   "allowed": 26,
+   "blockedPct": 10.3,
+   "blockedTop1k": 72
+  },
+  {
+   "token": "YouBot",
+   "slug": "youbot",
+   "explicit": 443,
+   "blocked": 585,
+   "allowed": 71,
+   "blockedPct": 10.3,
+   "blockedTop1k": 85
+  },
+  {
+   "token": "omgilibot",
+   "slug": null,
+   "explicit": 386,
+   "blocked": 583,
+   "allowed": 25,
+   "blockedPct": 10.2,
+   "blockedTop1k": 88
+  },
+  {
+   "token": "ICC-Crawler",
+   "slug": null,
+   "explicit": 353,
+   "blocked": 578,
+   "allowed": 5,
+   "blockedPct": 10.1,
+   "blockedTop1k": 74
+  },
+  {
+   "token": "FacebookBot",
+   "slug": "facebookbot",
+   "explicit": 438,
+   "blocked": 570,
+   "allowed": 79,
+   "blockedPct": 10.0,
+   "blockedTop1k": 78
+  },
+  {
+   "token": "ChatGPT-User",
+   "slug": "chatgpt-user",
+   "explicit": 729,
+   "blocked": 549,
+   "allowed": 364,
+   "blockedPct": 9.6,
+   "blockedTop1k": 73
+  },
+  {
+   "token": "Timpibot",
+   "slug": "timpibot",
+   "explicit": 340,
+   "blocked": 548,
+   "allowed": 13,
+   "blockedPct": 9.6,
+   "blockedTop1k": 85
+  },
+  {
+   "token": "ImagesiftBot",
+   "slug": null,
+   "explicit": 329,
+   "blocked": 533,
+   "allowed": 17,
+   "blockedPct": 9.3,
+   "blockedTop1k": 91
+  },
+  {
+   "token": "Cotoyogi",
+   "slug": null,
+   "explicit": 303,
+   "blocked": 532,
+   "allowed": 2,
+   "blockedPct": 9.3,
+   "blockedTop1k": 68
+  },
+  {
+   "token": "GoogleOther",
+   "slug": "googleother",
+   "explicit": 365,
+   "blocked": 509,
+   "allowed": 60,
+   "blockedPct": 8.9,
+   "blockedTop1k": 67
+  },
+  {
+   "token": "Scrapy",
+   "slug": null,
+   "explicit": 290,
+   "blocked": 502,
+   "allowed": 6,
+   "blockedPct": 8.8,
+   "blockedTop1k": 87
+  },
+  {
+   "token": "SemrushBot-SWA",
+   "slug": null,
+   "explicit": 276,
+   "blocked": 498,
+   "allowed": 6,
+   "blockedPct": 8.7,
+   "blockedTop1k": 61
+  },
+  {
+   "token": "Webzio-Extended",
+   "slug": null,
+   "explicit": 277,
+   "blocked": 491,
+   "allowed": 12,
+   "blockedPct": 8.6,
+   "blockedTop1k": 80
+  },
+  {
+   "token": "QualifiedBot",
+   "slug": null,
+   "explicit": 267,
+   "blocked": 488,
+   "allowed": 5,
+   "blockedPct": 8.6,
+   "blockedTop1k": 63
+  },
+  {
+   "token": "Meta-ExternalFetcher",
+   "slug": "meta-externalfetcher",
+   "explicit": 314,
+   "blocked": 481,
+   "allowed": 46,
+   "blockedPct": 8.4,
+   "blockedTop1k": 70
+  },
+  {
+   "token": "AI2Bot",
+   "slug": "ai2bot",
+   "explicit": 279,
+   "blocked": 475,
+   "allowed": 26,
+   "blockedPct": 8.3,
+   "blockedTop1k": 79
+  },
+  {
+   "token": "Perplexity-User",
+   "slug": "perplexity-user",
+   "explicit": 397,
+   "blocked": 464,
+   "allowed": 142,
+   "blockedPct": 8.1,
+   "blockedTop1k": 78
+  },
+  {
+   "token": "cohere-training-data-crawler",
+   "slug": "cohere-training-data-crawler",
+   "explicit": 251,
+   "blocked": 460,
+   "allowed": 21,
+   "blockedPct": 8.1,
+   "blockedTop1k": 75
+  },
+  {
+   "token": "atlassian-bot",
+   "slug": null,
+   "explicit": 238,
+   "blocked": 459,
+   "allowed": 9,
+   "blockedPct": 8.1,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "DuckAssistBot",
+   "slug": "duckassistbot",
+   "explicit": 322,
+   "blocked": 454,
+   "allowed": 79,
+   "blockedPct": 8.0,
+   "blockedTop1k": 68
+  },
+  {
+   "token": "WARDBot",
+   "slug": null,
+   "explicit": 220,
+   "blocked": 451,
+   "allowed": 0,
+   "blockedPct": 7.9,
+   "blockedTop1k": 49
+  },
+  {
+   "token": "Claude-User",
+   "slug": "claude-user",
+   "explicit": 400,
+   "blocked": 442,
+   "allowed": 159,
+   "blockedPct": 7.8,
+   "blockedTop1k": 72
+  },
+  {
+   "token": "KimiBot",
+   "slug": "kimibot",
+   "explicit": 205,
+   "blocked": 436,
+   "allowed": 0,
+   "blockedPct": 7.6,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "OAI-SearchBot",
+   "slug": "oai-searchbot",
+   "explicit": 621,
+   "blocked": 433,
+   "allowed": 371,
+   "blockedPct": 7.6,
+   "blockedTop1k": 61
+  },
+  {
+   "token": "MistralAI-Training",
+   "slug": "mistralai-training",
+   "explicit": 202,
+   "blocked": 432,
+   "allowed": 0,
+   "blockedPct": 7.6,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "MistralAI-User",
+   "slug": "mistralai-user",
+   "explicit": 255,
+   "blocked": 426,
+   "allowed": 48,
+   "blockedPct": 7.5,
+   "blockedTop1k": 70
+  },
+  {
+   "token": "Claude-SearchBot",
+   "slug": "claude-searchbot",
+   "explicit": 393,
+   "blocked": 423,
+   "allowed": 172,
+   "blockedPct": 7.4,
+   "blockedTop1k": 68
+  },
+  {
+   "token": "PanguBot",
+   "slug": null,
+   "explicit": 204,
+   "blocked": 423,
+   "allowed": 10,
+   "blockedPct": 7.4,
+   "blockedTop1k": 75
+  },
+  {
+   "token": "FriendlyCrawler",
+   "slug": null,
+   "explicit": 198,
+   "blocked": 422,
+   "allowed": 6,
+   "blockedPct": 7.4,
+   "blockedTop1k": 77
+  },
+  {
+   "token": "VelenPublicWebCrawler",
+   "slug": null,
+   "explicit": 192,
+   "blocked": 418,
+   "allowed": 5,
+   "blockedPct": 7.3,
+   "blockedTop1k": 71
+  },
+  {
+   "token": "img2dataset",
+   "slug": null,
+   "explicit": 195,
+   "blocked": 407,
+   "allowed": 16,
+   "blockedPct": 7.1,
+   "blockedTop1k": 74
+  },
+  {
+   "token": "Kangaroo Bot",
+   "slug": null,
+   "explicit": 173,
+   "blocked": 396,
+   "allowed": 7,
+   "blockedPct": 6.9,
+   "blockedTop1k": 72
+  },
+  {
+   "token": "Ai2Bot-Dolma",
+   "slug": null,
+   "explicit": 176,
+   "blocked": 392,
+   "allowed": 14,
+   "blockedPct": 6.9,
+   "blockedTop1k": 74
+  },
+  {
+   "token": "DeepSeekBot",
+   "slug": "deepseekbot",
+   "explicit": 185,
+   "blocked": 386,
+   "allowed": 22,
+   "blockedPct": 6.8,
+   "blockedTop1k": 66
+  },
+  {
+   "token": "meta-webindexer",
+   "slug": "meta-webindexer",
+   "explicit": 182,
+   "blocked": 374,
+   "allowed": 30,
+   "blockedPct": 6.6,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "FirecrawlAgent",
+   "slug": null,
+   "explicit": 160,
+   "blocked": 370,
+   "allowed": 16,
+   "blockedPct": 6.5,
+   "blockedTop1k": 54
+  },
+  {
+   "token": "iaskspider",
+   "slug": null,
+   "explicit": 136,
+   "blocked": 364,
+   "allowed": 2,
+   "blockedPct": 6.4,
+   "blockedTop1k": 71
+  },
+  {
+   "token": "ShapBot",
+   "slug": null,
+   "explicit": 131,
+   "blocked": 355,
+   "allowed": 3,
+   "blockedPct": 6.2,
+   "blockedTop1k": 65
+  },
+  {
+   "token": "ExaBot",
+   "slug": null,
+   "explicit": 140,
+   "blocked": 339,
+   "allowed": 27,
+   "blockedPct": 5.9,
+   "blockedTop1k": 51
+  },
+  {
+   "token": "ISSCyberRiskCrawler",
+   "slug": null,
+   "explicit": 106,
+   "blocked": 336,
+   "allowed": 2,
+   "blockedPct": 5.9,
+   "blockedTop1k": 66
+  },
+  {
+   "token": "ChatGLM-Spider",
+   "slug": null,
+   "explicit": 110,
+   "blocked": 335,
+   "allowed": 3,
+   "blockedPct": 5.9,
+   "blockedTop1k": 66
+  },
+  {
+   "token": "SBIntuitionsBot",
+   "slug": null,
+   "explicit": 105,
+   "blocked": 332,
+   "allowed": 2,
+   "blockedPct": 5.8,
+   "blockedTop1k": 63
+  },
+  {
+   "token": "aiHitBot",
+   "slug": null,
+   "explicit": 101,
+   "blocked": 326,
+   "allowed": 7,
+   "blockedPct": 5.7,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "Factset_spyderbot",
+   "slug": null,
+   "explicit": 97,
+   "blocked": 326,
+   "allowed": 2,
+   "blockedPct": 5.7,
+   "blockedTop1k": 64
+  },
+  {
+   "token": "Amzn-User",
+   "slug": "amzn-user",
+   "explicit": 111,
+   "blocked": 323,
+   "allowed": 13,
+   "blockedPct": 5.7,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "Brightbot 1.0",
+   "slug": null,
+   "explicit": 92,
+   "blocked": 322,
+   "allowed": 2,
+   "blockedPct": 5.6,
+   "blockedTop1k": 50
+  },
+  {
+   "token": "Amzn-SearchBot",
+   "slug": "amzn-searchbot",
+   "explicit": 113,
+   "blocked": 318,
+   "allowed": 18,
+   "blockedPct": 5.6,
+   "blockedTop1k": 50
+  },
+  {
+   "token": "imageSpider",
+   "slug": null,
+   "explicit": 88,
+   "blocked": 318,
+   "allowed": 1,
+   "blockedPct": 5.6,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "Datenbank Crawler",
+   "slug": null,
+   "explicit": 87,
+   "blocked": 316,
+   "allowed": 2,
+   "blockedPct": 5.5,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "iAskBot",
+   "slug": null,
+   "explicit": 88,
+   "blocked": 315,
+   "allowed": 1,
+   "blockedPct": 5.5,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "netEstate Imprint Crawler",
+   "slug": null,
+   "explicit": 86,
+   "blocked": 315,
+   "allowed": 2,
+   "blockedPct": 5.5,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "Sidetrade indexer bot",
+   "slug": null,
+   "explicit": 84,
+   "blocked": 314,
+   "allowed": 2,
+   "blockedPct": 5.5,
+   "blockedTop1k": 65
+  },
+  {
+   "token": "Brightbot",
+   "slug": null,
+   "explicit": 93,
+   "blocked": 312,
+   "allowed": 3,
+   "blockedPct": 5.5,
+   "blockedTop1k": 69
+  },
+  {
+   "token": "TikTokSpider",
+   "slug": null,
+   "explicit": 104,
+   "blocked": 310,
+   "allowed": 25,
+   "blockedPct": 5.4,
+   "blockedTop1k": 51
+  },
+  {
+   "token": "LinerBot",
+   "slug": null,
+   "explicit": 84,
+   "blocked": 308,
+   "allowed": 5,
+   "blockedPct": 5.4,
+   "blockedTop1k": 50
+  },
+  {
+   "token": "LinkupBot",
+   "slug": null,
+   "explicit": 79,
+   "blocked": 307,
+   "allowed": 3,
+   "blockedPct": 5.4,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "PhindBot",
+   "slug": null,
+   "explicit": 93,
+   "blocked": 306,
+   "allowed": 18,
+   "blockedPct": 5.4,
+   "blockedTop1k": 61
+  },
+  {
+   "token": "Bravebot",
+   "slug": "bravebot",
+   "explicit": 93,
+   "blocked": 305,
+   "allowed": 13,
+   "blockedPct": 5.3,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "Gemini-Deep-Research",
+   "slug": null,
+   "explicit": 106,
+   "blocked": 305,
+   "allowed": 28,
+   "blockedPct": 5.3,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "EchoboxBot",
+   "slug": null,
+   "explicit": 80,
+   "blocked": 302,
+   "allowed": 5,
+   "blockedPct": 5.3,
+   "blockedTop1k": 63
+  },
+  {
+   "token": "Devin",
+   "slug": null,
+   "explicit": 78,
+   "blocked": 301,
+   "allowed": 7,
+   "blockedPct": 5.3,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "Google-NotebookLM",
+   "slug": null,
+   "explicit": 97,
+   "blocked": 301,
+   "allowed": 18,
+   "blockedPct": 5.3,
+   "blockedTop1k": 56
+  },
+  {
+   "token": "laion-huggingface-processor",
+   "slug": null,
+   "explicit": 70,
+   "blocked": 300,
+   "allowed": 1,
+   "blockedPct": 5.3,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "Panscient",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 300,
+   "allowed": 0,
+   "blockedPct": 5.3,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "AI2Bot-DeepResearchEval",
+   "slug": null,
+   "explicit": 69,
+   "blocked": 299,
+   "allowed": 1,
+   "blockedPct": 5.2,
+   "blockedTop1k": 61
+  },
+  {
+   "token": "TerraCotta",
+   "slug": null,
+   "explicit": 70,
+   "blocked": 299,
+   "allowed": 2,
+   "blockedPct": 5.2,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "wpbot",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 299,
+   "allowed": 0,
+   "blockedPct": 5.2,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "panscient.com",
+   "slug": null,
+   "explicit": 67,
+   "blocked": 298,
+   "allowed": 1,
+   "blockedPct": 5.2,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "Crawl4AI",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 297,
+   "allowed": 2,
+   "blockedPct": 5.2,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "SemrushBot-OCOB",
+   "slug": null,
+   "explicit": 79,
+   "blocked": 297,
+   "allowed": 9,
+   "blockedPct": 5.2,
+   "blockedTop1k": 52
+  },
+  {
+   "token": "Thinkbot",
+   "slug": null,
+   "explicit": 64,
+   "blocked": 296,
+   "allowed": 0,
+   "blockedPct": 5.2,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "YandexAdditionalBot",
+   "slug": null,
+   "explicit": 73,
+   "blocked": 296,
+   "allowed": 4,
+   "blockedPct": 5.2,
+   "blockedTop1k": 52
+  },
+  {
+   "token": "TavilyBot",
+   "slug": null,
+   "explicit": 71,
+   "blocked": 295,
+   "allowed": 5,
+   "blockedPct": 5.2,
+   "blockedTop1k": 61
+  },
+  {
+   "token": "WRTNBot",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 295,
+   "allowed": 2,
+   "blockedPct": 5.2,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "AddSearchBot",
+   "slug": null,
+   "explicit": 67,
+   "blocked": 294,
+   "allowed": 3,
+   "blockedPct": 5.2,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "Echobot Bot",
+   "slug": null,
+   "explicit": 64,
+   "blocked": 294,
+   "allowed": 1,
+   "blockedPct": 5.2,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "KunatoCrawler",
+   "slug": null,
+   "explicit": 64,
+   "blocked": 294,
+   "allowed": 1,
+   "blockedPct": 5.2,
+   "blockedTop1k": 62
+  },
+  {
+   "token": "YaK",
+   "slug": null,
+   "explicit": 79,
+   "blocked": 294,
+   "allowed": 6,
+   "blockedPct": 5.2,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "Shap-User",
+   "slug": null,
+   "explicit": 61,
+   "blocked": 292,
+   "allowed": 0,
+   "blockedPct": 5.1,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "GoogleAgent-Mariner",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 290,
+   "allowed": 9,
+   "blockedPct": 5.1,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "GrokBot",
+   "slug": "grokbot",
+   "explicit": 69,
+   "blocked": 289,
+   "allowed": 7,
+   "blockedPct": 5.1,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "amazon-kendra",
+   "slug": null,
+   "explicit": 63,
+   "blocked": 289,
+   "allowed": 3,
+   "blockedPct": 5.1,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "Crawlspace",
+   "slug": null,
+   "explicit": 59,
+   "blocked": 289,
+   "allowed": 2,
+   "blockedPct": 5.1,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "bedrockbot",
+   "slug": null,
+   "explicit": 61,
+   "blocked": 287,
+   "allowed": 5,
+   "blockedPct": 5.0,
+   "blockedTop1k": 49
+  },
+  {
+   "token": "CloudVertexBot",
+   "slug": null,
+   "explicit": 59,
+   "blocked": 287,
+   "allowed": 4,
+   "blockedPct": 5.0,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "NovaAct",
+   "slug": null,
+   "explicit": 64,
+   "blocked": 287,
+   "allowed": 7,
+   "blockedPct": 5.0,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "YandexAdditional",
+   "slug": null,
+   "explicit": 64,
+   "blocked": 287,
+   "allowed": 5,
+   "blockedPct": 5.0,
+   "blockedTop1k": 51
+  },
+  {
+   "token": "Andibot",
+   "slug": null,
+   "explicit": 68,
+   "blocked": 286,
+   "allowed": 14,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "KlaviyoAIBot",
+   "slug": null,
+   "explicit": 58,
+   "blocked": 286,
+   "allowed": 2,
+   "blockedPct": 5.0,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "Poggio-Citations",
+   "slug": null,
+   "explicit": 56,
+   "blocked": 286,
+   "allowed": 1,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "ZanistaBot",
+   "slug": null,
+   "explicit": 57,
+   "blocked": 286,
+   "allowed": 1,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "CloudflareBrowserRenderingCrawler",
+   "slug": null,
+   "explicit": 62,
+   "blocked": 285,
+   "allowed": 4,
+   "blockedPct": 5.0,
+   "blockedTop1k": 60
+  },
+  {
+   "token": "Manus-User",
+   "slug": null,
+   "explicit": 58,
+   "blocked": 285,
+   "allowed": 4,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "quillbot.com",
+   "slug": null,
+   "explicit": 55,
+   "blocked": 285,
+   "allowed": 0,
+   "blockedPct": 5.0,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "AmazonBuyForMe",
+   "slug": null,
+   "explicit": 56,
+   "blocked": 284,
+   "allowed": 2,
+   "blockedPct": 5.0,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "Channel3Bot",
+   "slug": null,
+   "explicit": 56,
+   "blocked": 284,
+   "allowed": 1,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "TwinAgent",
+   "slug": null,
+   "explicit": 54,
+   "blocked": 284,
+   "allowed": 1,
+   "blockedPct": 5.0,
+   "blockedTop1k": 59
+  },
+  {
+   "token": "Spider",
+   "slug": null,
+   "explicit": 53,
+   "blocked": 282,
+   "allowed": 2,
+   "blockedPct": 4.9,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "MyCentralAIScraperBot",
+   "slug": null,
+   "explicit": 57,
+   "blocked": 281,
+   "allowed": 6,
+   "blockedPct": 4.9,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "Anomura",
+   "slug": null,
+   "explicit": 49,
+   "blocked": 280,
+   "allowed": 1,
+   "blockedPct": 4.9,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "Cloudflare-AutoRAG",
+   "slug": null,
+   "explicit": 51,
+   "blocked": 279,
+   "allowed": 2,
+   "blockedPct": 4.9,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "Poseidon Research Crawler",
+   "slug": null,
+   "explicit": 49,
+   "blocked": 279,
+   "allowed": 0,
+   "blockedPct": 4.9,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "ExaSearchBot",
+   "slug": null,
+   "explicit": 52,
+   "blocked": 278,
+   "allowed": 3,
+   "blockedPct": 4.9,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "ApifyBot",
+   "slug": null,
+   "explicit": 49,
+   "blocked": 277,
+   "allowed": 2,
+   "blockedPct": 4.9,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "ApifyWebsiteContentCrawler",
+   "slug": null,
+   "explicit": 47,
+   "blocked": 277,
+   "allowed": 0,
+   "blockedPct": 4.9,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "MistralAI-Index",
+   "slug": "mistralai-index",
+   "explicit": 48,
+   "blocked": 276,
+   "allowed": 2,
+   "blockedPct": 4.8,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "Kimi-User",
+   "slug": null,
+   "explicit": 48,
+   "blocked": 276,
+   "allowed": 2,
+   "blockedPct": 4.8,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "LCC",
+   "slug": null,
+   "explicit": 47,
+   "blocked": 276,
+   "allowed": 1,
+   "blockedPct": 4.8,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "xAI-Grok",
+   "slug": null,
+   "explicit": 48,
+   "blocked": 276,
+   "allowed": 2,
+   "blockedPct": 4.8,
+   "blockedTop1k": 58
+  },
+  {
+   "token": "bigsur.ai",
+   "slug": null,
+   "explicit": 48,
+   "blocked": 275,
+   "allowed": 3,
+   "blockedPct": 4.8,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "Operator",
+   "slug": null,
+   "explicit": 47,
+   "blocked": 272,
+   "allowed": 7,
+   "blockedPct": 4.8,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "GoogleOther-Image",
+   "slug": null,
+   "explicit": 63,
+   "blocked": 271,
+   "allowed": 20,
+   "blockedPct": 4.8,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "GoogleOther-Video",
+   "slug": null,
+   "explicit": 62,
+   "blocked": 271,
+   "allowed": 19,
+   "blockedPct": 4.8,
+   "blockedTop1k": 48
+  },
+  {
+   "token": "QuillBot",
+   "slug": null,
+   "explicit": 41,
+   "blocked": 271,
+   "allowed": 1,
+   "blockedPct": 4.8,
+   "blockedTop1k": 47
+  },
+  {
+   "token": "ERNIEBot",
+   "slug": null,
+   "explicit": 39,
+   "blocked": 270,
+   "allowed": 1,
+   "blockedPct": 4.7,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "Applebot",
+   "slug": "applebot",
+   "explicit": 267,
+   "blocked": 269,
+   "allowed": 175,
+   "blockedPct": 4.7,
+   "blockedTop1k": 31
+  },
+  {
+   "token": "Google-Agent",
+   "slug": "google-agent",
+   "explicit": 51,
+   "blocked": 268,
+   "allowed": 12,
+   "blockedPct": 4.7,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "amazon-QBusiness",
+   "slug": null,
+   "explicit": 37,
+   "blocked": 268,
+   "allowed": 0,
+   "blockedPct": 4.7,
+   "blockedTop1k": 45
+  },
+  {
+   "token": "BuddyBot",
+   "slug": null,
+   "explicit": 36,
+   "blocked": 268,
+   "allowed": 0,
+   "blockedPct": 4.7,
+   "blockedTop1k": 56
+  },
+  {
+   "token": "Diffbot-User",
+   "slug": null,
+   "explicit": 37,
+   "blocked": 268,
+   "allowed": 0,
+   "blockedPct": 4.7,
+   "blockedTop1k": 50
+  },
+  {
+   "token": "Google-Firebase",
+   "slug": null,
+   "explicit": 44,
+   "blocked": 268,
+   "allowed": 4,
+   "blockedPct": 4.7,
+   "blockedTop1k": 54
+  },
+  {
+   "token": "Linguee Bot",
+   "slug": null,
+   "explicit": 44,
+   "blocked": 267,
+   "allowed": 5,
+   "blockedPct": 4.7,
+   "blockedTop1k": 54
+  },
+  {
+   "token": "ChatGPT Agent",
+   "slug": "chatgpt-agent",
+   "explicit": 40,
+   "blocked": 263,
+   "allowed": 8,
+   "blockedPct": 4.6,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "LAIONDownloader",
+   "slug": null,
+   "explicit": 30,
+   "blocked": 260,
+   "allowed": 2,
+   "blockedPct": 4.6,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Awario",
+   "slug": null,
+   "explicit": 36,
+   "blocked": 259,
+   "allowed": 5,
+   "blockedPct": 4.5,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "OpenAI",
+   "slug": null,
+   "explicit": 31,
+   "blocked": 258,
+   "allowed": 4,
+   "blockedPct": 4.5,
+   "blockedTop1k": 41
+  },
+  {
+   "token": "AzureAI-SearchBot",
+   "slug": null,
+   "explicit": 30,
+   "blocked": 257,
+   "allowed": 4,
+   "blockedPct": 4.5,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "kagi-fetcher",
+   "slug": null,
+   "explicit": 28,
+   "blocked": 256,
+   "allowed": 3,
+   "blockedPct": 4.5,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "Kimi-SearchBot",
+   "slug": "kimi-searchbot",
+   "explicit": 23,
+   "blocked": 254,
+   "allowed": 0,
+   "blockedPct": 4.5,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Reflectionbot",
+   "slug": null,
+   "explicit": 24,
+   "blocked": 254,
+   "allowed": 1,
+   "blockedPct": 4.5,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "GeistHaus-PageFetcher",
+   "slug": null,
+   "explicit": 22,
+   "blocked": 253,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "TongyiBot",
+   "slug": null,
+   "explicit": 24,
+   "blocked": 253,
+   "allowed": 1,
+   "blockedPct": 4.4,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "UseAI",
+   "slug": null,
+   "explicit": 22,
+   "blocked": 253,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "YiyanBot",
+   "slug": null,
+   "explicit": 22,
+   "blocked": 253,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "Claude-Code",
+   "slug": null,
+   "explicit": 31,
+   "blocked": 252,
+   "allowed": 6,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "CragCrawler",
+   "slug": null,
+   "explicit": 19,
+   "blocked": 251,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Querit-SearchBot",
+   "slug": null,
+   "explicit": 19,
+   "blocked": 251,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "QueritBot",
+   "slug": null,
+   "explicit": 19,
+   "blocked": 251,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "HenkBot",
+   "slug": null,
+   "explicit": 18,
+   "blocked": 250,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "AIWebIndex",
+   "slug": null,
+   "explicit": 18,
+   "blocked": 249,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 44
+  },
+  {
+   "token": "Code",
+   "slug": null,
+   "explicit": 18,
+   "blocked": 249,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "opencode",
+   "slug": null,
+   "explicit": 20,
+   "blocked": 249,
+   "allowed": 2,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "QwenBot",
+   "slug": null,
+   "explicit": 20,
+   "blocked": 249,
+   "allowed": 2,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Trae",
+   "slug": null,
+   "explicit": 18,
+   "blocked": 249,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Cursor",
+   "slug": null,
+   "explicit": 19,
+   "blocked": 248,
+   "allowed": 2,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "DoubaoBot",
+   "slug": null,
+   "explicit": 17,
+   "blocked": 248,
+   "allowed": 1,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "KeenableBot",
+   "slug": null,
+   "explicit": 17,
+   "blocked": 248,
+   "allowed": 0,
+   "blockedPct": 4.4,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "AgentDataBot",
+   "slug": null,
+   "explicit": 16,
+   "blocked": 247,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Aranet-SearchBot",
+   "slug": null,
+   "explicit": 17,
+   "blocked": 247,
+   "allowed": 2,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "BixelBot",
+   "slug": null,
+   "explicit": 16,
+   "blocked": 247,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Mozilla-Tabstack",
+   "slug": null,
+   "explicit": 15,
+   "blocked": 247,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Terra Cotta",
+   "slug": null,
+   "explicit": 14,
+   "blocked": 246,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "MoonshotBot",
+   "slug": null,
+   "explicit": 16,
+   "blocked": 245,
+   "allowed": 2,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "YiBot",
+   "slug": null,
+   "explicit": 16,
+   "blocked": 245,
+   "allowed": 1,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Kimi-Agent",
+   "slug": null,
+   "explicit": 13,
+   "blocked": 244,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "qodercli",
+   "slug": null,
+   "explicit": 13,
+   "blocked": 244,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Hunyuan",
+   "slug": null,
+   "explicit": 14,
+   "blocked": 243,
+   "allowed": 1,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "NagetBot",
+   "slug": null,
+   "explicit": 11,
+   "blocked": 243,
+   "allowed": 0,
+   "blockedPct": 4.3,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "GoogleAgent-URLContext",
+   "slug": null,
+   "explicit": 12,
+   "blocked": 242,
+   "allowed": 1,
+   "blockedPct": 4.2,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "NotebookLM",
+   "slug": null,
+   "explicit": 13,
+   "blocked": 242,
+   "allowed": 2,
+   "blockedPct": 4.2,
+   "blockedTop1k": 41
+  },
+  {
+   "token": "AgentTimes",
+   "slug": null,
+   "explicit": 9,
+   "blocked": 241,
+   "allowed": 0,
+   "blockedPct": 4.2,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "newsai",
+   "slug": null,
+   "explicit": 10,
+   "blocked": 241,
+   "allowed": 1,
+   "blockedPct": 4.2,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Google-Gemini-CLI",
+   "slug": null,
+   "explicit": 10,
+   "blocked": 240,
+   "allowed": 2,
+   "blockedPct": 4.2,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "OAI-AdsBot",
+   "slug": "oai-adsbot",
+   "explicit": 40,
+   "blocked": 239,
+   "allowed": 32,
+   "blockedPct": 4.2,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Lightpanda",
+   "slug": null,
+   "explicit": 6,
+   "blocked": 238,
+   "allowed": 0,
+   "blockedPct": 4.2,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "ExaUser",
+   "slug": null,
+   "explicit": 4,
+   "blocked": 236,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 43
+  },
+  {
+   "token": "Muse",
+   "slug": null,
+   "explicit": 3,
+   "blocked": 235,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "AGI Agent",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "CartAI Agentic Commerce",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "CledaraBot",
+   "slug": null,
+   "explicit": 3,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Codex",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Dot",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Grok Bot",
+   "slug": null,
+   "explicit": 3,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "HarkBot",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Instinct",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "Payhawk Invoice Fetching Agent",
+   "slug": null,
+   "explicit": 2,
+   "blocked": 234,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "ElevenlabsBot",
+   "slug": null,
+   "explicit": 3,
+   "blocked": 233,
+   "allowed": 1,
+   "blockedPct": 4.1,
+   "blockedTop1k": 41
+  },
+  {
+   "token": "GrokAppAndroid",
+   "slug": null,
+   "explicit": 1,
+   "blocked": 233,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "nbot",
+   "slug": null,
+   "explicit": 1,
+   "blocked": 233,
+   "allowed": 0,
+   "blockedPct": 4.1,
+   "blockedTop1k": 42
+  },
+  {
+   "token": "facebookexternalhit",
+   "slug": null,
+   "explicit": 406,
+   "blocked": 189,
+   "allowed": 381,
+   "blockedPct": 3.3,
+   "blockedTop1k": 21
+  },
+  {
+   "token": "Bingbot",
+   "slug": "bingbot",
+   "explicit": 428,
+   "blocked": 161,
+   "allowed": 409,
+   "blockedPct": 2.8,
+   "blockedTop1k": 17
+  },
+  {
+   "token": "Googlebot",
+   "slug": "googlebot",
+   "explicit": 551,
+   "blocked": 137,
+   "allowed": 539,
+   "blockedPct": 2.4,
+   "blockedTop1k": 18
+  }
+ ],
+ "tiers": [
+  {
+   "tier": "Top 1,000",
+   "sites": 1000,
+   "withRobots": 507,
+   "blocksAnyAi": 139,
+   "llmsTxt": 116,
+   "blocksAnyAiPct": 27.4,
+   "llmsTxtPct": 11.6
+  },
+  {
+   "tier": "1,001\u20135,000",
+   "sites": 4000,
+   "withRobots": 2215,
+   "blocksAnyAi": 478,
+   "llmsTxt": 407,
+   "blocksAnyAiPct": 21.6,
+   "llmsTxtPct": 10.2
+  },
+  {
+   "tier": "5,001\u201310,000",
+   "sites": 5000,
+   "withRobots": 2979,
+   "blocksAnyAi": 650,
+   "llmsTxt": 460,
+   "blocksAnyAiPct": 21.8,
+   "llmsTxtPct": 9.2
+  }
+ ],
+ "topSites": [
+  {
+   "rank": 1,
+   "domain": "google.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 2,
+   "domain": "cloudflare.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "CCBot",
+    "cohere-ai"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 3,
+   "domain": "amazonaws.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 4,
+   "domain": "facebook.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 6,
+   "domain": "gstatic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 7,
+   "domain": "fbcdn.net",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 10,
+   "domain": "microsoft.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 11,
+   "domain": "youtube.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 12,
+   "domain": "apple.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 14,
+   "domain": "instagram.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 15,
+   "domain": "twitter.com",
+   "blocks": [],
+   "allows": [
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 17,
+   "domain": "mail.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 22,
+   "domain": "googlevideo.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 25,
+   "domain": "dzen.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 30,
+   "domain": "amazon.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 33,
+   "domain": "github.com",
+   "blocks": [
+    "Bytespider"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 36,
+   "domain": "wikipedia.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 39,
+   "domain": "fastly.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 42,
+   "domain": "whatsapp.net",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 43,
+   "domain": "netflix.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 45,
+   "domain": "bing.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 47,
+   "domain": "x.com",
+   "blocks": [],
+   "allows": [
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 48,
+   "domain": "youtu.be",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 49,
+   "domain": "gandi.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 50,
+   "domain": "doubleclick.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 52,
+   "domain": "pinterest.com",
+   "blocks": [
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [
+    "FacebookBot",
+    "DuckAssistBot",
+    "Bravebot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 54,
+   "domain": "icloud.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 58,
+   "domain": "cloudflare.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 59,
+   "domain": "wordpress.org",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "Bytespider"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 61,
+   "domain": "adobe.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 66,
+   "domain": "whatsapp.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 67,
+   "domain": "zoom.us",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 68,
+   "domain": "myfritz.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 70,
+   "domain": "digicert.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 72,
+   "domain": "yahoo.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "FriendlyCrawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot",
+    "panscient.com",
+    "Scrapy"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "Claude-SearchBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 73,
+   "domain": "wa.me",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 76,
+   "domain": "opera.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 77,
+   "domain": "roblox.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 78,
+   "domain": "spotify.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 83,
+   "domain": "ntp.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 85,
+   "domain": "amazonvideo.com",
+   "blocks": [
+    "ChatGPT-User",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 87,
+   "domain": "vimeo.com",
+   "blocks": [
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 88,
+   "domain": "nginx.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 89,
+   "domain": "qq.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 92,
+   "domain": "msn.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "bedrockbot",
+    "Cotoyogi",
+    "FriendlyCrawler",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KunatoCrawler",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "QualifiedBot",
+    "Scrapy",
+    "Sidetrade indexer bot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "WRTNBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 94,
+   "domain": "blogspot.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 95,
+   "domain": "mozilla.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 96,
+   "domain": "f5.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 102,
+   "domain": "reddit.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 103,
+   "domain": "sentry.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 107,
+   "domain": "yandex.ru",
+   "blocks": [],
+   "allows": [
+    "OAI-SearchBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 108,
+   "domain": "ui.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 109,
+   "domain": "europa.eu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 112,
+   "domain": "chatgpt.com",
+   "blocks": [
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "img2dataset",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 116,
+   "domain": "ipify.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 117,
+   "domain": "bit.ly",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 118,
+   "domain": "intuit.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 120,
+   "domain": "samsung.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "PerplexityBot",
+    "Google-Extended"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 122,
+   "domain": "skybridge.click",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 127,
+   "domain": "registrar-servers.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 129,
+   "domain": "t-online.de",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "CCBot",
+    "Bytespider"
+   ],
+   "allows": [
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 131,
+   "domain": "openai.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 135,
+   "domain": "android.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "MistralAI-User",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 136,
+   "domain": "dropbox.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 138,
+   "domain": "adobe.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 140,
+   "domain": "discord.gg",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 143,
+   "domain": "apache.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 146,
+   "domain": "vk.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 149,
+   "domain": "webex.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 150,
+   "domain": "archive.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 157,
+   "domain": "snapchat.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "GoogleOther",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "Brightbot 1.0",
+    "Crawlspace",
+    "FriendlyCrawler",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA",
+    "Sidetrade indexer bot",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "meta-webindexer",
+    "DuckAssistBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 160,
+   "domain": "tumblr.com",
+   "blocks": [
+    "ClaudeBot",
+    "anthropic-ai",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "YouBot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 163,
+   "domain": "nytimes.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Timpibot",
+    "Brightbot",
+    "Diffbot-User",
+    "EchoboxBot",
+    "ExaBot",
+    "ExaSearchBot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "ImagesiftBot",
+    "MyCentralAIScraperBot",
+    "omgili",
+    "omgilibot",
+    "Poseidon Research Crawler",
+    "quillbot.com",
+    "Scrapy",
+    "ShapBot"
+   ],
+   "allows": [
+    "Amazonbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 165,
+   "domain": "gravatar.com",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 166,
+   "domain": "kaspersky.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "DeepSeekBot",
+    "Diffbot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 168,
+   "domain": "ubuntu.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Bytespider",
+    "cohere-ai"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 170,
+   "domain": "shopify.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 173,
+   "domain": "google-analytics.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 174,
+   "domain": "paypal.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 176,
+   "domain": "afternic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 178,
+   "domain": "samsungcloud.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 180,
+   "domain": "flickr.com",
+   "blocks": [],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 182,
+   "domain": "w3.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 184,
+   "domain": "pki.goog",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 185,
+   "domain": "mts.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 186,
+   "domain": "unity3d.com",
+   "blocks": [
+    "Bytespider"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 187,
+   "domain": "creativecommons.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 189,
+   "domain": "discord.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 191,
+   "domain": "ebay.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-AdsBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "ChatGLM-Spider"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 192,
+   "domain": "soundcloud.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 193,
+   "domain": "macromedia.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 195,
+   "domain": "cnn.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "GoogleOther",
+    "Applebot-Extended",
+    "FacebookBot",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "Brightbot 1.0",
+    "Crawlspace",
+    "Diffbot-User",
+    "EchoboxBot",
+    "ExaBot",
+    "ExaSearchBot",
+    "ExaUser",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "MyCentralAIScraperBot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Panscient",
+    "Poseidon Research Crawler",
+    "QuillBot",
+    "quillbot.com",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA",
+    "Shap-User",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 196,
+   "domain": "theguardian.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "amazon-QBusiness",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 197,
+   "domain": "youtube-nocookie.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 198,
+   "domain": "medium.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "GoogleOther",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "Bytespider"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 203,
+   "domain": "stripe.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 216,
+   "domain": "bbc.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "ApifyBot",
+    "ApifyWebsiteContentCrawler",
+    "Brightbot",
+    "CloudflareBrowserRenderingCrawler",
+    "Diffbot-User",
+    "ExaBot",
+    "FirecrawlAgent",
+    "omgili",
+    "omgilibot",
+    "Scrapy",
+    "ShapBot",
+    "TavilyBot",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 217,
+   "domain": "criteo.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 220,
+   "domain": "forter.com",
+   "blocks": [
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "MistralAI-User",
+    "cohere-ai",
+    "DeepSeekBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 224,
+   "domain": "sciencedirect.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "ChatGLM-Spider",
+    "Claude-Code",
+    "FriendlyCrawler",
+    "Google-NotebookLM",
+    "iAskBot",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot",
+    "QuillBot",
+    "ShapBot",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "Claude-SearchBot",
+    "DuckAssistBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 225,
+   "domain": "twitch.tv",
+   "blocks": [],
+   "allows": [
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 227,
+   "domain": "researchgate.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 228,
+   "domain": "publicnode.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 229,
+   "domain": "applovin.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 230,
+   "domain": "mit.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 234,
+   "domain": "nist.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 236,
+   "domain": "bbc.co.uk",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "ApifyBot",
+    "ApifyWebsiteContentCrawler",
+    "Brightbot",
+    "CloudflareBrowserRenderingCrawler",
+    "Diffbot-User",
+    "ExaBot",
+    "FirecrawlAgent",
+    "omgili",
+    "omgilibot",
+    "Scrapy",
+    "ShapBot",
+    "TavilyBot",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 238,
+   "domain": "cpanel.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 239,
+   "domain": "namecheap.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 240,
+   "domain": "hcaptcha.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 242,
+   "domain": "cisco.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 245,
+   "domain": "t.co",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 246,
+   "domain": "roku.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 247,
+   "domain": "amplitude.com",
+   "blocks": [
+    "Bytespider"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "cohere-ai"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 250,
+   "domain": "weather.com",
+   "blocks": [
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "Diffbot",
+    "FriendlyCrawler",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot",
+    "Scrapy"
+   ],
+   "allows": [
+    "ChatGPT-User"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 251,
+   "domain": "sourceforge.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 254,
+   "domain": "astrumu.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 261,
+   "domain": "hubspot.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 263,
+   "domain": "linktr.ee",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ChatGPT Agent",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalFetcher",
+    "Amazonbot",
+    "CCBot",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "Bravebot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 264,
+   "domain": "imdb.com",
+   "blocks": [],
+   "allows": [
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "DuckAssistBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 269,
+   "domain": "userapi.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 271,
+   "domain": "who.int",
+   "blocks": [
+    "CCBot",
+    "aiHitBot",
+    "ExaBot",
+    "Panscient",
+    "Scrapy"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 275,
+   "domain": "wixsite.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 276,
+   "domain": "canva.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "FriendlyCrawler",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "Scrapy",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "PerplexityBot",
+    "Perplexity-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 277,
+   "domain": "ibm.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 281,
+   "domain": "launchpad.net",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Cotoyogi",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "Kangaroo Bot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 282,
+   "domain": "ip-api.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 283,
+   "domain": "reuters.com",
+   "blocks": [
+    "Applebot-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "GoogleOther",
+    "meta-webindexer",
+    "Amzn-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 284,
+   "domain": "brave.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 286,
+   "domain": "datadoghq.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 288,
+   "domain": "hp.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "OAI-AdsBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 290,
+   "domain": "tinyurl.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 293,
+   "domain": "booking.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 294,
+   "domain": "www.gov.uk",
+   "blocks": [],
+   "allows": [
+    "Meta-ExternalAgent"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 297,
+   "domain": "nature.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "GoogleOther",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "FriendlyCrawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 298,
+   "domain": "steampowered.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 302,
+   "domain": "demdex.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 304,
+   "domain": "salesforce.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 305,
+   "domain": "springer.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 310,
+   "domain": "alibaba.com",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 313,
+   "domain": "vungle.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 318,
+   "domain": "weibo.com",
+   "blocks": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Perplexity-User",
+    "Meta-ExternalAgent",
+    "Bytespider",
+    "DeepSeekBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 319,
+   "domain": "pubmatic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 321,
+   "domain": "harvard.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 322,
+   "domain": "ok.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 323,
+   "domain": "slack.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 325,
+   "domain": "rubiconproject.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 326,
+   "domain": "amazon.co.uk",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 328,
+   "domain": "etsy.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 329,
+   "domain": "launchdarkly.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 334,
+   "domain": "gmail.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 336,
+   "domain": "php.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 337,
+   "domain": "naver.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 340,
+   "domain": "bilibili.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 341,
+   "domain": "weebly.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 342,
+   "domain": "tp-link.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 344,
+   "domain": "trustpilot.com",
+   "blocks": [
+    "anthropic-ai",
+    "Applebot-Extended",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Timpibot",
+    "ImagesiftBot",
+    "Kangaroo Bot",
+    "omgili",
+    "omgilibot",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "CCBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 345,
+   "domain": "ea.com",
+   "blocks": [
+    "Meta-ExternalAgent",
+    "Bytespider",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "FriendlyCrawler",
+    "ICC-Crawler"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 346,
+   "domain": "zendesk.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 347,
+   "domain": "gnu.org",
+   "blocks": [
+    "panscient.com",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 349,
+   "domain": "grammarly.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 350,
+   "domain": "aliyun.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "CCBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 351,
+   "domain": "branch.io",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 353,
+   "domain": "dell.com",
+   "blocks": [],
+   "allows": [
+    "Bytespider"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 356,
+   "domain": "cdc.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 357,
+   "domain": "checkpoint.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 358,
+   "domain": "netflix.net",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 361,
+   "domain": "tradingview.com",
+   "blocks": [],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "Bytespider",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 362,
+   "domain": "nvidia.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 363,
+   "domain": "espn.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "anthropic-ai",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 364,
+   "domain": "anthropic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 366,
+   "domain": "cm.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 369,
+   "domain": "nasa.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 370,
+   "domain": "opendns.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 375,
+   "domain": "gitlab.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 377,
+   "domain": "issuu.com",
+   "blocks": [
+    "AddSearchBot",
+    "SemrushBot-OCOB",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 379,
+   "domain": "stanford.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 382,
+   "domain": "wsj.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "GoogleOther",
+    "Google-CloudVertexBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 383,
+   "domain": "washingtonpost.com",
+   "blocks": [
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "cohere-training-data-crawler",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 385,
+   "domain": "name.com",
+   "blocks": [
+    "Meta-ExternalAgent"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 386,
+   "domain": "bloomberg.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Brightbot"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 387,
+   "domain": "amazon.de",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 389,
+   "domain": "plesk.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 394,
+   "domain": "paloaltonetworks.com",
+   "blocks": [],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 396,
+   "domain": "bsky.app",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 398,
+   "domain": "drom.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 399,
+   "domain": "inmobi.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 401,
+   "domain": "yandex.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 403,
+   "domain": "go.com",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 406,
+   "domain": "calendly.com",
+   "blocks": [
+    "CCBot"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 407,
+   "domain": "netangels.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 409,
+   "domain": "archive.ph",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 411,
+   "domain": "claude.ai",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Google-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 412,
+   "domain": "okta.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 414,
+   "domain": "line.me",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 416,
+   "domain": "duckduckgo.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 418,
+   "domain": "unsplash.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Bytespider",
+    "ImagesiftBot",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 419,
+   "domain": "hostgator.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 420,
+   "domain": "indeed.com",
+   "blocks": [
+    "GoogleOther",
+    "MyCentralAIScraperBot",
+    "omgili",
+    "omgilibot",
+    "Scrapy",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 421,
+   "domain": "aol.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "FriendlyCrawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot",
+    "panscient.com",
+    "Scrapy"
+   ],
+   "allows": [
+    "ChatGPT-User",
+    "PerplexityBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 427,
+   "domain": "steamcommunity.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 428,
+   "domain": "taboola.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 429,
+   "domain": "substack.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 431,
+   "domain": "temu.com",
+   "blocks": [
+    "Bytespider"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended",
+    "FacebookBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 435,
+   "domain": "dailymotion.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 437,
+   "domain": "telekom.de",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 442,
+   "domain": "dynatrace.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 443,
+   "domain": "wps.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 446,
+   "domain": "intel.com",
+   "blocks": [
+    "ICC-Crawler"
+   ],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 453,
+   "domain": "atlassian.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 454,
+   "domain": "archive.is",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 455,
+   "domain": "bluehost.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 456,
+   "domain": "taobao.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 458,
+   "domain": "arxiv.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 461,
+   "domain": "yahoo.co.jp",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 464,
+   "domain": "pixabay.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "Bytespider"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 465,
+   "domain": "huawei.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 466,
+   "domain": "duolingo.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 468,
+   "domain": "selectel.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 469,
+   "domain": "speedtest.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 471,
+   "domain": "businessinsider.com",
+   "blocks": [
+    "ClaudeBot",
+    "anthropic-ai",
+    "CCBot",
+    "Bytespider",
+    "Diffbot",
+    "Timpibot",
+    "Scrapy"
+   ],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 473,
+   "domain": "fandom.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "CCBot",
+    "GrokBot",
+    "xAI-Grok"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 474,
+   "domain": "cnbc.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot",
+    "Google-NotebookLM",
+    "omgili",
+    "omgilibot",
+    "Scrapy"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 477,
+   "domain": "walmart.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 481,
+   "domain": "kwai.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 482,
+   "domain": "goodreads.com",
+   "blocks": [
+    "GPTBot",
+    "CCBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 483,
+   "domain": "shein.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 485,
+   "domain": "appsflyer.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 486,
+   "domain": "ietf.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 490,
+   "domain": "amazon.co.jp",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 491,
+   "domain": "quora.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Bytespider",
+    "Bravebot",
+    "Diffbot",
+    "ImagesiftBot",
+    "Scrapy"
+   ],
+   "allows": [
+    "Google-Extended",
+    "Amazonbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 493,
+   "domain": "statista.com",
+   "blocks": [
+    "Brightbot 1.0"
+   ],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 497,
+   "domain": "aliexpress.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 498,
+   "domain": "scribd.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-Web",
+    "CCBot",
+    "Bytespider",
+    "AI2Bot",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 503,
+   "domain": "teamviewer.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 504,
+   "domain": "addtoany.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 505,
+   "domain": "eventbrite.com",
+   "blocks": [],
+   "allows": [
+    "CCBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 506,
+   "domain": "sina.com.cn",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 509,
+   "domain": "foxnews.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 510,
+   "domain": "noaa.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 511,
+   "domain": "supercell.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 512,
+   "domain": "trendmicro.com",
+   "blocks": [],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "cohere-ai"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 515,
+   "domain": "indiatimes.com",
+   "blocks": [
+    "Meta-ExternalAgent"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 516,
+   "domain": "blogger.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 518,
+   "domain": "google.de",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 519,
+   "domain": "amzn.to",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 521,
+   "domain": "google.com.hk",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 524,
+   "domain": "mobile.de",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 525,
+   "domain": "behance.net",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "ImagesiftBot",
+    "Kangaroo Bot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 530,
+   "domain": "openstreetmap.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 531,
+   "domain": "docker.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 532,
+   "domain": "tplinkcloud.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 534,
+   "domain": "braze.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 535,
+   "domain": "uol.com.br",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Cotoyogi",
+    "Datenbank Crawler",
+    "Devin",
+    "Factset_spyderbot",
+    "Gemini-Deep-Research",
+    "GoogleAgent-Mariner",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "Kangaroo Bot",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "Operator",
+    "PanguBot",
+    "SemrushBot-OCOB",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 537,
+   "domain": "cloudns.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 539,
+   "domain": "ivi.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 543,
+   "domain": "mysql.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 544,
+   "domain": "newrelic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 545,
+   "domain": "netcraze.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 546,
+   "domain": "capcut.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "OAI-AdsBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "DuckAssistBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 547,
+   "domain": "mozilla.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 550,
+   "domain": "slideshare.net",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-Web",
+    "CCBot",
+    "Bytespider",
+    "AI2Bot",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 552,
+   "domain": "ft.com",
+   "blocks": [
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 554,
+   "domain": "doubleverify.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 557,
+   "domain": "sohu.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "DeepSeekBot",
+    "Diffbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 558,
+   "domain": "firefox.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 562,
+   "domain": "visualstudio.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 564,
+   "domain": "tandfonline.com",
+   "blocks": [
+    "GPTBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 568,
+   "domain": "fast.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 570,
+   "domain": "wired.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "Bravebot",
+    "Diffbot",
+    "Timpibot",
+    "Brightbot 1.0",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "PanguBot",
+    "Scrapy",
+    "Shap-User",
+    "ShapBot",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 571,
+   "domain": "cornell.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 572,
+   "domain": "tripadvisor.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "img2dataset",
+    "PanguBot"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "PerplexityBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 573,
+   "domain": "playstation.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 576,
+   "domain": "herokuapp.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 577,
+   "domain": "shop.app",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 578,
+   "domain": "klaviyo.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Agent",
+    "Meta-ExternalAgent",
+    "DuckAssistBot",
+    "YouBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 579,
+   "domain": "comcast.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 582,
+   "domain": "dreamhost.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 583,
+   "domain": "time.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 584,
+   "domain": "ezvizlife.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 585,
+   "domain": "jquery.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 587,
+   "domain": "squarespace.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Google-Extended",
+    "GoogleOther",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 588,
+   "domain": "free.fr",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 591,
+   "domain": "threads.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 592,
+   "domain": "deviantart.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 593,
+   "domain": "rakuten.co.jp",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 597,
+   "domain": "eset.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 598,
+   "domain": "360yield.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 599,
+   "domain": "ca.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 604,
+   "domain": "media.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 605,
+   "domain": "atlassian.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 606,
+   "domain": "target.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 613,
+   "domain": "digitalocean.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 616,
+   "domain": "wix.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 617,
+   "domain": "usatoday.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ChatGPT Agent",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Bravebot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "AmazonBuyForMe",
+    "Andibot",
+    "Anomura",
+    "ApifyBot",
+    "atlassian-bot",
+    "bigsur.ai",
+    "Brightbot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Crawlspace",
+    "Datenbank Crawler",
+    "Devin",
+    "Diffbot-User",
+    "Echobot Bot",
+    "EchoboxBot",
+    "ExaBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "laion-huggingface-processor",
+    "LCC",
+    "LinerBot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "PhindBot",
+    "Poggio-Citations",
+    "Poseidon Research Crawler",
+    "QualifiedBot",
+    "QuillBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "Spider",
+    "TavilyBot",
+    "TikTokSpider",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "YandexAdditional",
+    "YandexAdditionalBot",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 619,
+   "domain": "dailymail.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "bedrockbot",
+    "ChatGLM-Spider",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "EchoboxBot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KunatoCrawler",
+    "LinerBot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "QualifiedBot",
+    "Scrapy",
+    "Sidetrade indexer bot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot"
+   ],
+   "allows": [
+    "GoogleOther"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 624,
+   "domain": "sagepub.com",
+   "blocks": [
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Google-Extended",
+    "Applebot-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 626,
+   "domain": "endpoints.news",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [
+    "Google-Extended",
+    "GoogleOther"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 628,
+   "domain": "berkeley.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 629,
+   "domain": "telegraph.co.uk",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "cohere-ai",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "bedrockbot",
+    "ChatGLM-Spider",
+    "Cotoyogi",
+    "FriendlyCrawler",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KunatoCrawler",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "QualifiedBot",
+    "Scrapy",
+    "Sidetrade indexer bot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "WRTNBot"
+   ],
+   "allows": [
+    "Google-Extended"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 630,
+   "domain": "avito.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 631,
+   "domain": "hotjar.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 632,
+   "domain": "amazon.fr",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 633,
+   "domain": "amazon.ca",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 634,
+   "domain": "techcrunch.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "Applebot-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot",
+    "omgili"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 635,
+   "domain": "nintendo.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Claude-Web",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "FriendlyCrawler",
+    "ICC-Crawler",
+    "Kangaroo Bot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 636,
+   "domain": "ikea.com",
+   "blocks": [
+    "Amazonbot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 637,
+   "domain": "bitrix24.ru",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 641,
+   "domain": "merriam-webster.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 642,
+   "domain": "verisign.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 643,
+   "domain": "sophos.com",
+   "blocks": [
+    "Amazonbot",
+    "DeepSeekBot"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "YouBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 644,
+   "domain": "onetrust.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 645,
+   "domain": "jotform.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "OAI-AdsBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "Diffbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 651,
+   "domain": "beget.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 654,
+   "domain": "tencent.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 655,
+   "domain": "intercom.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 657,
+   "domain": "meta.com",
+   "blocks": [
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 659,
+   "domain": "charter.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 661,
+   "domain": "2gis.com",
+   "blocks": [
+    "GoogleOther"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 662,
+   "domain": "loc.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 664,
+   "domain": "stackadapt.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 668,
+   "domain": "iso.org",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 670,
+   "domain": "optimizely.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 673,
+   "domain": "binance.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 674,
+   "domain": "elpais.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "DeepSeekBot",
+    "ExaBot",
+    "LinerBot",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 676,
+   "domain": "amazon.in",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 677,
+   "domain": "nike.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 678,
+   "domain": "primevideo.com",
+   "blocks": [
+    "ChatGPT-User",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 680,
+   "domain": "redhat.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 681,
+   "domain": "sharethrough.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-User",
+    "PerplexityBot",
+    "GoogleOther",
+    "Meta-ExternalAgent",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "SBIntuitionsBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 682,
+   "domain": "britannica.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 684,
+   "domain": "box.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 686,
+   "domain": "surveymonkey.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 689,
+   "domain": "ngenix.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 691,
+   "domain": "cambridge.org",
+   "blocks": [
+    "ChatGPT-User"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 693,
+   "domain": "perplexity.ai",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 696,
+   "domain": "xhamster.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 698,
+   "domain": "ring.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "cohere-ai"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 699,
+   "domain": "kick.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 700,
+   "domain": "lemonde.fr",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Google-Agent",
+    "Applebot-Extended",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "MistralAI-Index",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "KimiBot",
+    "Kimi-SearchBot",
+    "AI2Bot",
+    "Bravebot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "AIWebIndex",
+    "amazon-kendra",
+    "amazon-QBusiness",
+    "AmazonBuyForMe",
+    "Anomura",
+    "ApifyBot",
+    "ApifyWebsiteContentCrawler",
+    "Aranet-SearchBot",
+    "atlassian-bot",
+    "AzureAI-SearchBot",
+    "bedrockbot",
+    "bigsur.ai",
+    "Brightbot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudVertexBot",
+    "Cotoyogi",
+    "CragCrawler",
+    "Crawl4AI",
+    "Crawlspace",
+    "Datenbank Crawler",
+    "Devin",
+    "DoubaoBot",
+    "ERNIEBot",
+    "ExaBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "GeistHaus-PageFetcher",
+    "Gemini-Deep-Research",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "GoogleAgent-URLContext",
+    "HenkBot",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "imageSpider",
+    "kagi-fetcher",
+    "Kangaroo Bot",
+    "Kimi-User",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "LCC",
+    "LinerBot",
+    "LinkupBot",
+    "Manus-User",
+    "MoonshotBot",
+    "Mozilla-Tabstack",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "Querit-SearchBot",
+    "QueritBot",
+    "QwenBot",
+    "SBIntuitionsBot",
+    "SemrushBot-OCOB",
+    "Shap-User",
+    "ShapBot",
+    "Spider",
+    "TavilyBot",
+    "Terra Cotta",
+    "TerraCotta",
+    "TongyiBot",
+    "TwinAgent",
+    "UseAI",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "WRTNBot",
+    "YaK",
+    "YandexAdditional",
+    "YandexAdditionalBot",
+    "YiyanBot",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 701,
+   "domain": "cbsnews.com",
+   "blocks": [
+    "GPTBot",
+    "panscient.com"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 702,
+   "domain": "yelp.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "CCBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 704,
+   "domain": "rustore.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 705,
+   "domain": "fb.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "Brightbot",
+    "Scrapy",
+    "YaK"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 709,
+   "domain": "telefonica.de",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 710,
+   "domain": "360.cn",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 711,
+   "domain": "bandcamp.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "Diffbot",
+    "omgili"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 713,
+   "domain": "imgsmail.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 714,
+   "domain": "amazon.es",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 717,
+   "domain": "dailymail.co.uk",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "bedrockbot",
+    "ChatGLM-Spider",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "EchoboxBot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "GoogleOther-Image",
+    "GoogleOther-Video",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KunatoCrawler",
+    "LinerBot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "QualifiedBot",
+    "Scrapy",
+    "Sidetrade indexer bot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot"
+   ],
+   "allows": [
+    "GoogleOther"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 719,
+   "domain": "stripchat.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 721,
+   "domain": "hihonorcloud.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 722,
+   "domain": "outbrain.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 723,
+   "domain": "ya.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 727,
+   "domain": "itch.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 729,
+   "domain": "uber.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 730,
+   "domain": "pinimg.com",
+   "blocks": [
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [
+    "FacebookBot",
+    "DuckAssistBot",
+    "Bravebot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 731,
+   "domain": "linode.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 735,
+   "domain": "amazon.it",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 737,
+   "domain": "cnet.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Bravebot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AgentDataBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "AIWebIndex",
+    "amazon-QBusiness",
+    "AmazonBuyForMe",
+    "ApifyBot",
+    "ApifyWebsiteContentCrawler",
+    "atlassian-bot",
+    "AzureAI-SearchBot",
+    "bigsur.ai",
+    "BixelBot",
+    "Brightbot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Claude-Code",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Code",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Cursor",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "ExaBot",
+    "ExaSearchBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "GeistHaus-PageFetcher",
+    "Hunyuan",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "kagi-fetcher",
+    "Kangaroo Bot",
+    "KeenableBot",
+    "Kimi-Agent",
+    "Kimi-User",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "LCC",
+    "LinerBot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "opencode",
+    "PanguBot",
+    "PhindBot",
+    "Poggio-Citations",
+    "qodercli",
+    "QualifiedBot",
+    "Reflectionbot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "Shap-User",
+    "ShapBot",
+    "Spider",
+    "TavilyBot",
+    "TerraCotta",
+    "TongyiBot",
+    "Trae",
+    "TwinAgent",
+    "UseAI",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "WRTNBot",
+    "xAI-Grok",
+    "YandexAdditionalBot",
+    "YiBot",
+    "YiyanBot",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 738,
+   "domain": "quantserve.com",
+   "blocks": [
+    "GoogleOther"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 740,
+   "domain": "viber.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 741,
+   "domain": "mediafire.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 743,
+   "domain": "asus.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 745,
+   "domain": "shopee.co.id",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 746,
+   "domain": "gumgum.com",
+   "blocks": [
+    "Brightbot"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "GoogleOther"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 747,
+   "domain": "creativecdn.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 750,
+   "domain": "hugedomains.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 752,
+   "domain": "marriott.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 753,
+   "domain": "wpguardian.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 755,
+   "domain": "wpguardian.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 758,
+   "domain": "python.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 759,
+   "domain": "bild.de",
+   "blocks": [
+    "PerplexityBot",
+    "Perplexity-User",
+    "Applebot-Extended",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Awario",
+    "bedrockbot",
+    "Brightbot 1.0",
+    "Cotoyogi",
+    "Crawlspace",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "LCC",
+    "MyCentralAIScraperBot",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "Operator",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poseidon Research Crawler",
+    "QualifiedBot",
+    "QuillBot",
+    "quillbot.com",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA",
+    "Sidetrade indexer bot",
+    "TerraCotta",
+    "Thinkbot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "wpbot",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 761,
+   "domain": "globalsign.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "CCBot",
+    "Bytespider"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "PerplexityBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 762,
+   "domain": "rfc-editor.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 764,
+   "domain": "google.co.uk",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 766,
+   "domain": "homedepot.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 769,
+   "domain": "airbnb.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Applebot-Extended",
+    "MistralAI-Training",
+    "AI2Bot",
+    "ImagesiftBot",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Meta-ExternalAgent",
+    "cohere-ai"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 770,
+   "domain": "mailchimp.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 772,
+   "domain": "craigslist.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 774,
+   "domain": "imgur.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 775,
+   "domain": "mlb.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 776,
+   "domain": "mikrotik.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 777,
+   "domain": "fontawesome.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 780,
+   "domain": "deepl.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 781,
+   "domain": "livejournal.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 783,
+   "domain": "welt.de",
+   "blocks": [
+    "PerplexityBot",
+    "Perplexity-User",
+    "Applebot-Extended",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Awario",
+    "bedrockbot",
+    "Brightbot 1.0",
+    "Cotoyogi",
+    "Crawlspace",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "LCC",
+    "MyCentralAIScraperBot",
+    "netEstate Imprint Crawler",
+    "NovaAct",
+    "omgili",
+    "omgilibot",
+    "Operator",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poseidon Research Crawler",
+    "QualifiedBot",
+    "QuillBot",
+    "quillbot.com",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-OCOB",
+    "SemrushBot-SWA",
+    "Sidetrade indexer bot",
+    "TerraCotta",
+    "Thinkbot",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "WARDBot",
+    "Webzio-Extended",
+    "wpbot",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 784,
+   "domain": "crwdcntrl.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 785,
+   "domain": "shopee.com.br",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 786,
+   "domain": "amazon.co.za",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 789,
+   "domain": "allegro.pl",
+   "blocks": [],
+   "allows": [
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 792,
+   "domain": "maricopa.gov",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "PerplexityBot",
+    "Meta-ExternalAgent",
+    "meta-webindexer",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 793,
+   "domain": "wattpad.com",
+   "blocks": [
+    "GPTBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 795,
+   "domain": "zillow.com",
+   "blocks": [
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "YouBot",
+    "AI2Bot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "amazon-kendra",
+    "YandexAdditional",
+    "YandexAdditionalBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 796,
+   "domain": "apnews.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Amazonbot",
+    "CCBot",
+    "cohere-ai",
+    "Timpibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 798,
+   "domain": "sentinelone.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 800,
+   "domain": "moloco.com",
+   "blocks": [
+    "Bytespider"
+   ],
+   "allows": [
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 801,
+   "domain": "google.com.br",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 802,
+   "domain": "ameblo.jp",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 805,
+   "domain": "zoho.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 806,
+   "domain": "recaptcha.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 808,
+   "domain": "flurry.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 812,
+   "domain": "rakuten.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 813,
+   "domain": "zoom.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 814,
+   "domain": "wp.pl",
+   "blocks": [
+    "GPTBot",
+    "CCBot"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "PerplexityBot",
+    "Perplexity-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 818,
+   "domain": "prnewswire.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 820,
+   "domain": "discordapp.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 821,
+   "domain": "fiverr.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 822,
+   "domain": "disneyplus.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Google-Extended",
+    "Google-Agent",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "YouBot",
+    "DeepSeekBot",
+    "GrokBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 823,
+   "domain": "ted.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "Diffbot",
+    "Timpibot",
+    "Brightbot",
+    "FriendlyCrawler",
+    "iaskspider",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 824,
+   "domain": "conviva.com",
+   "blocks": [
+    "Brightbot"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "GoogleOther"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 827,
+   "domain": "people.com",
+   "blocks": [
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "MistralAI-Index",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "Bravebot",
+    "Diffbot",
+    "Timpibot",
+    "amazon-kendra",
+    "AmazonBuyForMe",
+    "Brightbot 1.0",
+    "Diffbot-User",
+    "ERNIEBot",
+    "ExaSearchBot",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "iAskBot",
+    "iaskspider",
+    "ImagesiftBot",
+    "imageSpider",
+    "ISSCyberRiskCrawler",
+    "LinerBot",
+    "LinkupBot",
+    "omgili",
+    "omgilibot",
+    "Shap-User",
+    "ShapBot",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 828,
+   "domain": "erome.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 829,
+   "domain": "gotinder.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 830,
+   "domain": "mixpanel.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 831,
+   "domain": "parklogic.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 834,
+   "domain": "usps.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 835,
+   "domain": "onlyfans.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 838,
+   "domain": "liftoff.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 842,
+   "domain": "vivo.com.cn",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 843,
+   "domain": "netlify.app",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 844,
+   "domain": "vkontakte.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 845,
+   "domain": "consultant.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 846,
+   "domain": "xvideos.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 847,
+   "domain": "adform.net",
+   "blocks": [],
+   "allows": [
+    "GoogleOther"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 850,
+   "domain": "life360.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 851,
+   "domain": "academia.edu",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended",
+    "Applebot-Extended"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 852,
+   "domain": "supabase.co",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 853,
+   "domain": "agoda.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 855,
+   "domain": "vivoglobal.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 858,
+   "domain": "synology.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 859,
+   "domain": "cdnvideo.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 861,
+   "domain": "myspace.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 862,
+   "domain": "theverge.com",
+   "blocks": [
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "ApifyBot",
+    "ApifyWebsiteContentCrawler",
+    "Brightbot",
+    "ChatGLM-Spider",
+    "CloudVertexBot",
+    "Cotoyogi",
+    "Crawl4AI",
+    "FirecrawlAgent",
+    "FriendlyCrawler",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "img2dataset",
+    "omgili",
+    "omgilibot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "TikTokSpider",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended"
+   ],
+   "allows": [
+    "GPTBot",
+    "Amazonbot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 863,
+   "domain": "chess.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 865,
+   "domain": "unpkg.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 867,
+   "domain": "frontiersin.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 868,
+   "domain": "amazon.com.br",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 869,
+   "domain": "one.one",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 871,
+   "domain": "flipkart.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 872,
+   "domain": "agora.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 873,
+   "domain": "cursor.sh",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 874,
+   "domain": "www.gov.br",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 875,
+   "domain": "pexels.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Applebot-Extended",
+    "CCBot",
+    "Bytespider"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 877,
+   "domain": "ebay.co.uk",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "ChatGLM-Spider"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 879,
+   "domain": "porkbun.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 880,
+   "domain": "cloudinary.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 881,
+   "domain": "pikabu.ru",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 882,
+   "domain": "ebay.de",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "ChatGLM-Spider"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 887,
+   "domain": "biblegateway.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 888,
+   "domain": "no-ip.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 890,
+   "domain": "pendo.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 891,
+   "domain": "deloitte.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 893,
+   "domain": "arcgis.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 898,
+   "domain": "nbcnews.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Brightbot 1.0",
+    "ExaBot",
+    "ExaSearchBot",
+    "NagetBot",
+    "omgili",
+    "omgilibot",
+    "QuillBot",
+    "quillbot.com",
+    "Scrapy",
+    "ShapBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 900,
+   "domain": "worldbank.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 902,
+   "domain": "auth0.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 903,
+   "domain": "pornhub.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 904,
+   "domain": "daum.net",
+   "blocks": [
+    "GoogleOther"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 906,
+   "domain": "hbr.org",
+   "blocks": [
+    "GPTBot",
+    "Google-Extended",
+    "CCBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 907,
+   "domain": "figma.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Google-Extended",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "cohere-ai",
+    "amazon-kendra",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "Claude-SearchBot",
+    "Claude-User",
+    "PerplexityBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 909,
+   "domain": "wyzecam.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Google-Extended",
+    "Meta-ExternalAgent",
+    "CCBot"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 910,
+   "domain": "princeton.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 911,
+   "domain": "poki.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 913,
+   "domain": "fwmrm.net",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 914,
+   "domain": "bankofamerica.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 915,
+   "domain": "singular.net",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 916,
+   "domain": "disqus.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 917,
+   "domain": "epa.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 918,
+   "domain": "lg.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 919,
+   "domain": "latimes.com",
+   "blocks": [
+    "GPTBot",
+    "ClaudeBot",
+    "Bytespider",
+    "Diffbot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 920,
+   "domain": "networkadvertising.org",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 926,
+   "domain": "mercadolivre.com.br",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Amazonbot"
+   ],
+   "allows": [
+    "FacebookBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 928,
+   "domain": "qualtrics.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 929,
+   "domain": "seedtag.com",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "PerplexityBot",
+    "Bytespider"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 935,
+   "domain": "classlink.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 936,
+   "domain": "patreon.com",
+   "blocks": [
+    "PerplexityBot",
+    "Google-CloudVertexBot",
+    "FacebookBot",
+    "Timpibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 940,
+   "domain": "genius.com",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Timpibot",
+    "ImagesiftBot",
+    "omgili",
+    "omgilibot",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 941,
+   "domain": "tailscale.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 942,
+   "domain": "jetbrains.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 944,
+   "domain": "note.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 946,
+   "domain": "state.gov",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 950,
+   "domain": "odoo.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 951,
+   "domain": "xiaohongshu.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 963,
+   "domain": "chaturbate.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 964,
+   "domain": "mercadolibre.com.ar",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-User",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Amazonbot"
+   ],
+   "allows": [
+    "FacebookBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 967,
+   "domain": "amazon.com.au",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "GoogleOther",
+    "Google-CloudVertexBot",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "meta-webindexer",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "DuckAssistBot",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "GrokBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "AddSearchBot",
+    "AI2Bot-DeepResearchEval",
+    "Ai2Bot-Dolma",
+    "aiHitBot",
+    "Andibot",
+    "Anomura",
+    "atlassian-bot",
+    "Brightbot",
+    "BuddyBot",
+    "Channel3Bot",
+    "ChatGLM-Spider",
+    "Cloudflare-AutoRAG",
+    "CloudflareBrowserRenderingCrawler",
+    "Cotoyogi",
+    "Crawl4AI",
+    "Datenbank Crawler",
+    "Devin",
+    "Echobot Bot",
+    "EchoboxBot",
+    "Factset_spyderbot",
+    "FriendlyCrawler",
+    "Gemini-Deep-Research",
+    "Google-Firebase",
+    "Google-NotebookLM",
+    "GoogleAgent-Mariner",
+    "iAskBot",
+    "iaskspider",
+    "ICC-Crawler",
+    "ImagesiftBot",
+    "imageSpider",
+    "img2dataset",
+    "ISSCyberRiskCrawler",
+    "Kangaroo Bot",
+    "KlaviyoAIBot",
+    "KunatoCrawler",
+    "laion-huggingface-processor",
+    "Linguee Bot",
+    "LinkupBot",
+    "Manus-User",
+    "netEstate Imprint Crawler",
+    "omgili",
+    "PanguBot",
+    "Panscient",
+    "panscient.com",
+    "PhindBot",
+    "Poggio-Citations",
+    "QualifiedBot",
+    "SBIntuitionsBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "ShapBot",
+    "Sidetrade indexer bot",
+    "TavilyBot",
+    "TerraCotta",
+    "Thinkbot",
+    "TwinAgent",
+    "VelenPublicWebCrawler",
+    "Webzio-Extended",
+    "wpbot",
+    "WRTNBot",
+    "xAI-Grok",
+    "YaK",
+    "ZanistaBot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 968,
+   "domain": "otto.de",
+   "blocks": [],
+   "allows": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "PerplexityBot",
+    "Perplexity-User"
+   ],
+   "llmsTxt": true
+  },
+  {
+   "rank": 969,
+   "domain": "washington.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 971,
+   "domain": "docker.io",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 972,
+   "domain": "corriere.it",
+   "blocks": [
+    "GPTBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "anthropic-ai",
+    "Claude-Web",
+    "Google-Extended",
+    "Google-CloudVertexBot",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "YouBot",
+    "Timpibot",
+    "Diffbot-User",
+    "Scrapy"
+   ],
+   "allows": [
+    "OAI-SearchBot",
+    "PerplexityBot",
+    "Amzn-SearchBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 973,
+   "domain": "nexusmods.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 974,
+   "domain": "eporner.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 976,
+   "domain": "ancestry.com",
+   "blocks": [
+    "Google-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 980,
+   "domain": "onet.pl",
+   "blocks": [
+    "Meta-ExternalAgent",
+    "meta-webindexer",
+    "Amazonbot",
+    "Amzn-SearchBot",
+    "Amzn-User",
+    "Bytespider",
+    "YouBot",
+    "cohere-ai",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "Diffbot-User",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 984,
+   "domain": "app-ads-services.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 985,
+   "domain": "trendyol.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 986,
+   "domain": "spiegel.de",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "FacebookBot",
+    "CCBot",
+    "Bytespider",
+    "MistralAI-User",
+    "YouBot",
+    "cohere-ai",
+    "cohere-training-data-crawler",
+    "DeepSeekBot",
+    "AI2Bot",
+    "Diffbot",
+    "Timpibot",
+    "bigsur.ai",
+    "CloudVertexBot",
+    "Devin",
+    "iaskspider",
+    "ImagesiftBot",
+    "Kangaroo Bot",
+    "LCC",
+    "LinerBot",
+    "omgili",
+    "omgilibot",
+    "PanguBot",
+    "Scrapy",
+    "SemrushBot-SWA",
+    "Webzio-Extended"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 987,
+   "domain": "change.org",
+   "blocks": [],
+   "allows": [
+    "Google-CloudVertexBot"
+   ],
+   "llmsTxt": false
+  },
+  {
+   "rank": 988,
+   "domain": "mailchi.mp",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 989,
+   "domain": "att.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 991,
+   "domain": "abovedomains.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 992,
+   "domain": "xnxx.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 993,
+   "domain": "instructure.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": true
+  },
+  {
+   "rank": 994,
+   "domain": "jd.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 995,
+   "domain": "jamfcloud.com",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 998,
+   "domain": "huffpost.com",
+   "blocks": [
+    "GPTBot",
+    "OAI-SearchBot",
+    "ChatGPT-User",
+    "ClaudeBot",
+    "Claude-SearchBot",
+    "Claude-User",
+    "anthropic-ai",
+    "Claude-Web",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "Meta-ExternalAgent",
+    "Meta-ExternalFetcher",
+    "FacebookBot",
+    "Amazonbot",
+    "CCBot",
+    "Bytespider",
+    "DuckAssistBot",
+    "cohere-ai",
+    "Diffbot",
+    "Timpibot",
+    "Ai2Bot-Dolma",
+    "omgilibot"
+   ],
+   "allows": [],
+   "llmsTxt": false
+  },
+  {
+   "rank": 1000,
+   "domain": "umich.edu",
+   "blocks": [],
+   "allows": [],
+   "llmsTxt": false
+  }
+ ],
+ "llmsTxtSites": [
+  {
+   "rank": 2,
+   "domain": "cloudflare.com"
+  },
+  {
+   "rank": 33,
+   "domain": "github.com"
+  },
+  {
+   "rank": 39,
+   "domain": "fastly.net"
+  },
+  {
+   "rank": 59,
+   "domain": "wordpress.org"
+  },
+  {
+   "rank": 61,
+   "domain": "adobe.com"
+  },
+  {
+   "rank": 70,
+   "domain": "digicert.com"
+  },
+  {
+   "rank": 76,
+   "domain": "opera.com"
+  },
+  {
+   "rank": 103,
+   "domain": "sentry.io"
+  },
+  {
+   "rank": 118,
+   "domain": "intuit.com"
+  },
+  {
+   "rank": 120,
+   "domain": "samsung.com"
+  },
+  {
+   "rank": 136,
+   "domain": "dropbox.com"
+  },
+  {
+   "rank": 149,
+   "domain": "webex.com"
+  },
+  {
+   "rank": 165,
+   "domain": "gravatar.com"
+  },
+  {
+   "rank": 166,
+   "domain": "kaspersky.com"
+  },
+  {
+   "rank": 168,
+   "domain": "ubuntu.com"
+  },
+  {
+   "rank": 170,
+   "domain": "shopify.com"
+  },
+  {
+   "rank": 174,
+   "domain": "paypal.com"
+  },
+  {
+   "rank": 186,
+   "domain": "unity3d.com"
+  },
+  {
+   "rank": 193,
+   "domain": "macromedia.com"
+  },
+  {
+   "rank": 203,
+   "domain": "stripe.com"
+  },
+  {
+   "rank": 220,
+   "domain": "forter.com"
+  },
+  {
+   "rank": 240,
+   "domain": "hcaptcha.com"
+  },
+  {
+   "rank": 242,
+   "domain": "cisco.com"
+  },
+  {
+   "rank": 246,
+   "domain": "roku.com"
+  },
+  {
+   "rank": 247,
+   "domain": "amplitude.com"
+  },
+  {
+   "rank": 250,
+   "domain": "weather.com"
+  },
+  {
+   "rank": 251,
+   "domain": "sourceforge.net"
+  },
+  {
+   "rank": 261,
+   "domain": "hubspot.com"
+  },
+  {
+   "rank": 263,
+   "domain": "linktr.ee"
+  },
+  {
+   "rank": 286,
+   "domain": "datadoghq.com"
+  },
+  {
+   "rank": 319,
+   "domain": "pubmatic.com"
+  },
+  {
+   "rank": 323,
+   "domain": "slack.com"
+  },
+  {
+   "rank": 325,
+   "domain": "rubiconproject.com"
+  },
+  {
+   "rank": 328,
+   "domain": "etsy.com"
+  },
+  {
+   "rank": 340,
+   "domain": "bilibili.com"
+  },
+  {
+   "rank": 345,
+   "domain": "ea.com"
+  },
+  {
+   "rank": 346,
+   "domain": "zendesk.com"
+  },
+  {
+   "rank": 351,
+   "domain": "branch.io"
+  },
+  {
+   "rank": 353,
+   "domain": "dell.com"
+  },
+  {
+   "rank": 357,
+   "domain": "checkpoint.com"
+  },
+  {
+   "rank": 362,
+   "domain": "nvidia.com"
+  },
+  {
+   "rank": 366,
+   "domain": "cm.com"
+  },
+  {
+   "rank": 385,
+   "domain": "name.com"
+  },
+  {
+   "rank": 389,
+   "domain": "plesk.com"
+  },
+  {
+   "rank": 394,
+   "domain": "paloaltonetworks.com"
+  },
+  {
+   "rank": 406,
+   "domain": "calendly.com"
+  },
+  {
+   "rank": 412,
+   "domain": "okta.com"
+  },
+  {
+   "rank": 420,
+   "domain": "indeed.com"
+  },
+  {
+   "rank": 428,
+   "domain": "taboola.com"
+  },
+  {
+   "rank": 435,
+   "domain": "dailymotion.com"
+  },
+  {
+   "rank": 442,
+   "domain": "dynatrace.com"
+  },
+  {
+   "rank": 443,
+   "domain": "wps.com"
+  },
+  {
+   "rank": 446,
+   "domain": "intel.com"
+  },
+  {
+   "rank": 455,
+   "domain": "bluehost.com"
+  },
+  {
+   "rank": 468,
+   "domain": "selectel.ru"
+  },
+  {
+   "rank": 471,
+   "domain": "businessinsider.com"
+  },
+  {
+   "rank": 483,
+   "domain": "shein.com"
+  },
+  {
+   "rank": 509,
+   "domain": "foxnews.com"
+  },
+  {
+   "rank": 512,
+   "domain": "trendmicro.com"
+  },
+  {
+   "rank": 534,
+   "domain": "braze.com"
+  },
+  {
+   "rank": 537,
+   "domain": "cloudns.net"
+  },
+  {
+   "rank": 544,
+   "domain": "newrelic.com"
+  },
+  {
+   "rank": 546,
+   "domain": "capcut.com"
+  },
+  {
+   "rank": 573,
+   "domain": "playstation.com"
+  },
+  {
+   "rank": 577,
+   "domain": "shop.app"
+  },
+  {
+   "rank": 578,
+   "domain": "klaviyo.com"
+  },
+  {
+   "rank": 579,
+   "domain": "comcast.com"
+  },
+  {
+   "rank": 582,
+   "domain": "dreamhost.com"
+  },
+  {
+   "rank": 583,
+   "domain": "time.com"
+  },
+  {
+   "rank": 587,
+   "domain": "squarespace.com"
+  },
+  {
+   "rank": 605,
+   "domain": "atlassian.com"
+  },
+  {
+   "rank": 606,
+   "domain": "target.com"
+  },
+  {
+   "rank": 616,
+   "domain": "wix.com"
+  },
+  {
+   "rank": 637,
+   "domain": "bitrix24.ru"
+  },
+  {
+   "rank": 643,
+   "domain": "sophos.com"
+  },
+  {
+   "rank": 644,
+   "domain": "onetrust.com"
+  },
+  {
+   "rank": 655,
+   "domain": "intercom.io"
+  },
+  {
+   "rank": 664,
+   "domain": "stackadapt.com"
+  },
+  {
+   "rank": 670,
+   "domain": "optimizely.com"
+  },
+  {
+   "rank": 680,
+   "domain": "redhat.com"
+  },
+  {
+   "rank": 686,
+   "domain": "surveymonkey.com"
+  },
+  {
+   "rank": 698,
+   "domain": "ring.com"
+  },
+  {
+   "rank": 743,
+   "domain": "asus.com"
+  },
+  {
+   "rank": 746,
+   "domain": "gumgum.com"
+  },
+  {
+   "rank": 770,
+   "domain": "mailchimp.com"
+  },
+  {
+   "rank": 777,
+   "domain": "fontawesome.com"
+  },
+  {
+   "rank": 789,
+   "domain": "allegro.pl"
+  },
+  {
+   "rank": 800,
+   "domain": "moloco.com"
+  },
+  {
+   "rank": 805,
+   "domain": "zoho.com"
+  },
+  {
+   "rank": 818,
+   "domain": "prnewswire.com"
+  },
+  {
+   "rank": 821,
+   "domain": "fiverr.com"
+  },
+  {
+   "rank": 838,
+   "domain": "liftoff.io"
+  },
+  {
+   "rank": 843,
+   "domain": "netlify.app"
+  },
+  {
+   "rank": 850,
+   "domain": "life360.com"
+  },
+  {
+   "rank": 852,
+   "domain": "supabase.co"
+  },
+  {
+   "rank": 865,
+   "domain": "unpkg.com"
+  },
+  {
+   "rank": 867,
+   "domain": "frontiersin.org"
+  },
+  {
+   "rank": 869,
+   "domain": "one.one"
+  },
+  {
+   "rank": 872,
+   "domain": "agora.io"
+  },
+  {
+   "rank": 873,
+   "domain": "cursor.sh"
+  },
+  {
+   "rank": 879,
+   "domain": "porkbun.com"
+  },
+  {
+   "rank": 880,
+   "domain": "cloudinary.com"
+  },
+  {
+   "rank": 888,
+   "domain": "no-ip.com"
+  },
+  {
+   "rank": 890,
+   "domain": "pendo.io"
+  },
+  {
+   "rank": 902,
+   "domain": "auth0.com"
+  },
+  {
+   "rank": 909,
+   "domain": "wyzecam.com"
+  },
+  {
+   "rank": 913,
+   "domain": "fwmrm.net"
+  },
+  {
+   "rank": 915,
+   "domain": "singular.net"
+  },
+  {
+   "rank": 918,
+   "domain": "lg.com"
+  },
+  {
+   "rank": 929,
+   "domain": "seedtag.com"
+  },
+  {
+   "rank": 935,
+   "domain": "classlink.com"
+  },
+  {
+   "rank": 941,
+   "domain": "tailscale.com"
+  },
+  {
+   "rank": 968,
+   "domain": "otto.de"
+  },
+  {
+   "rank": 985,
+   "domain": "trendyol.com"
+  },
+  {
+   "rank": 989,
+   "domain": "att.com"
+  },
+  {
+   "rank": 993,
+   "domain": "instructure.com"
+  },
+  {
+   "rank": 1009,
+   "domain": "flightradar24.com"
+  },
+  {
+   "rank": 1017,
+   "domain": "xing.com"
+  },
+  {
+   "rank": 1018,
+   "domain": "kwai.com"
+  },
+  {
+   "rank": 1020,
+   "domain": "moe.video"
+  },
+  {
+   "rank": 1025,
+   "domain": "clever.com"
+  },
+  {
+   "rank": 1038,
+   "domain": "onesignal.com"
+  },
+  {
+   "rank": 1041,
+   "domain": "epicgames.dev"
+  },
+  {
+   "rank": 1050,
+   "domain": "sknt.ru"
+  },
+  {
+   "rank": 1070,
+   "domain": "netgear.com"
+  },
+  {
+   "rank": 1101,
+   "domain": "usercentrics.eu"
+  },
+  {
+   "rank": 1104,
+   "domain": "typeform.com"
+  },
+  {
+   "rank": 1126,
+   "domain": "lge.com"
+  },
+  {
+   "rank": 1136,
+   "domain": "jimdo.com"
+  },
+  {
+   "rank": 1162,
+   "domain": "kslawin.com"
+  },
+  {
+   "rank": 1198,
+   "domain": "one.com"
+  },
+  {
+   "rank": 1211,
+   "domain": "coursera.org"
+  },
+  {
+   "rank": 1212,
+   "domain": "home.pl"
+  },
+  {
+   "rank": 1216,
+   "domain": "siemens.com"
+  },
+  {
+   "rank": 1225,
+   "domain": "dlsite.com"
+  },
+  {
+   "rank": 1226,
+   "domain": "marktplaats.nl"
+  },
+  {
+   "rank": 1249,
+   "domain": "twilio.com"
+  },
+  {
+   "rank": 1256,
+   "domain": "savefrom.net"
+  },
+  {
+   "rank": 1272,
+   "domain": "jusbrasil.com.br"
+  },
+  {
+   "rank": 1288,
+   "domain": "rajasthan.gov.in"
+  },
+  {
+   "rank": 1295,
+   "domain": "intercom.com"
+  },
+  {
+   "rank": 1297,
+   "domain": "polybuzz.ai"
+  },
+  {
+   "rank": 1337,
+   "domain": "oxylabs.io"
+  },
+  {
+   "rank": 1344,
+   "domain": "haberler.com"
+  },
+  {
+   "rank": 1371,
+   "domain": "bbb.org"
+  },
+  {
+   "rank": 1373,
+   "domain": "bookmyshow.com"
+  },
+  {
+   "rank": 1409,
+   "domain": "protothema.gr"
+  },
+  {
+   "rank": 1422,
+   "domain": "nesine.com"
+  },
+  {
+   "rank": 1429,
+   "domain": "notion.com"
+  },
+  {
+   "rank": 1431,
+   "domain": "ilmeteo.it"
+  },
+  {
+   "rank": 1443,
+   "domain": "sozcu.com.tr"
+  },
+  {
+   "rank": 1487,
+   "domain": "eltiempo.es"
+  },
+  {
+   "rank": 1490,
+   "domain": "sondakika.com"
+  },
+  {
+   "rank": 1500,
+   "domain": "loopia.se"
+  },
+  {
+   "rank": 1514,
+   "domain": "markt.de"
+  },
+  {
+   "rank": 1523,
+   "domain": "programme-tv.net"
+  },
+  {
+   "rank": 1533,
+   "domain": "musicdel.ir"
+  },
+  {
+   "rank": 1544,
+   "domain": "rakuten-sec.co.jp"
+  },
+  {
+   "rank": 1551,
+   "domain": "alura.com.br"
+  },
+  {
+   "rank": 1577,
+   "domain": "therapservices.net"
+  },
+  {
+   "rank": 1591,
+   "domain": "chordtela.com"
+  },
+  {
+   "rank": 1594,
+   "domain": "nustargame.com"
+  },
+  {
+   "rank": 1637,
+   "domain": "kir2kos.net"
+  },
+  {
+   "rank": 1662,
+   "domain": "xorgasmo.com"
+  },
+  {
+   "rank": 1724,
+   "domain": "tamildhool.tech"
+  },
+  {
+   "rank": 1754,
+   "domain": "dpboss.tax"
+  },
+  {
+   "rank": 1764,
+   "domain": "sambad.com"
+  },
+  {
+   "rank": 1776,
+   "domain": "sattamatkano1.me"
+  },
+  {
+   "rank": 1777,
+   "domain": "coinbase.com"
+  },
+  {
+   "rank": 1785,
+   "domain": "adroll.com"
+  },
+  {
+   "rank": 1792,
+   "domain": "dns-shop.ru"
+  },
+  {
+   "rank": 1796,
+   "domain": "rapid7.com"
+  },
+  {
+   "rank": 1801,
+   "domain": "cloud.com"
+  },
+  {
+   "rank": 1806,
+   "domain": "xfinity.com"
+  },
+  {
+   "rank": 1812,
+   "domain": "hostinger.com"
+  },
+  {
+   "rank": 1827,
+   "domain": "utorrent.com"
+  },
+  {
+   "rank": 1834,
+   "domain": "bitdefender.com"
+  },
+  {
+   "rank": 1836,
+   "domain": "pewresearch.org"
+  },
+  {
+   "rank": 1842,
+   "domain": "revenuecat.com"
+  },
+  {
+   "rank": 1864,
+   "domain": "wpastra.com"
+  },
+  {
+   "rank": 1879,
+   "domain": "mongodb.com"
+  },
+  {
+   "rank": 1900,
+   "domain": "moengage.com"
+  },
+  {
+   "rank": 1911,
+   "domain": "clevelandclinic.org"
+  },
+  {
+   "rank": 1917,
+   "domain": "udemy.com"
+  },
+  {
+   "rank": 1928,
+   "domain": "screenconnect.com"
+  },
+  {
+   "rank": 1930,
+   "domain": "meetup.com"
+  },
+  {
+   "rank": 1933,
+   "domain": "oreilly.com"
+  },
+  {
+   "rank": 1959,
+   "domain": "amocrm.ru"
+  },
+  {
+   "rank": 1964,
+   "domain": "intentiq.com"
+  },
+  {
+   "rank": 1966,
+   "domain": "shodan.io"
+  },
+  {
+   "rank": 1970,
+   "domain": "rustdesk.com"
+  },
+  {
+   "rank": 1971,
+   "domain": "squareup.com"
+  },
+  {
+   "rank": 1991,
+   "domain": "privacymanager.io"
+  },
+  {
+   "rank": 1994,
+   "domain": "umeng.com"
+  },
+  {
+   "rank": 2001,
+   "domain": "trip.com"
+  },
+  {
+   "rank": 2007,
+   "domain": "logitech.com"
+  },
+  {
+   "rank": 2023,
+   "domain": "ninjarmm.com"
+  },
+  {
+   "rank": 2030,
+   "domain": "apkpure.com"
+  },
+  {
+   "rank": 2038,
+   "domain": "msu.edu"
+  },
+  {
+   "rank": 2061,
+   "domain": "surfshark.com"
+  },
+  {
+   "rank": 2063,
+   "domain": "sendbird.com"
+  },
+  {
+   "rank": 2064,
+   "domain": "getbootstrap.com"
+  },
+  {
+   "rank": 2067,
+   "domain": "notion.so"
+  },
+  {
+   "rank": 2068,
+   "domain": "centinel-analytica.com"
+  },
+  {
+   "rank": 2071,
+   "domain": "datto.com"
+  },
+  {
+   "rank": 2074,
+   "domain": "hubspot.net"
+  },
+  {
+   "rank": 2081,
+   "domain": "acronis.com"
+  },
+  {
+   "rank": 2094,
+   "domain": "posthog.com"
+  },
+  {
+   "rank": 2096,
+   "domain": "primis.tech"
+  },
+  {
+   "rank": 2099,
+   "domain": "iubenda.com"
+  },
+  {
+   "rank": 2112,
+   "domain": "simpli.fi"
+  },
+  {
+   "rank": 2113,
+   "domain": "customer.io"
+  },
+  {
+   "rank": 2117,
+   "domain": "yotpo.com"
+  },
+  {
+   "rank": 2118,
+   "domain": "gdemoideti.ru"
+  },
+  {
+   "rank": 2122,
+   "domain": "edna.ru"
+  },
+  {
+   "rank": 2137,
+   "domain": "expedia.com"
+  },
+  {
+   "rank": 2139,
+   "domain": "asana.com"
+  },
+  {
+   "rank": 2140,
+   "domain": "metamask.io"
+  },
+  {
+   "rank": 2148,
+   "domain": "utoronto.ca"
+  },
+  {
+   "rank": 2156,
+   "domain": "lenta.com"
+  },
+  {
+   "rank": 2158,
+   "domain": "unity.com"
+  },
+  {
+   "rank": 2164,
+   "domain": "livechatinc.com"
+  },
+  {
+   "rank": 2165,
+   "domain": "coinmarketcap.com"
+  },
+  {
+   "rank": 2166,
+   "domain": "americanexpress.com"
+  },
+  {
+   "rank": 2167,
+   "domain": "crowdstrike.com"
+  },
+  {
+   "rank": 2170,
+   "domain": "adkernel.com"
+  },
+  {
+   "rank": 2198,
+   "domain": "mgid.com"
+  },
+  {
+   "rank": 2201,
+   "domain": "constantcontact.com"
+  },
+  {
+   "rank": 2204,
+   "domain": "useinsider.com"
+  },
+  {
+   "rank": 2209,
+   "domain": "fliphtml5.com"
+  },
+  {
+   "rank": 2212,
+   "domain": "evernote.com"
+  },
+  {
+   "rank": 2218,
+   "domain": "made-in-china.com"
+  },
+  {
+   "rank": 2223,
+   "domain": "nodejs.org"
+  },
+  {
+   "rank": 2225,
+   "domain": "dondominio.com"
+  },
+  {
+   "rank": 2229,
+   "domain": "websupport.sk"
+  },
+  {
+   "rank": 2230,
+   "domain": "pubnative.net"
+  },
+  {
+   "rank": 2233,
+   "domain": "railway.app"
+  },
+  {
+   "rank": 2237,
+   "domain": "nielsen.com"
+  },
+  {
+   "rank": 2241,
+   "domain": "innovid.com"
+  },
+  {
+   "rank": 2248,
+   "domain": "semrush.com"
+  },
+  {
+   "rank": 2250,
+   "domain": "inmotionhosting.com"
+  },
+  {
+   "rank": 2260,
+   "domain": "grafana.com"
+  },
+  {
+   "rank": 2269,
+   "domain": "cookiebot.com"
+  },
+  {
+   "rank": 2277,
+   "domain": "mindbox.ru"
+  },
+  {
+   "rank": 2294,
+   "domain": "adp.com"
+  },
+  {
+   "rank": 2300,
+   "domain": "su89-cdn.net"
+  },
+  {
+   "rank": 2303,
+   "domain": "kbz0pwvxmv.com"
+  },
+  {
+   "rank": 2304,
+   "domain": "ringcentral.com"
+  },
+  {
+   "rank": 2315,
+   "domain": "poste.it"
+  },
+  {
+   "rank": 2321,
+   "domain": "verkada.com"
+  },
+  {
+   "rank": 2325,
+   "domain": "klarna.com"
+  },
+  {
+   "rank": 2346,
+   "domain": "hihonor.com"
+  },
+  {
+   "rank": 2361,
+   "domain": "kochava.com"
+  },
+  {
+   "rank": 2366,
+   "domain": "atom.com"
+  },
+  {
+   "rank": 2382,
+   "domain": "canonical.com"
+  },
+  {
+   "rank": 2389,
+   "domain": "gameanalytics.com"
+  },
+  {
+   "rank": 2392,
+   "domain": "x-cdn-static.com"
+  },
+  {
+   "rank": 2411,
+   "domain": "c6gj-static.net"
+  },
+  {
+   "rank": 2422,
+   "domain": "upwork.com"
+  },
+  {
+   "rank": 2426,
+   "domain": "goguardian.com"
+  },
+  {
+   "rank": 2436,
+   "domain": "fotmob.com"
+  },
+  {
+   "rank": 2441,
+   "domain": "nordvpn.com"
+  },
+  {
+   "rank": 2457,
+   "domain": "dantri.com.vn"
+  },
+  {
+   "rank": 2467,
+   "domain": "tvsquared.com"
+  },
+  {
+   "rank": 2475,
+   "domain": "yg5sjx5kzy.com"
+  },
+  {
+   "rank": 2476,
+   "domain": "urbanairship.com"
+  },
+  {
+   "rank": 2502,
+   "domain": "digg.com"
+  },
+  {
+   "rank": 2508,
+   "domain": "okx.com"
+  },
+  {
+   "rank": 2515,
+   "domain": "fullstory.com"
+  },
+  {
+   "rank": 2520,
+   "domain": "ifeng.com"
+  },
+  {
+   "rank": 2539,
+   "domain": "brightspace.com"
+  },
+  {
+   "rank": 2541,
+   "domain": "cardekho.com"
+  },
+  {
+   "rank": 2542,
+   "domain": "braze.eu"
+  },
+  {
+   "rank": 2566,
+   "domain": "typing.com"
+  },
+  {
+   "rank": 2567,
+   "domain": "egnyte.com"
+  },
+  {
+   "rank": 2591,
+   "domain": "parallels.com"
+  },
+  {
+   "rank": 2602,
+   "domain": "slashdot.org"
+  },
+  {
+   "rank": 2607,
+   "domain": "tenable.com"
+  },
+  {
+   "rank": 2646,
+   "domain": "here.com"
+  },
+  {
+   "rank": 2649,
+   "domain": "weplayapp.com"
+  },
+  {
+   "rank": 2685,
+   "domain": "padlet.com"
+  },
+  {
+   "rank": 2704,
+   "domain": "riskified.com"
+  },
+  {
+   "rank": 2725,
+   "domain": "dmac-solutions.net"
+  },
+  {
+   "rank": 2731,
+   "domain": "nsw.gov.au"
+  },
+  {
+   "rank": 2739,
+   "domain": "suno.com"
+  },
+  {
+   "rank": 2752,
+   "domain": "xvideo.vlog.br"
+  },
+  {
+   "rank": 2753,
+   "domain": "sattamatka.email"
+  },
+  {
+   "rank": 2761,
+   "domain": "hindustantimes.com"
+  },
+  {
+   "rank": 2771,
+   "domain": "cookieyes.com"
+  },
+  {
+   "rank": 2772,
+   "domain": "zscaler.com"
+  },
+  {
+   "rank": 2773,
+   "domain": "databricks.com"
+  },
+  {
+   "rank": 2806,
+   "domain": "webflow.com"
+  },
+  {
+   "rank": 2822,
+   "domain": "malwarebytes.com"
+  },
+  {
+   "rank": 2823,
+   "domain": "weatherbug.net"
+  },
+  {
+   "rank": 2825,
+   "domain": "cutt.ly"
+  },
+  {
+   "rank": 2834,
+   "domain": "uhc.com"
+  },
+  {
+   "rank": 2837,
+   "domain": "robinhood.com"
+  },
+  {
+   "rank": 2839,
+   "domain": "clickup.com"
+  },
+  {
+   "rank": 2848,
+   "domain": "woocommerce.com"
+  },
+  {
+   "rank": 2854,
+   "domain": "tutu.ru"
+  },
+  {
+   "rank": 2855,
+   "domain": "dnsimple.com"
+  },
+  {
+   "rank": 2875,
+   "domain": "glassdoor.com"
+  },
+  {
+   "rank": 2886,
+   "domain": "shazam.com"
+  },
+  {
+   "rank": 2891,
+   "domain": "threatlocker.com"
+  },
+  {
+   "rank": 2903,
+   "domain": "prezi.com"
+  },
+  {
+   "rank": 2904,
+   "domain": "cloudx.io"
+  },
+  {
+   "rank": 2909,
+   "domain": "redis.io"
+  },
+  {
+   "rank": 2914,
+   "domain": "snapcraft.io"
+  },
+  {
+   "rank": 2921,
+   "domain": "kpmg.com"
+  },
+  {
+   "rank": 2922,
+   "domain": "gumroad.com"
+  },
+  {
+   "rank": 2931,
+   "domain": "ucoz.ru"
+  },
+  {
+   "rank": 2932,
+   "domain": "rudderstack.com"
+  },
+  {
+   "rank": 2942,
+   "domain": "square.site"
+  },
+  {
+   "rank": 2953,
+   "domain": "blueapron.com"
+  },
+  {
+   "rank": 2956,
+   "domain": "duosecurity.com"
+  },
+  {
+   "rank": 2974,
+   "domain": "phys.org"
+  },
+  {
+   "rank": 2986,
+   "domain": "crealitycloud.com"
+  },
+  {
+   "rank": 2989,
+   "domain": "ex.co"
+  },
+  {
+   "rank": 2992,
+   "domain": "newsbreak.com"
+  },
+  {
+   "rank": 3003,
+   "domain": "libsyn.com"
+  },
+  {
+   "rank": 3005,
+   "domain": "crazyegg.com"
+  },
+  {
+   "rank": 3006,
+   "domain": "loom.com"
+  },
+  {
+   "rank": 3012,
+   "domain": "ihc.ru"
+  },
+  {
+   "rank": 3015,
+   "domain": "visualwebsiteoptimizer.com"
+  },
+  {
+   "rank": 3016,
+   "domain": "zapier.com"
+  },
+  {
+   "rank": 3028,
+   "domain": "guard.io"
+  },
+  {
+   "rank": 3038,
+   "domain": "ip.sb"
+  },
+  {
+   "rank": 3040,
+   "domain": "thawte.com"
+  },
+  {
+   "rank": 3047,
+   "domain": "jumpcloud.com"
+  },
+  {
+   "rank": 3070,
+   "domain": "mountain.com"
+  },
+  {
+   "rank": 3077,
+   "domain": "vercel.com"
+  },
+  {
+   "rank": 3081,
+   "domain": "dpbosssss.boston"
+  },
+  {
+   "rank": 3096,
+   "domain": "dpbossss.com"
+  },
+  {
+   "rank": 3098,
+   "domain": "alchemer.com"
+  },
+  {
+   "rank": 3119,
+   "domain": "dpbossss.boston"
+  },
+  {
+   "rank": 3159,
+   "domain": "dpbosssss.mobi"
+  },
+  {
+   "rank": 3165,
+   "domain": "intercomcdn.com"
+  },
+  {
+   "rank": 3175,
+   "domain": "drpc.org"
+  },
+  {
+   "rank": 3176,
+   "domain": "lokalise.com"
+  },
+  {
+   "rank": 3183,
+   "domain": "unrealengine.com"
+  },
+  {
+   "rank": 3193,
+   "domain": "traveloka.com"
+  },
+  {
+   "rank": 3207,
+   "domain": "cvent.com"
+  },
+  {
+   "rank": 3225,
+   "domain": "fool.com"
+  },
+  {
+   "rank": 3226,
+   "domain": "cldin.eu"
+  },
+  {
+   "rank": 3234,
+   "domain": "laracasts.com"
+  },
+  {
+   "rank": 3237,
+   "domain": "fox.com"
+  },
+  {
+   "rank": 3258,
+   "domain": "sardine.ai"
+  },
+  {
+   "rank": 3259,
+   "domain": "imagemagick.org"
+  },
+  {
+   "rank": 3292,
+   "domain": "walkme.com"
+  },
+  {
+   "rank": 3297,
+   "domain": "monday.com"
+  },
+  {
+   "rank": 3298,
+   "domain": "cursor.com"
+  },
+  {
+   "rank": 3352,
+   "domain": "federalregister.gov"
+  },
+  {
+   "rank": 3357,
+   "domain": "iterable.com"
+  },
+  {
+   "rank": 3365,
+   "domain": "joinmassive.com"
+  },
+  {
+   "rank": 3369,
+   "domain": "proximus.be"
+  },
+  {
+   "rank": 3370,
+   "domain": "razorpay.com"
+  },
+  {
+   "rank": 3376,
+   "domain": "bybit.com"
+  },
+  {
+   "rank": 3379,
+   "domain": "revcontent.com"
+  },
+  {
+   "rank": 3380,
+   "domain": "mediavine.com"
+  },
+  {
+   "rank": 3402,
+   "domain": "backblaze.com"
+  },
+  {
+   "rank": 3408,
+   "domain": "hotmart.com"
+  },
+  {
+   "rank": 3415,
+   "domain": "lavanguardia.com"
+  },
+  {
+   "rank": 3418,
+   "domain": "elevenlabs.io"
+  },
+  {
+   "rank": 3428,
+   "domain": "honor.com"
+  },
+  {
+   "rank": 3440,
+   "domain": "xero.com"
+  },
+  {
+   "rank": 3457,
+   "domain": "voximplant.com"
+  },
+  {
+   "rank": 3459,
+   "domain": "grafana.net"
+  },
+  {
+   "rank": 3479,
+   "domain": "dinahosting.com"
+  },
+  {
+   "rank": 3484,
+   "domain": "hootsuite.com"
+  },
+  {
+   "rank": 3501,
+   "domain": "mobilefuse.com"
+  },
+  {
+   "rank": 3506,
+   "domain": "e-recht24.de"
+  },
+  {
+   "rank": 3507,
+   "domain": "postman.com"
+  },
+  {
+   "rank": 3515,
+   "domain": "jio.com"
+  },
+  {
+   "rank": 3521,
+   "domain": "vkusvill.ru"
+  },
+  {
+   "rank": 3609,
+   "domain": "twingate.com"
+  },
+  {
+   "rank": 3611,
+   "domain": "qnap.com"
+  },
+  {
+   "rank": 3631,
+   "domain": "smartsheet.com"
+  },
+  {
+   "rank": 3643,
+   "domain": "osano.com"
+  },
+  {
+   "rank": 3657,
+   "domain": "pushwoosh.com"
+  },
+  {
+   "rank": 3668,
+   "domain": "clerk.com"
+  },
+  {
+   "rank": 3669,
+   "domain": "17track.net"
+  },
+  {
+   "rank": 3670,
+   "domain": "adsbynimbus.com"
+  },
+  {
+   "rank": 3695,
+   "domain": "redbull.com"
+  },
+  {
+   "rank": 3700,
+   "domain": "lovable.dev"
+  },
+  {
+   "rank": 3701,
+   "domain": "si.com"
+  },
+  {
+   "rank": 3707,
+   "domain": "krushmedia.com"
+  },
+  {
+   "rank": 3713,
+   "domain": "edx.org"
+  },
+  {
+   "rank": 3715,
+   "domain": "bitwarden.com"
+  },
+  {
+   "rank": 3718,
+   "domain": "replit.com"
+  },
+  {
+   "rank": 3738,
+   "domain": "piano.io"
+  },
+  {
+   "rank": 3741,
+   "domain": "easydns.com"
+  },
+  {
+   "rank": 3749,
+   "domain": "qualcomm.com"
+  },
+  {
+   "rank": 3753,
+   "domain": "gitee.com"
+  },
+  {
+   "rank": 3754,
+   "domain": "arduino.cc"
+  },
+  {
+   "rank": 3757,
+   "domain": "dev.to"
+  },
+  {
+   "rank": 3758,
+   "domain": "ably.io"
+  },
+  {
+   "rank": 3773,
+   "domain": "demandbase.com"
+  },
+  {
+   "rank": 3795,
+   "domain": "colorlib.com"
+  },
+  {
+   "rank": 3796,
+   "domain": "sproutsocial.com"
+  },
+  {
+   "rank": 3808,
+   "domain": "rome2rio.com"
+  }
+ ]
+}

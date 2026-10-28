@@ -488,3 +488,235 @@ h4 {
   opacity: 1;
   text-decoration: line-through;
 }
+
+/* ============================================================
+   DATA SECTION — tables, stats, reference blocks
+   Same rules as the rest of the site: hairlines, scale, weight.
+   ============================================================ */
+
+.lede {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--fg);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.crumbs li + li::before {
+  content: "/";
+  margin-right: 0.35rem;
+  color: var(--faint);
+}
+
+/* Breaks out of the 44rem reading column for wide tables. */
+.bleed {
+  --bleed: min(72rem, calc(100vw - 2.5rem));
+  width: var(--bleed);
+  margin-left: calc(50% - var(--bleed) / 2);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table caption {
+  text-align: left;
+  padding-bottom: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.data-table th {
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 650;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--fg);
+  padding: 0.5rem 1rem 0.5rem 0;
+  vertical-align: bottom;
+}
+
+.data-table td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.55rem 1rem 0.55rem 0;
+  vertical-align: top;
+}
+
+.data-table td.num,
+.data-table th.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.data-table .strong {
+  font-weight: 650;
+}
+
+.data-table .nowrap {
+  white-space: nowrap;
+}
+
+.data-table code,
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+}
+
+.table-filter .meta {
+  white-space: nowrap;
+}
+
+.table-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  max-width: 28rem;
+}
+
+/* Headline numbers */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 1.75rem 2rem;
+  border-top: 2px solid var(--fg);
+  padding-top: 1.25rem;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+/* Key–value facts on reference pages */
+.facts {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.facts dt,
+.facts dd {
+  margin: 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.facts dt {
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 0.95rem;
+  padding-right: 1rem;
+}
+
+.facts dd {
+  font-size: 1rem;
+}
+
+@media (max-width: 560px) {
+  .facts {
+    grid-template-columns: 1fr;
+  }
+  .facts dt {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* Simple horizontal bars for percentages — black on hairline */
+.bar {
+  position: relative;
+  display: block;
+  height: 0.5rem;
+  min-width: 6rem;
+  background: var(--rule);
+}
+
+.bar > span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background: var(--fg);
+}
+
+.copy-block pre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  background: var(--code-bg);
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.cite-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.cite-text {
+  flex: 1 1 22rem;
+  margin: 0;
+  font-size: 0.95rem;
+  overflow-wrap: anywhere;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--fg);
+}
+
+.timeline > li {
+  position: relative;
+  padding: 0 0 2rem 1.5rem;
+}
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  left: -0.4rem;
+  top: 0.45rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--bg);
+  border: 2px solid var(--fg);
+  border-radius: 50%;
+}

@@ -4,21 +4,22 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 const nav = [
   { href: "/writing", label: "Writing" },
+  { href: "/data", label: "Data" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
 ];
 
 export function SiteHeader() {
   return (
-    <header className="col flex items-baseline justify-between pb-16 pt-8 sm:pb-24 sm:pt-10">
+    <header className="col flex flex-wrap items-baseline justify-between gap-x-6 gap-y-3 pb-16 pt-8 sm:pb-24 sm:pt-10">
       <Link
         href="/"
-        className="font-display text-[1.05rem] font-bold tracking-tight"
+        className="font-display whitespace-nowrap text-[1.05rem] font-bold tracking-tight"
         style={{ fontFamily: "var(--font-display)" }}
       >
         {SITE.name}
       </Link>
-      <nav className="flex items-center gap-5 sm:gap-7">
+      <nav className="flex items-center gap-4 sm:gap-7">
         {nav.map((item) => (
           <Link key={item.href} href={item.href} className="link text-[0.95rem]">
             {item.label}

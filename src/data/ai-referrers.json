@@ -1,0 +1,149 @@
+{
+ "updated": "2026-10-29",
+ "rows": [
+  {
+   "host": "chatgpt.com",
+   "product": "ChatGPT",
+   "operator": "OpenAI",
+   "note": "Main ChatGPT web/app referrer; citation links also carry utm_source=chatgpt.com."
+  },
+  {
+   "host": "chat.openai.com",
+   "product": "ChatGPT (legacy)",
+   "operator": "OpenAI",
+   "note": "Pre-2024 domain; still appears in historical data."
+  },
+  {
+   "host": "perplexity.ai",
+   "product": "Perplexity",
+   "operator": "Perplexity AI",
+   "note": "Includes www.perplexity.ai."
+  },
+  {
+   "host": "gemini.google.com",
+   "product": "Gemini",
+   "operator": "Google",
+   "note": "Some Gemini clicks arrive as google.com / organic instead."
+  },
+  {
+   "host": "bard.google.com",
+   "product": "Bard (legacy)",
+   "operator": "Google",
+   "note": "Pre-February 2024 domain."
+  },
+  {
+   "host": "notebooklm.google.com",
+   "product": "NotebookLM",
+   "operator": "Google",
+   "note": ""
+  },
+  {
+   "host": "copilot.microsoft.com",
+   "product": "Microsoft Copilot",
+   "operator": "Microsoft",
+   "note": "Consumer Copilot."
+  },
+  {
+   "host": "copilot.cloud.microsoft",
+   "product": "Microsoft 365 Copilot",
+   "operator": "Microsoft",
+   "note": "Work Copilot; often stripped by enterprise browsers."
+  },
+  {
+   "host": "edgeservices.bing.com",
+   "product": "Copilot in Edge",
+   "operator": "Microsoft",
+   "note": "Edge sidebar Copilot."
+  },
+  {
+   "host": "claude.ai",
+   "product": "Claude",
+   "operator": "Anthropic",
+   "note": ""
+  },
+  {
+   "host": "chat.deepseek.com",
+   "product": "DeepSeek",
+   "operator": "DeepSeek",
+   "note": ""
+  },
+  {
+   "host": "chat.mistral.ai",
+   "product": "Le Chat",
+   "operator": "Mistral AI",
+   "note": ""
+  },
+  {
+   "host": "meta.ai",
+   "product": "Meta AI",
+   "operator": "Meta",
+   "note": "In-app clicks from WhatsApp/Instagram usually arrive without a referrer."
+  },
+  {
+   "host": "grok.com",
+   "product": "Grok",
+   "operator": "xAI",
+   "note": "Grok inside X arrives as x.com / t.co."
+  },
+  {
+   "host": "you.com",
+   "product": "You.com",
+   "operator": "You.com",
+   "note": ""
+  },
+  {
+   "host": "duck.ai",
+   "product": "Duck.ai",
+   "operator": "DuckDuckGo",
+   "note": ""
+  },
+  {
+   "host": "poe.com",
+   "product": "Poe",
+   "operator": "Quora",
+   "note": ""
+  },
+  {
+   "host": "phind.com",
+   "product": "Phind",
+   "operator": "Phind",
+   "note": ""
+  },
+  {
+   "host": "chat.qwen.ai",
+   "product": "Qwen Chat",
+   "operator": "Alibaba",
+   "note": ""
+  },
+  {
+   "host": "kimi.com",
+   "product": "Kimi",
+   "operator": "Moonshot AI",
+   "note": "Also kimi.moonshot.cn."
+  },
+  {
+   "host": "doubao.com",
+   "product": "Doubao",
+   "operator": "ByteDance",
+   "note": ""
+  },
+  {
+   "host": "yiyan.baidu.com",
+   "product": "ERNIE Bot (Yiyan)",
+   "operator": "Baidu",
+   "note": ""
+  },
+  {
+   "host": "huggingface.co/chat",
+   "product": "HuggingChat",
+   "operator": "Hugging Face",
+   "note": "Match the path, not just the host."
+  },
+  {
+   "host": "perplexity.ai/comet",
+   "product": "Comet",
+   "operator": "Perplexity AI",
+   "note": "Comet clicks mostly appear as perplexity.ai or direct."
+  }
+ ]
+}
