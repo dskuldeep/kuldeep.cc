@@ -412,7 +412,7 @@ export const DATASETS: DatasetEntry[] = [
   },
   {
     slug: "datacenters-osm",
-    path: "/data/datacenters",
+    path: "/data/datacenters/existing",
     title: "Map of existing data centers",
     description:
       "Every data center mapped in OpenStreetMap, with operator and country, on one interactive world map.",

@@ -52,13 +52,26 @@ function fmtMw(mw: number) {
   return mw >= 1000 ? `${(mw / 1000).toLocaleString("en-US", { maximumFractionDigits: 1 })} GW` : `${mw.toLocaleString("en-US")} MW`;
 }
 
-export function DatacenterMap({ projects, existingUrl, existingCount }: { projects: DcProject[]; existingUrl: string; existingCount: number }) {
+export function DatacenterMap({
+  projects,
+  existingUrl,
+  existingCount,
+  existingOnByDefault = true,
+}: {
+  /** New builds; pass [] for the existing-only map. */
+  projects: DcProject[];
+  existingUrl: string;
+  existingCount: number;
+  /** The existing layer is fetched only once it is switched on. */
+  existingOnByDefault?: boolean;
+}) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [width, setWidth] = useState(0);
   const [land, setLand] = useState<{ land: Path2D; borders: Path2D; sphere: Path2D } | null>(null);
   const [existing, setExisting] = useState<Existing[] | null>(null);
-  const [showExisting, setShowExisting] = useState(true);
+  const existingOnly = projects.length === 0;
+  const [showExisting, setShowExisting] = useState(existingOnByDefault || existingOnly);
   const [showNew, setShowNew] = useState(true);
   const [statuses, setStatuses] = useState<Set<string>>(() => new Set(STATUS_ORDER));
   const [query, setQuery] = useState("");
@@ -93,8 +106,10 @@ export function DatacenterMap({ projects, existingUrl, existingCount }: { projec
     };
   }, [projection]);
 
-  // Existing facilities, fetched after first paint
+  // Existing facilities, fetched after first paint (or when first switched on)
+  const wantExisting = showExisting || existing !== null;
   useEffect(() => {
+    if (!wantExisting) return;
     let live = true;
     fetch(existingUrl)
       .then((r) => r.json() as Promise<{ rows: Existing[] }>)
@@ -102,7 +117,7 @@ export function DatacenterMap({ projects, existingUrl, existingCount }: { projec
     return () => {
       live = false;
     };
-  }, [existingUrl]);
+  }, [existingUrl, wantExisting]);
 
   // Size + theme
   useEffect(() => {
@@ -442,36 +457,44 @@ export function DatacenterMap({ projects, existingUrl, existingCount }: { projec
         <input
           type="search"
           className="field"
-          placeholder="Search operator, project, city or country"
+          placeholder={existingOnly ? "Search name, operator or country" : "Search operator, project, city or country"}
           aria-label="Search the map"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <div className="dc-chips" role="group" aria-label="Layers">
-          <button type="button" className="dc-chip" aria-pressed={showNew} onClick={() => setShowNew((v) => !v)}>
-            <span className="dc-key dc-key-built" aria-hidden="true" />
-            New builds <span className="meta">{projects.length}</span>
-          </button>
-          <button type="button" className="dc-chip" aria-pressed={showExisting} onClick={() => setShowExisting((v) => !v)}>
-            <span className="dc-key dc-key-existing" aria-hidden="true" />
-            Existing <span className="meta">{existingCount.toLocaleString("en-US")}</span>
-          </button>
-        </div>
-        <div className="dc-chips" role="group" aria-label="Project status">
-          {STATUS_ORDER.filter((s) => statusCounts.get(s)).map((s) => (
-            <button key={s} type="button" className="dc-chip" aria-pressed={statuses.has(s)} onClick={() => toggleStatus(s)} disabled={!showNew}>
-              <span className={`dc-key ${isBuilt(s) ? "dc-key-built" : isStopped(s) ? "dc-key-stopped" : "dc-key-planned"}`} aria-hidden="true" />
-              {s[0].toUpperCase() + s.slice(1)} <span className="meta">{statusCounts.get(s)}</span>
-            </button>
-          ))}
-        </div>
+        {!existingOnly && (
+          <>
+            <div className="dc-chips" role="group" aria-label="Layers">
+              <button type="button" className="dc-chip" aria-pressed={showNew} onClick={() => setShowNew((v) => !v)}>
+                <span className="dc-key dc-key-built" aria-hidden="true" />
+                New builds <span className="meta">{projects.length}</span>
+              </button>
+              <button type="button" className="dc-chip" aria-pressed={showExisting} onClick={() => setShowExisting((v) => !v)}>
+                <span className="dc-key dc-key-existing" aria-hidden="true" />
+                Existing <span className="meta">{existingCount.toLocaleString("en-US")}</span>
+              </button>
+            </div>
+            <div className="dc-chips" role="group" aria-label="Project status">
+              {STATUS_ORDER.filter((s) => statusCounts.get(s)).map((s) => (
+                <button key={s} type="button" className="dc-chip" aria-pressed={statuses.has(s)} onClick={() => toggleStatus(s)} disabled={!showNew}>
+                  <span className={`dc-key ${isBuilt(s) ? "dc-key-built" : isStopped(s) ? "dc-key-stopped" : "dc-key-planned"}`} aria-hidden="true" />
+                  {s[0].toUpperCase() + s.slice(1)} <span className="meta">{statusCounts.get(s)}</span>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <div ref={wrapRef} className="dc-canvas-wrap" style={{ height: height || undefined }}>
         <canvas
           ref={canvasRef}
           role="img"
-          aria-label={`World map of ${projects.length} new data center projects and ${existingCount} existing data centers`}
+          aria-label={
+            existingOnly
+              ? `World map of ${existingCount} existing data centers`
+              : `World map of ${projects.length} new data center projects`
+          }
           style={{ width, height, cursor: hover ? "pointer" : "grab" }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -515,11 +538,20 @@ export function DatacenterMap({ projects, existingUrl, existingCount }: { projec
       </div>
 
       <p className="meta mt-3 flex flex-wrap gap-x-4 gap-y-1">
-        <span>
-          Showing {visibleNew.length} of {projects.length} new builds
-          {showExisting && existing ? ` and ${visibleExisting.length.toLocaleString("en-US")} existing sites` : ""}.
-        </span>
-        <span>Circle size = planned capacity (MW). Filled = under construction or operating; hollow = announced; dashed = paused or cancelled.</span>
+        {existingOnly ? (
+          <span>
+            Showing {visibleExisting.length.toLocaleString("en-US")} of {existingCount.toLocaleString("en-US")} data centers
+            {existing ? "" : " (loading…)"}.
+          </span>
+        ) : (
+          <>
+            <span>
+              Showing {visibleNew.length} of {projects.length} new builds
+              {showExisting && existing ? ` and ${visibleExisting.length.toLocaleString("en-US")} existing sites` : ""}.
+            </span>
+            <span>Circle size = planned capacity (MW). Filled = under construction or operating; hollow = announced; dashed = paused or cancelled.</span>
+          </>
+        )}
         <span>Drag to pan, ⌘/Ctrl + scroll or pinch to zoom, click a site for details.</span>
       </p>
 

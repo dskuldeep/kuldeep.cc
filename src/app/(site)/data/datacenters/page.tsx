@@ -10,7 +10,8 @@ import { SourceLink } from "@/components/data/source-link";
 import { TableFilter } from "@/components/data/table-filter";
 import { JsonLd } from "@/components/json-ld";
 import { fmtNumber } from "@/lib/data";
-import { dcExisting, dcNew, dcTotals, groupSum, type DcProject } from "@/lib/datacenters";
+import Link from "next/link";
+import { dcNew, dcTotals, groupSum, type DcProject } from "@/lib/datacenters";
 import { breadcrumbNode, datasetNode, faqNode, graph } from "@/lib/schema";
 import { pageMeta } from "@/lib/site";
 
@@ -18,24 +19,22 @@ const PATH = "/data/datacenters";
 const t = dcTotals();
 const gw = (n: number) => n.toLocaleString("en-US", { maximumFractionDigits: n >= 100 ? 0 : 1 });
 const usd = (bn: number) => (bn >= 1000 ? `$${(bn / 1000).toFixed(1)}T` : `$${Math.round(bn)}B`);
-const TITLE = "Data center map: every data center and new AI campus (2026)";
-const DESC = `Interactive world map of ${fmtNumber(t.existing)} existing data centers and ${fmtNumber(t.projects)} new AI and hyperscale data center projects since 2024, with developer, MW, investment, status and sources.`;
+const TITLE = "New data center projects: map of AI & hyperscale builds (2026)";
+const DESC = `Interactive map of ${fmtNumber(t.projects)} new AI and hyperscale data center projects announced or under construction since 2024 in ${t.countries} countries, with developer, MW, investment, status and sources.`;
 
 export const metadata: Metadata = pageMeta({ title: TITLE, description: DESC, path: PATH });
 
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "Data", path: "/data" },
-  { name: "Data center map", path: PATH },
+  { name: "New data center projects", path: PATH },
 ];
 
 const live = dcNew.rows.filter((p) => p.status !== "cancelled");
 const byCountry = groupSum(live, (p) => p.country, (p) => p.capacityMw ?? 0);
 const byOperator = groupSum(live, (p) => p.operator, (p) => p.capacityMw ?? 0);
 const countByCountry = groupSum(dcNew.rows, (p) => p.country, () => 1);
-const existingByCountry = [...dcExisting.rows.reduce((m, r) => m.set(r[4] || "Unknown", (m.get(r[4] || "Unknown") ?? 0) + 1), new Map<string, number>())]
-  .filter(([c]) => c !== "Unknown")
-  .sort((a, b) => b[1] - a[1]);
+const usdByCountry = groupSum(live, (p) => p.country, (p) => p.investmentUsdBn ?? 0);
 const usShare = Math.round(((byCountry.find(([c]) => c === "United States")?.[1] ?? 0) / (t.gw * 1000)) * 100);
 const largest = dcNew.rows.find((p) => p.capacityMw);
 const STATUS_LABEL: Record<DcProject["status"], string> = {
@@ -57,10 +56,6 @@ const announcedByYear = (() => {
 })();
 
 const FAQ = [
-  {
-    q: "How many data centers are there in the world?",
-    a: `OpenStreetMap maps ${fmtNumber(t.existing)} data center buildings and sites across ${t.existingCountries} countries; this map shows all of them. Industry estimates of the true total run higher (often cited at 10,000 to 12,000 colocation and cloud facilities), because many enterprise and hyperscale buildings are not mapped.`,
-  },
   {
     q: "How many new data centers are being built?",
     a: `This dataset tracks ${fmtNumber(t.projects)} data center projects announced, planned or under construction since 2024 in ${t.countries} countries, adding up to about ${gw(t.gw)} GW of stated planned capacity where a figure was published.`,
@@ -92,7 +87,6 @@ export default function DatacentersPage() {
       temporalCoverage: "2024-01/2026-10",
       spatialCoverage: "Worldwide",
       variableMeasured: ["Planned capacity (MW)", "Investment (USD)", "Project status", "Location"],
-      isBasedOn: ["https://www.openstreetmap.org/copyright"],
       downloads: [
         { format: "CSV", path: "/data/download/datacenter-projects.csv" },
         { format: "JSON", path: "/data/download/datacenter-projects.json" },
@@ -107,8 +101,8 @@ export default function DatacentersPage() {
       <JsonLd data={jsonLd} />
       <Breadcrumbs crumbs={crumbs} />
       <DatasetHeader
-        title="Data center map"
-        dek="Every data center mapped in OpenStreetMap, plus the AI and hyperscale campuses announced or under construction since 2024: who is building them, where, how many megawatts and how much money, each linked to its sources."
+        title="New data center projects"
+        dek="The AI and hyperscale data center campuses announced, planned or under construction since 2024: who is building them, where, how many megawatts and how much money, each linked to its sources."
         updated={dcNew.updated}
         records={t.projects}
         recordLabel="new projects"
@@ -129,14 +123,26 @@ export default function DatacentersPage() {
           <span className="stat-label">stated investment ({t.withUsd} projects)</span>
         </div>
         <div>
-          <span className="stat-value">{fmtNumber(t.existing)}</span>
-          <span className="stat-label">existing data centers mapped</span>
+          <span className="stat-value">{t.countries}</span>
+          <span className="stat-label">countries with a new project</span>
         </div>
       </section>
 
       <div className="mt-12">
-        <DatacenterMap projects={dcNew.rows} existingUrl={`${PATH}/existing.json`} existingCount={t.existing} />
+        <DatacenterMap
+          projects={dcNew.rows}
+          existingUrl="/data/datacenters/existing.json"
+          existingCount={t.existing}
+          existingOnByDefault={false}
+        />
       </div>
+      <p className="meta mt-3">
+        Switch on &ldquo;Existing&rdquo; to see today&apos;s data centers behind the new builds, or open the{" "}
+        <Link href="/data/datacenters/existing" className="link">
+          map of {fmtNumber(t.existing)} existing data centers
+        </Link>
+        .
+      </p>
 
       <HBarChart
         title="Planned new capacity by country (GW)"
@@ -217,29 +223,24 @@ export default function DatacentersPage() {
             <thead>
               <tr>
                 <th>Country</th>
-                <th className="num">Existing (mapped)</th>
-                <th className="num">New projects</th>
+                <th className="num">Projects</th>
                 <th className="num">Planned GW</th>
+                <th className="num">Stated $B</th>
               </tr>
             </thead>
             <tbody>
-              {existingByCountry.slice(0, 30).map(([c, n]) => (
+              {countByCountry.map(([c, n]) => (
                 <tr key={c}>
                   <td>{c}</td>
-                  <td className="num">{fmtNumber(n)}</td>
-                  <td className="num">{countByCountry.find(([x]) => x === c)?.[1] ?? 0}</td>
+                  <td className="num">{n}</td>
                   <td className="num">{gw((byCountry.find(([x]) => x === c)?.[1] ?? 0) / 1000)}</td>
+                  <td className="num">{fmtNumber(Math.round(usdByCountry.find(([x]) => x === c)?.[1] ?? 0))}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        <p className="meta mt-3">
-          Top 30 countries by mapped facilities. Existing counts reflect OpenStreetMap coverage, which is densest in Europe and North America.{" "}
-          <a className="link" href="/data/download/datacenters-osm.csv" download>
-            Download all {fmtNumber(t.existing)} existing sites (CSV, ODbL)
-          </a>
-        </p>
+        <p className="meta mt-3">Cancelled projects are excluded from capacity and investment totals.</p>
       </section>
 
       <AboutDataset
@@ -247,9 +248,9 @@ export default function DatacentersPage() {
         what={
           <>
             <p>
-              Two layers. <strong>New builds</strong>: {fmtNumber(t.projects)} data center projects announced, planned, under construction,
-              completed, paused or cancelled since January 2024, from AI training campuses to colocation facilities. <strong>Existing</strong>:{" "}
-              {fmtNumber(t.existing)} sites tagged as data centers in OpenStreetMap.
+              {fmtNumber(t.projects)} data center projects announced, planned, under construction, completed, paused or cancelled
+              since January 2024, from AI training campuses to colocation facilities. Existing facilities are a separate dataset:
+              the <Link href="/data/datacenters/existing">map of existing data centers</Link>.
             </p>
           </>
         }
@@ -262,18 +263,14 @@ export default function DatacentersPage() {
               project across sources were merged, the latest source decides the status, and each location was geocoded to its town or
               county with OpenStreetMap Nominatim.
             </p>
-            <p>
-              Existing sites are every OpenStreetMap feature tagged <code>telecom=data_center</code>, <code>building=data_center</code>{" "}
-              or <code>industrial=data_center</code>, with countries assigned from Natural Earth borders.
-            </p>
           </>
         }
         limits={
           <p>
             Map points for new builds are town-level, not site-level. Capacity and investment figures are announcements, often for
             multi-phase builds over many years, and some are never built. Joint ventures can be reported under different developers
-            in different sources. OpenStreetMap coverage is uneven: it under-counts data centers in Asia, Africa and Latin America and
-            does not include most enterprise server rooms.
+            in different sources. Coverage follows English-language and trade-press reporting, so projects in China and other
+            markets with less English coverage are under-represented.
           </p>
         }
         fields={[
@@ -292,11 +289,11 @@ export default function DatacentersPage() {
         ]}
       />
       <p className="meta mt-6">
-        Existing data center locations © <a className="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>,
-        available under the Open Database License. Country outlines: Natural Earth (public domain).
+        Geocoding © <a className="link" href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (Nominatim) and
+        GeoNames (Open-Meteo). Country outlines: Natural Earth (public domain).
       </p>
       <Faq items={FAQ} />
-      <CiteThis title="Data center map" path={PATH} updated={dcNew.updated} />
+      <CiteThis title="New data center projects" path={PATH} updated={dcNew.updated} />
     </>
   );
 }

@@ -27,7 +27,7 @@ export function citations(title: string, path: string, updated: string) {
  * the LLMs drafting for them an attribution with a link back, which is how a
  * dataset earns citations.
  */
-export function CiteThis({ title, path, updated }: { title: string; path: string; updated: string }) {
+export function CiteThis({ title, path, updated, odbl = false }: { title: string; path: string; updated: string; odbl?: boolean }) {
   const c = citations(title, path, updated);
   const formats: [string, string][] = [
     ["APA", c.apa],
@@ -42,13 +42,24 @@ export function CiteThis({ title, path, updated }: { title: string; path: string
         How to cite this data
       </h2>
       <div className="article">
-        <p>
-          This dataset is free to use, including commercially, under{" "}
-          <a href={LICENSE} rel="license">
-            Creative Commons Attribution 4.0
-          </a>
-          . The one rule is attribution:
-        </p>
+        {odbl ? (
+          <p>
+            This dataset is OpenStreetMap data, free to use under the{" "}
+            <a href="https://opendatacommons.org/licenses/odbl/1-0/" rel="license">
+              Open Database License
+            </a>
+            : credit &ldquo;© OpenStreetMap contributors&rdquo;, and share any database you build from it
+            under the same licence. Attribution for this compilation:
+          </p>
+        ) : (
+          <p>
+            This dataset is free to use, including commercially, under{" "}
+            <a href={LICENSE} rel="license">
+              Creative Commons Attribution 4.0
+            </a>
+            . The one rule is attribution:
+          </p>
+        )}
         <ol>
           <li>
             <strong>Credit the source</strong> as &ldquo;{SITE.name}, kuldeep.cc&rdquo; wherever you

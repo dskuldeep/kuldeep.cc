@@ -81,6 +81,8 @@ export interface DatasetSchemaInput {
   isBasedOn?: string[];
   /** /writing slugs of research posts built on this dataset. */
   research?: string[];
+  /** Upstream licence for data republished as-is (default: CC BY 4.0). */
+  license?: { url: string; notice: string };
 }
 
 export function datasetNode(d: DatasetSchemaInput) {
@@ -95,10 +97,10 @@ export function datasetNode(d: DatasetSchemaInput) {
     dateModified: d.dateModified,
     inLanguage: "en-US",
     isAccessibleForFree: true,
-    license: "https://creativecommons.org/licenses/by/4.0/",
+    license: d.license?.url ?? "https://creativecommons.org/licenses/by/4.0/",
     creditText: `${SITE.name}, kuldeep.cc — ${d.name}`,
     copyrightHolder: { "@id": PERSON_ID },
-    copyrightNotice: `© ${d.dateModified.slice(0, 4)} ${SITE.name}. Licensed under CC BY 4.0.`,
+    copyrightNotice: d.license?.notice ?? `© ${d.dateModified.slice(0, 4)} ${SITE.name}. Licensed under CC BY 4.0.`,
     usageInfo: canonicalPath("/data/methodology#licence"),
     creator: { "@id": PERSON_ID },
     author: { "@id": PERSON_ID },
