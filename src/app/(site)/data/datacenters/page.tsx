@@ -121,8 +121,8 @@ export default function DatacentersPage() {
           <span className="stat-label">new data center projects since 2024</span>
         </div>
         <div>
-          <span className="stat-value">{gw(t.gw)}&nbsp;GW</span>
-          <span className="stat-label">stated planned capacity ({t.withMw} projects)</span>
+          <span className="stat-value">{gw(t.gw)}</span>
+          <span className="stat-label">GW of stated planned capacity ({t.withMw} projects)</span>
         </div>
         <div>
           <span className="stat-value">{usd(t.usdBn)}</span>

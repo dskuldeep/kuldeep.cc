@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight } from "next/font/google";
 import { SITE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const GTM_ID = "GTM-TZHZ6TDK";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -71,10 +57,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${interTight.variable} h-full antialiased`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <head>
+        {/* Fonts are self-hosted from public/fonts (@font-face in globals.css). */}
+        <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossOrigin="" />
         {/* Apply the stored theme choice before first paint (no flash). */}
         <script
           dangerouslySetInnerHTML={{
