@@ -25,15 +25,22 @@ function isSpaceHost(host: string): boolean {
 }
 
 /**
- * Two jobs:
- *   1. Map the space host onto the /space route tree — space.kuldeep.cc serves
+ * Three jobs:
+ *   1. 301 www.kuldeep.cc to the apex (the canonical host).
+ *   2. Map the space host onto the /space route tree — space.kuldeep.cc serves
  *      the hub and space.kuldeep.cc/<slug> serves a published artifact.
- *   2. Optimistic gate for /admin: bounce to login when the session cookie is
+ *   3. Optimistic gate for /admin: bounce to login when the session cookie is
  *      absent. NOT the security boundary — every admin page, server action and
  *      /api/admin handler verifies the signed session itself via requireAuth().
  */
 export function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
+
+  // www is not canonical: 301 to the apex so crawlers (and Search Console
+  // sitemap fetches) never see a second copy of the site.
+  if ((request.headers.get("host") ?? "").split(":")[0].toLowerCase() === "www.kuldeep.cc") {
+    return NextResponse.redirect(`https://kuldeep.cc${pathname}${search}`, 301);
+  }
 
   if (
     isSpaceHost(request.headers.get("host") ?? "") &&
