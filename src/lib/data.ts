@@ -495,7 +495,10 @@ export function downloadRows(slug: string): Record<string, unknown>[] | null {
         sources: sources.map((x) => x.url).join(" "),
       }));
     case "datacenters-osm":
-      return dcExisting.rows.map(([lng, lat, name, operator, country, osm]) => ({
+      // Named sites first within each country, so the file doesn't open on a run of blank names
+      return [...dcExisting.rows]
+        .sort((a, b) => a[4].localeCompare(b[4]) || Number(!a[2]) - Number(!b[2]) || a[2].localeCompare(b[2]))
+        .map(([lng, lat, name, operator, country, osm]) => ({
         name,
         operator,
         country,

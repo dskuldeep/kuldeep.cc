@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { DatasetViewer } from "@/components/data/dataset-viewer";
 import { fmtMonth, fmtNumber } from "@/lib/data";
 import { SITE } from "@/lib/site";
 
@@ -11,7 +12,7 @@ interface Props {
   download?: string;
 }
 
-/** Title block shared by every dataset page: H1, standfirst, byline, freshness and downloads. */
+/** Title block shared by every dataset page: H1, standfirst, byline, freshness, data viewer and downloads. */
 export function DatasetHeader({ title, dek, updated, records, recordLabel = "records", download }: Props) {
   return (
     <header className="mb-12">
@@ -33,24 +34,17 @@ export function DatasetHeader({ title, dek, updated, records, recordLabel = "rec
             {fmtNumber(records)} {recordLabel}
           </span>
         )}
-        {download && (
-          <span>
-            Download{" "}
-            <a className="link" href={`/data/download/${download}.csv`} download>
-              CSV
-            </a>{" "}
-            ·{" "}
-            <a className="link" href={`/data/download/${download}.json`} download>
-              JSON
-            </a>
-          </span>
-        )}
         <span>
           <Link href="/data/methodology" className="link">
             Methodology
           </Link>
         </span>
       </p>
+      {download && (
+        <div className="mt-6">
+          <DatasetViewer slug={download} title={title} />
+        </div>
+      )}
     </header>
   );
 }

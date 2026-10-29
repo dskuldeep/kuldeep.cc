@@ -966,3 +966,82 @@ h4 {
 .dc-controls input[type="search"]::-webkit-search-cancel-button {
   filter: grayscale(1);
 }
+
+/* Dataset viewer modal (components/data/dataset-viewer.tsx) */
+.dv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dv-actions .btn,
+.dv-tools .btn {
+  text-decoration: none;
+}
+
+.dv-dialog {
+  width: min(80rem, calc(100vw - 2rem));
+  height: min(52rem, calc(100dvh - 2rem));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+  flex-direction: column;
+}
+
+.dv-dialog[open] {
+  display: flex;
+}
+
+.dv-dialog::backdrop {
+  background: rgb(0 0 0 / 0.55);
+}
+
+.dv-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--fg);
+}
+
+.dv-title {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.dv-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dv-tools .field {
+  width: 16rem;
+  max-width: 100%;
+}
+
+.dv-grid {
+  flex: 1;
+  min-height: 0;
+}
+
+@media (max-width: 640px) {
+  .dv-dialog {
+    width: 100vw;
+    height: 100dvh;
+    border: 0;
+  }
+  .dv-tools .field {
+    width: 100%;
+  }
+}
