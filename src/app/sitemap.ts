@@ -21,7 +21,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/data`, changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/data/chatgpt-ads`, lastModified: lastMod(DATASETS[0].updated), changeFrequency: "weekly", priority: 0.95 },
     { url: `${SITE_URL}/data/methodology`, changeFrequency: "monthly", priority: 0.5 },
-    ...DATASETS.filter((d) => d.path !== "/data/chatgpt-ads").map((d) => ({
+    // Several datasets can share one page (e.g. both data center layers); list each URL once.
+    ...DATASETS.filter((d, i) => d.path !== "/data/chatgpt-ads" && DATASETS.findIndex((x) => x.path === d.path) === i).map((d) => ({
       url: `${SITE_URL}${d.path}`,
       lastModified: lastMod(d.updated),
       changeFrequency: "weekly" as const,

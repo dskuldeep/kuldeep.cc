@@ -7,6 +7,7 @@ import referrersJson from "@/data/ai-referrers.json";
 import robotsJson from "@/data/robots-study.json";
 import usersJson from "@/data/ai-user-numbers.json";
 import insightsJson from "@/data/insights.json";
+import { dcExisting, dcNew } from "@/lib/datacenters";
 
 /**
  * Datasets behind /data. Sources are versioned JSON in src/data, regenerated
@@ -303,8 +304,10 @@ export interface DatasetEntry {
   description: string;
   records: number;
   updated: string;
-  group: "ChatGPT Ads Index" | "AI Search Reference";
+  group: "ChatGPT Ads Index" | "AI Search Reference" | "AI Infrastructure";
   download?: string;
+  /** Downloads default to CC BY 4.0; set for data that keeps its upstream licence. */
+  license?: string;
 }
 
 export const DATASETS: DatasetEntry[] = [
@@ -396,6 +399,29 @@ export const DATASETS: DatasetEntry[] = [
     group: "AI Search Reference",
     download: "ai-user-numbers",
   },
+  {
+    slug: "datacenter-projects",
+    path: "/data/datacenters",
+    title: "New data center projects",
+    description:
+      "AI and hyperscale data center campuses announced or under construction worldwide since 2024: developer, location, MW, investment, status and sources.",
+    records: dcNew.rows.length,
+    updated: dcNew.updated,
+    group: "AI Infrastructure",
+    download: "datacenter-projects",
+  },
+  {
+    slug: "datacenters-osm",
+    path: "/data/datacenters",
+    title: "Map of existing data centers",
+    description:
+      "Every data center mapped in OpenStreetMap, with operator and country, on one interactive world map.",
+    records: dcExisting.rows.length,
+    updated: dcExisting.updated,
+    group: "AI Infrastructure",
+    download: "datacenters-osm",
+    license: "ODbL 1.0, © OpenStreetMap contributors — https://opendatacommons.org/licenses/odbl/1-0/",
+  },
 ];
 
 export function datasetBySlug(slug: string): DatasetEntry | undefined {
@@ -463,6 +489,20 @@ export function downloadRows(slug: string): Record<string, unknown>[] | null {
       return referrers.rows.map((r) => ({ ...r }));
     case "ai-user-numbers":
       return userNumbers.rows.map((r) => ({ ...r }));
+    case "datacenter-projects":
+      return dcNew.rows.map(({ sources, ...p }) => ({
+        ...p,
+        sources: sources.map((x) => x.url).join(" "),
+      }));
+    case "datacenters-osm":
+      return dcExisting.rows.map(([lng, lat, name, operator, country, osm]) => ({
+        name,
+        operator,
+        country,
+        lat,
+        lng,
+        osm: `https://www.openstreetmap.org/${osm}`,
+      }));
     default:
       return null;
   }

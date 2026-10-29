@@ -13,6 +13,7 @@
   "dependencies": {
     "@milkdown/crepe": "^7.22.1",
     "@milkdown/kit": "^7.22.1",
+    "d3-geo": "^3.1.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.8.0",
     "mammoth": "^1.12.3",
@@ -23,14 +24,17 @@
     "react-dom": "^19.2.5",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.1",
+    "topojson-client": "^3.1.0",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.31.2",
     "@cloudflare/workers-types": "^5.20260903.1",
+    "@types/d3-geo": "^3.1.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/topojson-client": "^3.1.5",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitejs/plugin-rsc": "^0.5.23",
     "autoprefixer": "^10.4.27",
@@ -44,6 +48,7 @@
     "typescript": "^5",
     "vinext": "^0.0.41",
     "vite": "^8.0.8",
+    "world-atlas": "^2.0.2",
     "wrangler": "^4.81.1"
   },
   "type": "module"

@@ -3,9 +3,10 @@ import hashlib, json, os, sys, time, threading, urllib.request, urllib.error
 LOCK = threading.Lock()
 HERE = os.path.dirname(os.path.abspath(__file__))
 KEY = os.environ["EXA_KEY"]
-LEDGER = os.path.join(HERE, "ledger.json")
-PRIOR = 0.245            # spent in ideation + calibration
-CAP = 5.00               # total hard cap, USD
+# Each dataset project gets its own ledger and cap (EXA_LEDGER / EXA_CAP).
+LEDGER = os.path.join(HERE, os.environ.get("EXA_LEDGER", "ledger.json"))
+PRIOR = float(os.environ.get("EXA_PRIOR", "0.245"))   # spent before the ledger existed
+CAP = float(os.environ.get("EXA_CAP", "5.00"))        # total hard cap, USD
 
 def spent():
   with LOCK:

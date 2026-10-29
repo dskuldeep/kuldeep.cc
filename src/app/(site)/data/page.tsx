@@ -38,7 +38,7 @@ const crumbs = [
 ];
 
 export default function DataIndex() {
-  const groups = ["ChatGPT Ads Index", "AI Search Reference"] as const;
+  const groups = ["ChatGPT Ads Index", "AI Search Reference", "AI Infrastructure"] as const;
   const total = DATASETS.reduce((n, d) => n + d.records, 0);
 
   const jsonLd = graph(

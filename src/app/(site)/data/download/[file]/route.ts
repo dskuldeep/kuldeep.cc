@@ -34,7 +34,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ file: s
     dataset: entry.title,
     url: `https://kuldeep.cc${entry.path}`,
     creator: "Kuldeep Paul (kuldeep.cc)",
-    license: "CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/",
+    license: entry.license ?? "CC BY 4.0 — https://creativecommons.org/licenses/by/4.0/",
     updated: entry.updated,
     rows,
   };
